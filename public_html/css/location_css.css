@@ -1,0 +1,151 @@
+@import "general_css.css";
+
+body {
+  font-size: 16px;
+}
+
+p {
+  line-height: 1.2rem;
+  margin-bottom: 10px;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+}
+
+nav {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 100px;
+  gap: 50px;
+}
+
+nav > div {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+
+.nav_icons {
+  gap: 20px;
+  font-size: 30px;
+}
+
+
+
+ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  font-size: 18px;
+}
+
+.restaurant_name {
+  color: #ffb100;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.link {
+  color: #ffb100;
+  transition: 0.3s;
+}
+
+.link:hover,
+.active {
+  color: white;
+  border-bottom: 1px solid white;
+}
+main{
+    position:relative;
+    z-index:10;
+}
+
+/* letras*/
+.locals_title {
+  font-size: 30px;
+  color: #ffb100;
+  text-align: center;
+  letter-spacing: 4px;
+  margin: 70px auto 20px;
+  text-transform: uppercase;
+}
+
+section{
+    padding: 0 70px;
+    display: flex;
+    gap:50px;
+    justify-content: center;
+}
+
+.boxes{
+    width:320px;
+}
+
+.placeslocals_nombre {
+    margin-bottom: 10px;
+  }
+
+.local_link{
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: rgb(255, 177, 0);
+    color:black;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.local_link:hover{
+    background-color: rgba(255, 179, 2, 0.534);
+}
+
+/* Estilo para cada lugar */
+.local_box {
+  margin-bottom: 20px;
+  border: 2px solid #ffd700; /* Borde amarillo */
+  padding: 20px; /* Espaciado interior */
+  border-radius: 10px; /* Redondeado de bordes */
+}
+
+.local_box:hover{
+    border: 2px solid black; /* Borde amarillo */
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 70px;
+  padding-bottom: 20px;
+  justify-content: center;
+}
+.icons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.icons a {
+    color: black;
+  font-size: 30px;
+  transition: 0.3s;
+}
+
+.icons a:hover {
+  color: #ffb100;
+}

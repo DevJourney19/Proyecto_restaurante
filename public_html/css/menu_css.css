@@ -1,0 +1,263 @@
+@import "general_css.css";
+
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    display:inline-block;
+}
+
+nav {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 100px;
+    gap: 50px;
+}
+
+nav>div{
+    display:flex;
+    align-items: center;
+    gap:100px;
+}
+
+.nav_icons{
+    gap:20px;
+    font-size:30px;
+}
+
+ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    gap:20px;
+    font-size:18px;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding:20px;
+    position:relative;
+    z-index:10;
+}
+
+.restaurant_name{
+    color: #ffb100;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.link{
+    color: #ffb100;
+    transition: 0.3s;
+}
+
+.link:hover{
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+.active{
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+.curve_header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    background:url(../assets/img/curve-header.svg);
+    background-size: cover;
+    background-position: 25% 65%;
+    width: 100%;
+    height: 300px;
+}
+
+.container_menu{
+    max-width:1000px;
+}
+
+.title_section{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.title_section>p{
+    color:#ffb100;
+    font-weight: 600;
+}
+
+.title_section>h3{
+    font-size: 40px;
+}
+
+.nav_categories{
+    border-bottom: 1px solid #100b00;
+    padding-bottom: 5px;
+}
+
+.category_item{
+    color:black;
+}
+
+.category_item:hover, .category_active{
+    border-bottom:2px solid #FFB100;
+    font-weight: 600;
+}
+
+.menu{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+}
+
+.menu>button{
+    background-color: #FFB100;
+    padding:10px 20px;
+    border:none;
+    border-radius:30px;
+    font-size:16px;
+    font-weight: 600;
+    cursor:pointer;
+    transition: 0.3s;
+}
+
+.menu>button:hover{
+    background-color: #100b00;
+    color:white;
+}
+
+.menu_cards{
+    display:flex;
+    flex-wrap: wrap;
+    gap:10px 20px;
+    flex: none;
+    padding:10px 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    margin-top:30px;
+    position:relative;
+    max-width: 250px;
+    height: 240px;
+    border:1px solid #100b00;
+    padding:20px;
+    border-radius:10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover{
+    border-color:#FFB100;
+}
+
+.container_img{
+    position:absolute;
+    top:-40px;
+    left:0;
+    display:flex;
+    width:100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.card_img{
+    object-fit: cover;
+}
+
+.card_inner{
+    margin-top:50px;
+}
+
+.card h4{
+    font-size:16px;
+}
+
+.card p{
+    font-size:12px;
+}
+
+.price{
+    display:flex;
+    gap:10px;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.price span{
+    font-weight: 600;
+    color:#FFB100;
+    font-size:18px;
+}
+
+.description > h4, .description>p {
+    margin-bottom:5px;
+}
+
+.review_starts{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card button{
+    border:1px solid #100b00;
+    padding:5px 10px;
+    background-color:transparent;
+    cursor:pointer;
+    border-radius:30px;
+    font-weight: 500;
+}
+
+.card button:hover{
+    background-color: #FFB100;
+}
+
+footer{
+    color: black;
+    display: flex;
+    align-items: center;
+    padding:0 70px;    
+    padding-bottom:10px;
+    justify-content: center;
+}
+.icons{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.icons a{
+    font-size: 30px;
+    color: black;
+    transition: 0.3s;
+}
+
+.icons a:hover{
+    color: #FFB100;
+}
+
+

@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>LogIn | SignUp</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="assets/img/logo.png">
+        <link href="css/login_signup_css.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header>
+            <div>
+                <img src="assets/img/logo.png" alt="logo"/>
+                <h1>La Trattoria Secreta</h1>
+            </div>
+        </header>
+        <main>
+            <div class="contenedor_todo">
+                <div class="caja_trasera">
+                    <!-- Cuando uno ya tiene cuenta -->
+                    <div class="caja_trasera_login">
+                        <h3>¿Ya tienes una cuenta?</h3>
+                        <p>Inicia sesión para entrar en la página</p>
+                        <button id="btn_iniciarSesion">Iniciar sesión</button>
+                    </div>
+                    <!-- Cuando uno es nuevo -->
+                    <div class="caja_trasera_register">
+                        <h3>¿Aún no tienes una cuenta?</h3>
+                        <p>Registrate para iniciar sesión</p>
+                        <button id="btn_registrarse">Registrarse</button>
+                    </div>
+                </div>
+                <!-- Contenedor de los formularios que vamos a estar usando -->
+                <div class="contenedor_login_register">
+                    <!-- Login --> <!-- onsubmit ejecuta la función al enviar el
+                                   formulario, dando por enter como por el clic del botón-->
+                    <form  method="POST" class="formulario_login" onsubmit="enter(event)">
+                        <div>
+                            <h2>Iniciar sesión</h2>
+                            <input type="email" placeholder="Correo Electrónico" name="correo" required/>
+                            <input type="password" placeholder="Contraseña" name="contrasena" required/>
+                        </div>
+                        <button id="entrar" type="submit">Entrar</button>
+                    </form>
+                    <!-- Register -->
+                    <!-- Si no se pone el method, entonces por defecto es "GET" -->
+                    <form method="POST" class="formulario_register" onsubmit="enter(event)">
+                        <div>
+                            <h2>Registrarse</h2>
+                            <input type="text" placeholder="Nombre completo" name="nombre_completo" required/>
+                            <input type="email" placeholder="Correo Electrónico" name="correoR" required/>
+                            <input type="text" placeholder="Usuario" name="usuario" required/>
+                            <input type="password" placeholder="Contraseña" name="contrasenaR" required/>
+                        </div>
+                        <button id="registrar" type="submit">Registrarse</button> <!-- Cuando se presione el botón tendrá referencia a la dirección de action  -->
+                    </form>
+                </div>
+            </div> 
+        </main>
+        <footer>
+            <div>
+                <a href="index.html">Regresar</a>
+            </div>
+        </footer>
+        <script src="js/login_signup_js.js" type="text/javascript"></script>
+    </body>
+
+</html>

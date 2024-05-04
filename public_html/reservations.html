@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>La Trattoria Secreta | Reservations</title>
+        <link rel="icon" type="image/x-icon" href="../assets/img/logo.png">
+        <link rel="stylesheet" href="css/reservations_css.css" />
+        <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet" />
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <div class="curve_header"></div>
+                <div>
+                    <span class="restaurant_name">La Trattoria Secreta</span>
+                    <ul>
+                        <li><a href="index.html" class="link">Home</a></li>
+                        <li><a href="about.html" class="link">About</a></li>
+                        <li><a href="menu.html" class="link">Menu</a></li>
+                        <li><a href="location.html" class="link">Location</a></li>
+                        <li><a href="#" class="link active">Reservations</a></li>
+                    </ul>
+                </div>
+                <div class="nav_icons">
+                    <a href="menu.html"><i class='bx bx-cart'></i></a>
+                    <a href="login_signup.html"><i class='bx bx-user'></i></a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="title_section">
+                <h3>Ponte en contacto con nosotros</h3>
+                <p>Estamos aquí para ayudar, consulta informacion sobre nosotros y reservaciones</p>
+            </div>
+            <div class="container">
+                <section>
+                    <form>
+                        <div class="double_input">
+                            <div>
+                                <label for="full_name"> Nombre Completo </label>
+                                <input type="text" placeholder="Enter your full name" id="full_name" required />
+                            </div>
+                            <div>
+                                <label for="age"> Acompañantes* </label>
+                                <input type="number" placeholder="# of people" min="1" max="10" id="age" required />
+                            </div>
+                        </div>
+                        <div class="double_input">
+                            <div>
+                                <label for="email"> Email </label>
+                                <input type="text" placeholder="Enter your email" id="email" required />
+                            </div>
+                            <div>
+                                <label for="phone_number"> Número celular </label>
+                                <input
+                                    type="text"
+                                    pattern="[0-9]{7,9}"
+                                    placeholder="914703631"
+                                    id="phone_number"
+                                    required />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="day_selected">
+                                Selecciona el dia y hora que planeas asistir*
+                            </label>
+                            <div class="double_input">
+                                <div>
+                                    <input type="time" id="time" />
+                                </div>
+                                <div>
+                                    <input type="date" id="day_selected" />
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <fieldset>
+                                <legend>
+                                    Mensaje adicional
+                                </legend>
+                                <textarea name="message" rows="4" cols="20"> </textarea>
+                            </fieldset>
+                        </div>
+                        <div class="final_form">
+                            <button type="submit">Send Message</button>
+                            <p>(* = opcional si solo desea contactar)</p>
+                        </div>
+                    </form>
+                </section>
+                <section class="contact_info">
+                    <h4>Contact Info</h4>
+                    <div>
+                        <i class="bx bxs-phone"></i>
+                        <p>+51 914703631</p>
+                    </div>
+                    <div>
+                        <i class="bx bxs-envelope"></i>
+                        <p>hello@example.com</p>
+                    </div>
+                    <div>
+                        <i class="bx bxs-map-pin"></i>
+                        <p>189 San Isidro, Lima - Perú</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <footer>
+            <div class="footer_desc">
+                <img src="assets/img/logo.png" alt="logo" class="logo"/>
+                <p>
+                    Nos esforzamos para ofrecerle una experiencia gastronómica excepcional, donde cada plato
+                    <br />
+                    es una obra maestra de sabor, calidad y dedicación, saborea la excelencia en cada bocado.
+                </p>
+            </div>
+            <div class="icons">
+                <a href="https://www.facebook.com/?locale=es_LA" target="blank"><i class="bx bxl-facebook-circle"></i></a>
+                <a href="https://www.instagram.com/" target="blank"><i class="bx bxl-instagram"></i></a>
+                <a href="https://www.tiktok.com/es/" target="blank"><i class="bx bxl-tiktok"></i></a>
+            </div>
+            <div class="curve_footer"></div>
+        </footer>
+    </body>
+</html>
