@@ -122,34 +122,6 @@ h2 {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-table{
-    font-size: var(--parrafo);
-}
-
-thead{
-    background: var(--amarillo);
-}
-
-tr th{
-    font-weight: 800;
-}
-
-th,td{
-    padding: 20px 15px;
-    font-weight: 400;
-    padding: 10px;
-}
-
-tbody tr:hover{
-    color:black;
-    background: var(--amarillo);
-}
-
-table,th,td{
-    border: 1px solid #212B2A;
-    border-collapse: collapse;
-}
-
 .texto_encabezado {
     position: absolute;
     z-index: 2;
