@@ -28,15 +28,7 @@ a {
     display: inline-block;
 }
 
-nav {
-    position:relative;
-    z-index:10;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 100px;
-    gap: 50px;
-}
+
 
 nav > div {
     display: flex;
@@ -58,11 +50,7 @@ ul {
     font-size: 18px;
 }
 
-.restaurant_name {
-    color: #ffb100;
-    font-weight: 600;
-    font-size: 36px;
-}
+
 
 .link {
     color: #ffb100;
