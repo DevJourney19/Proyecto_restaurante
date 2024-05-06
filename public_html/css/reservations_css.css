@@ -13,25 +13,6 @@ a{
     color: white;
 }
 
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 100px;
-    gap:50px;
-}
-
-nav>div{
-    display:flex;
-    align-items: center;
-    gap:100px;
-}
-
-.nav_icons{
-    gap:20px;
-    font-size:30px;
-}
-
 ul{
     display: flex;
     list-style: none;
