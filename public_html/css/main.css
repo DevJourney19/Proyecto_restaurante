@@ -1,0 +1,94 @@
+/*About*/
+/*la imagen de la curva para el encabezado del html*/
+.curve_header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: url(../assets/img/curve-header.svg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 260px;
+}
+/*Ajustes de centralización de los elementos del encabezado*/
+nav {
+    position:relative;
+    z-index:10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 100px;
+    gap: 50px;
+}
+/*        parte de la letra  del encabezado*/
+.restaurant_name {
+    color: #ffb100;
+    font-weight: 600;
+    font-size: 36px;
+}
+/* espaciado entre el titulo los subindices y los iconos del encabezado*/
+nav > div {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+/* tamño y espaciado de iconos del encabezado*/
+.nav_icons{
+    gap:20px;
+    font-size:30px;
+}
+/* index*/
+/*
+nav {
+    padding: 20px 100px;
+    display:flex;
+    justify-content: space-between;
+}
+
+nav>div{
+    display:flex;
+    gap:50px;
+    align-items:center;
+}
+
+.nav_icons{
+    gap:20px;
+    font-size:30px;
+}
+*/
+/* Login signup*/
+header>div{
+    display:flex;
+    align-items: center;
+    gap:20px;
+} 
+header img{
+    width: 100px;
+    height: 100px;
+}
+/*
+header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:20px 100px;
+}
+
+header h1{
+    color:#FFB100;
+}
+
+header>div{
+    display:flex;
+    align-items: center;
+    gap:20px;
+}
+
+header img{
+    width: 100px;
+    height: 100px;
+} 
+por si pasa algo 
+*/
+/* 
