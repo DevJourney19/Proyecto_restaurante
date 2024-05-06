@@ -33,23 +33,6 @@ a{
     cursor: default;
 }
 
-nav {
-    padding: 20px 100px;
-    display:flex;
-    justify-content: space-between;
-}
-
-nav>div{
-    display:flex;
-    gap:50px;
-    align-items:center;
-}
-
-.nav_icons{
-    gap:20px;
-    font-size:30px;
-}
-
 .primera_ul {
     display: flex;
     justify-content: space-evenly;

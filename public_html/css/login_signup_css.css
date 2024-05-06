@@ -9,28 +9,6 @@ body{
     background-attachment: fixed;
 }
 
-header{
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-    padding:20px 100px;
-}
-
-header h1{
-    color:#FFB100;
-}
-
-header>div{
-    display:flex;
-    align-items: center;
-    gap:20px;
-}
-
-header img{
-    width: 100px;
-    height: 100px;
-}
-
 main{
     height: 80vh;
     display:flex;

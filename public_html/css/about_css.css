@@ -28,21 +28,6 @@ a {
     display: inline-block;
 }
 
-
-
-nav > div {
-    display: flex;
-    align-items: center;
-    gap: 100px;
-}
-
-.nav_icons {
-    gap: 20px;
-    font-size: 30px;
-}
-
-
-
 ul {
     display: flex;
     list-style: none;
