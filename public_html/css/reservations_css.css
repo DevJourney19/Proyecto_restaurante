@@ -1,5 +1,5 @@
 @import "general_css.css";
-
+@import "main.css";
 body{
     min-height: 100vh;
     overflow: hidden;
