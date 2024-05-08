@@ -94,58 +94,6 @@ section{
     padding: 20px 40px;
 }
 
-form>div, .double_input>div{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-label, legend{
-    font-weight: 600;
-}
-
-.double_input{
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-
-.double_input>div{
-    flex: 1;
-}
-
-input{
-    outline: none;
-    border: none;
-    border-bottom: 1px solid black;
-    padding-bottom: 5px;
-}
-
-textarea{
-    outline: none;
-    resize: none;
-    border:none;
-    padding: 10px;
-    width: 100%;
-}
-
-button{
-    font-weight: 600;
-    padding: 10px 20px;
-    background: #ffb100;
-    color: black;
-    border: none;
-    cursor: pointer;
-    border-radius: 30px;
-    transition: 0.3s;
-}
-
-button:hover{
-    background: black;
-    color: white;
-}
-
 .contact_info{
     display: flex;
     flex-direction: column;
@@ -162,17 +110,6 @@ button:hover{
     display: flex;
     gap: 20px;
     align-items: center;
-}
-
-.final_form{
-    display:flex;
-    gap:10px;
-    flex-direction:row;
-    align-items: center;
-}
-
-.final_form>p{
-    font-size:12px
 }
 
 footer{
