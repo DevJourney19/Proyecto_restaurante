@@ -28,7 +28,7 @@ nav {
     font-size: 36px;
 }
 /* espaciado entre el titulo los subindices y los iconos del encabezado*/
-nav > div {
+nav > div { 
     display: flex;
     align-items: center;
     gap: 100px;
@@ -91,6 +91,7 @@ header img{
 } 
 por si pasa algo 
 */
+
 /* ------------------------------------------------- FOOTER--------------------------------*/
 /* About*/
 footer {
@@ -183,5 +184,6 @@ footer {
   background-position: center;
 
 }
+
 
 

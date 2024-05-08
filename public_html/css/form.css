@@ -1,0 +1,127 @@
+
+/*Formularios*/
+.contenedor_login_register{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    top: -185px;
+    max-width: 380px;
+    left: 10px;
+    transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+
+.contenedor_login_register form{
+    display:flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px;
+    background: #fff;
+    position: absolute;
+    border-radius: 20px;
+    height: 450px;
+    width:100%;
+}
+
+
+.contenedor_login_register form h2{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: black;
+}
+
+/*Contenedor donde se ingresaran los datos correspondientes*/
+.contenedor_login_register form input{
+    width: 100%;
+    margin-top: 10px; 
+    padding: 10px;
+    border: none;
+    background: #f2f2f2;
+    font-size: 14px;
+    outline: none;
+    border-radius:5px;
+}
+.contenedor_login_register form button{
+    margin-top:30px;
+    border: none;
+    font-size: 14px;
+    background: #FFB100;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    padding:10px 0;
+    border-radius:5px;
+}
+
+form.formulario_login{
+    opacity: 1;
+    display: flex;
+}
+form.formulario_register{
+    display: none;
+}
+
+form>div, .double_input>div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+label, legend{
+    font-weight: 600;
+}
+
+.double_input{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.double_input>div{
+    flex: 1;
+}
+
+input{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+}
+
+textarea{
+    outline: none;
+    resize: none;
+    border:none;
+    padding: 10px;
+    width: 100%;
+}
+
+button{
+    font-weight: 600;
+    padding: 10px 20px;
+    background: #ffb100;
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+button:hover{
+    background: black;
+    color: white;
+}
+
+.final_form{
+    display:flex;
+    gap:10px;
+    flex-direction:row;
+    align-items: center;
+}
+
+.final_form>p{
+    font-size:12px
+}
