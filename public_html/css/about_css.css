@@ -160,25 +160,7 @@ h2 {
     margin-bottom: 1rem;
 }
 
-footer {
-    color: black;
-    display: flex;
-    align-items: center;
-    padding: 0 70px;
-    padding-bottom: 20px;
-    justify-content: center;
-}
-.icons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
-.icons a {
-    font-size: 30px;
-    transition: 0.3s;
-}
-
 .icons a:hover {
     color: #ffb100;
 }
+

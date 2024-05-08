@@ -16,7 +16,7 @@ img {
 
 a {
   text-decoration: none;
-  color: white;
+  color: black;
   display: inline-block;
 }
 
@@ -93,26 +93,6 @@ section{
 
 .local_box:hover{
     border: 2px solid black; /* Borde amarillo */
-}
-
-footer {
-  display: flex;
-  align-items: center;
-  margin-top: 20px;
-  padding: 0 70px;
-  padding-bottom: 20px;
-  justify-content: center;
-}
-.icons {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-
-.icons a {
-    color: black;
-  font-size: 30px;
-  transition: 0.3s;
 }
 
 .icons a:hover {
