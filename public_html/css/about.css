@@ -1,4 +1,4 @@
-@import "general_css.css";
+@import "general.css";
 :root {
     --blanco: #e9eae8;
     --amarillo: #ffb100;
@@ -20,32 +20,6 @@ p {
 img {
     width: 100%;
     object-fit: cover;
-}
-
-a {
-    text-decoration: none;
-    color: white;
-    display: inline-block;
-}
-
-ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    font-size: 18px;
-}
-
-
-
-.link {
-    color: #ffb100;
-    transition: 0.3s;
-}
-
-.link:hover,
-.active {
-    color: white;
-    border-bottom: 1px solid white;
 }
 
 section {
@@ -158,9 +132,5 @@ h2 {
 }
 .imagen2 img {
     margin-bottom: 1rem;
-}
-
-.icons a:hover {
-    color: #ffb100;
 }
 

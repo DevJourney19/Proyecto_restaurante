@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>La Trattoria Secreta | Reservations</title>
         <link rel="icon" type="image/x-icon" href="../assets/img/logo.png">
-        <link rel="stylesheet" href="css/reservations_css.css" />
+        <link rel="stylesheet" href="css/reservations.css" />
         <link rel="stylesheet" href="css/form.css" />
         <link
             href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -44,21 +44,22 @@
                         <div class="double_input">
                             <div>
                                 <label for="full_name"> Nombre Completo </label>
-                                <input type="text" placeholder="Enter your full name" id="full_name" required />
+                                <input title="nombre completo para contacto" type="text" placeholder="Enter your full name" id="full_name" required />
                             </div>
                             <div>
                                 <label for="age"> Acompañantes* </label>
-                                <input type="number" placeholder="# of people" min="1" max="10" id="age" required />
+                                <input title="edad para permitir realizar el contacto" type="number" placeholder="# of people" min="1" max="10" id="age" required />
                             </div>
                         </div>
                         <div class="double_input">
                             <div>
                                 <label for="email"> Email </label>
-                                <input type="text" placeholder="Enter your email" id="email" required />
+                                <input title="email para contacto" type="text" placeholder="Enter your email" id="email" required />
                             </div>
                             <div>
                                 <label for="phone_number"> Número celular </label>
                                 <input
+                                    title="numero de telefono para contacto"
                                     type="text"
                                     pattern="[0-9]{7,9}"
                                     placeholder="914703631"
@@ -72,10 +73,10 @@
                             </label>
                             <div class="double_input">
                                 <div>
-                                    <input type="time" id="time" />
+                                    <input title="hora de la reserva" type="time" id="time" />
                                 </div>
                                 <div>
-                                    <input type="date" id="day_selected" />
+                                    <input title="dia de la reserva" type="date" id="day_selected" />
                                 </div>
                             </div>
                         </div>
@@ -84,7 +85,8 @@
                                 <legend>
                                     Mensaje adicional
                                 </legend>
-                                <textarea name="message" rows="4" cols="20"> </textarea>
+                                <!--no se encontro atributo para accesibilidad-->
+                                <textarea name="message" rows="4" cols="20" placeholder="Enter the message..." ></textarea>
                             </fieldset>
                         </div>
                         <div class="final_form">
@@ -112,14 +114,14 @@
         </main>
         <footer class="footer_reservation">
             <div class="footer_desc">
-                <img src="assets/img/logo.png" alt="logo" class="logo"/>
+                <img src="assets/img/logo.png" alt="logo" class="Logo de la Trattoria Secreta" width="70" heigth="70"/>
                 <p>
                     Nos esforzamos para ofrecerle una experiencia gastronómica excepcional, donde cada plato
                     <br />
                     es una obra maestra de sabor, calidad y dedicación, saborea la excelencia en cada bocado.
                 </p>
             </div>
-            <div class="icons">
+            <div class="footer_icons white">
                 <a href="https://www.facebook.com/?locale=es_LA" target="blank"><i class="bx bxl-facebook-circle"></i></a>
                 <a href="https://www.instagram.com/" target="blank"><i class="bx bxl-instagram"></i></a>
                 <a href="https://www.tiktok.com/es/" target="blank"><i class="bx bxl-tiktok"></i></a>

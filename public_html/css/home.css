@@ -19,43 +19,6 @@ a{
     display:inline-block;
 }
 
-.titulo {
-    color: #FFB100;
-    font-size: 36px;
-    top: 10px;
-    transition: color 350ms, transform 350ms;
-}
-
-.titulo:hover {
-    color: white;
-    text-decoration: underline wavy;
-    transform: skew(-15deg);
-    cursor: default;
-}
-
-.primera_ul {
-    display: flex;
-    justify-content: space-evenly;
-    list-style-type: none;
-    gap:10px;
-    flex-wrap: wrap;
-}
-.primera_ul li a {
-     margin: 0px 10px 0px 0px;
-    padding: 10px 12px;
-    font-size: 18px;
-    color: white;
-    font-weight: 600;
-    text-align: center;
-    transition: color 350ms, transform 350ms, background 350ms;
-    border-radius: 25px;
-}
-li a:hover, li a.active {
-    color: black;
-    background: #FFB100;
-    transform: scale(1.2);
-}
-
 main{
     height:70vh;
     display:flex;
