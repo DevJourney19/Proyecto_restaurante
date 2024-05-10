@@ -1,3 +1,43 @@
+
+/* Home */
+.titulo {
+    color: #FFB100;
+    font-size: 36px;
+    top: 10px;
+    transition: color 350ms, transform 350ms;
+}
+
+.titulo:hover {
+    color: white;
+    text-decoration: underline wavy;
+    transform: skew(-15deg);
+    cursor: default;
+}
+
+.primera_ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    gap:10px;
+    flex-wrap: wrap;
+}
+.primera_ul li a {
+    margin: 0px 10px 0px 0px;
+    padding: 10px 12px;
+    font-size: 18px;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    transition: color 350ms, transform 350ms, background 350ms;
+    border-radius: 25px;
+}
+.primera_ul li a:hover, .primera_ul li a.active {
+    color: black;
+    background: #FFB100;
+    transform: scale(1.2);
+}
+
+
 /*About*/
 /*la imagen de la curva para el encabezado del html*/
 .curve_header {
@@ -33,66 +73,70 @@ nav > div {
     align-items: center;
     gap: 100px;
 }
-/* tamño y espaciado de iconos del encabezado*/
-.nav_icons{
+/* tamaño y espaciado de iconos del encabezado*/
+nav > .nav_icons{
+    display: flex;
     gap:20px;
     font-size:30px;
 }
-/* index*/
-/*
-nav {
-    padding: 20px 100px;
-    display:flex;
-    justify-content: space-between;
+
+a {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
 }
 
-nav>div{
-    display:flex;
-    gap:50px;
-    align-items:center;
+ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    font-size: 18px;
 }
 
-.nav_icons{
-    gap:20px;
-    font-size:30px;
+
+
+.link {
+    color: #ffb100;
+    transition: 0.3s;
 }
-*/
-/* Login signup*/
+
+.link:hover,
+.active {
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+/* Login Signup*/
 header>div{
     display:flex;
     align-items: center;
     gap:20px;
+    padding: 20px 50px;
 } 
 header img{
     width: 100px;
     height: 100px;
 }
-/* sing up
-header{
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-    padding:20px 100px;
-}
-
-header h1{
-    color:#FFB100;
-}
-
-header>div{
-    display:flex;
-    align-items: center;
-    gap:20px;
-}
-
-header img{
-    width: 100px;
-    height: 100px;
-} 
-por si pasa algo 
-*/
 
 /* ------------------------------------------------- FOOTER--------------------------------*/
+
+.footer_icons, .footer_icons.white {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+}
+
+.footer_icons.white > a{
+    color: black;
+}
+
+.footer_icons > a{
+    text-decoration: none;
+    color: white;
+    font-size:30px;
+}   
+
 /* About*/
 footer {
   color: black;
@@ -101,15 +145,6 @@ footer {
   padding: 0 70px;
   padding-bottom: 20px;
   justify-content: center;
-}
-.icons {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-.icons a {
-  font-size: 30px;
-  transition: 0.3s;
 }
 /* index*/
 .redes {
@@ -157,7 +192,28 @@ footer {
   position:relative;
   bottom:20px;
 }
-/* Login_signup* no hay pie de pagina aqui :v */
+/* Login_signup */
+
+.loginFooter a{
+    display:inline-block;
+    color:white;
+    text-decoration:none;
+    padding:10px 30px;
+    background-color:#FFB100;
+    font-weight: 600;
+    border-radius:30px;
+    transition:0.3s;
+}
+
+.loginFooter a:hover{
+    color:black;
+    background-color:white;
+}
+
+.loginFooter div{
+    width: 100%;
+    text-align: right;
+}
 /* Reservation */
 .footer_reservation{
   color: black;
@@ -172,6 +228,7 @@ footer {
   flex-direction: column;
   gap:10px;
 }
+
 .curve_footer{
   position: absolute;
   bottom: 0px;

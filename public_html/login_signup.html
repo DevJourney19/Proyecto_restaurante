@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/x-icon" href="assets/img/logo.png">
-        <link href="css/login_signup_css.css" rel="stylesheet"/>
+        <link href="css/login_signup.css" rel="stylesheet"/>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/form.css">
     
@@ -14,7 +14,7 @@
     <body>
         <header>
             <div>
-                <img src="assets/img/logo.png" alt="logo"/>
+                <img src="assets/img/logo.png" alt="Logo de la Trattoria Secreta"/>
                 <h1 style="color: white;">La Trattoria Secreta</h1>
             </div>
         </header>
@@ -41,8 +41,8 @@
                     <form  method="POST" class="formulario_login" onsubmit="enter(event)">
                         <div>
                             <h2>Iniciar sesión</h2>
-                            <input type="email" placeholder="Correo Electrónico" name="correo" required/>
-                            <input type="password" placeholder="Contraseña" name="contrasena" required/>
+                            <input title="email de inicio de sesion" type="email" placeholder="Correo Electrónico" name="correo" required/>
+                            <input title="password de inicio de sesion" type="password" placeholder="Contraseña" name="contrasena" required/>
                         </div>
                         <button id="entrar" type="submit">Entrar</button>
                     </form>
@@ -51,17 +51,17 @@
                     <form method="POST" class="formulario_register" onsubmit="enter(event)">
                         <div>
                             <h2>Registrarse</h2>
-                            <input type="text" placeholder="Nombre completo" name="nombre_completo" required/>
-                            <input type="email" placeholder="Correo Electrónico" name="correoR" required/>
-                            <input type="text" placeholder="Usuario" name="usuario" required/>
-                            <input type="password" placeholder="Contraseña" name="contrasenaR" required/>
+                            <input title="nombre completo para registro" type="text" placeholder="Nombre completo" name="nombre_completo" required/>
+                            <input title="email para registro" type="email" placeholder="Correo Electrónico" name="correoR" required/>
+                            <input title="nombre de usuario para registro" type="text" placeholder="Usuario" name="usuario" required/>
+                            <input title="contraseña para registro" type="password" placeholder="Contraseña" name="contrasenaR" required/>
                         </div>
                         <button id="registrar" type="submit">Registrarse</button> <!-- Cuando se presione el botón tendrá referencia a la dirección de action  -->
                     </form>
                 </div>
             </div> 
         </main>
-        <footer>
+        <footer class="loginFooter">
             <div>
                 <a href="index.html">Regresar</a>
             </div>

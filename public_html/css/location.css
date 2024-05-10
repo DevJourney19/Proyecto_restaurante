@@ -1,4 +1,4 @@
-@import "general_css.css";
+@import "general.css";
 
 body {
   font-size: 16px;
@@ -14,27 +14,6 @@ img {
   object-fit: cover;
 }
 
-a {
-  text-decoration: none;
-  color: black;
-  display: inline-block;
-}
-
-ul {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-  font-size: 18px;
-}
-.link {
-  color: #ffb100;
-  transition: 0.3s;
-}
-.link:hover,
-.active {
-  color: white;
-  border-bottom: 1px solid white;
-}
 main{
     position:relative;
     z-index:10;
@@ -55,6 +34,7 @@ section{
     display: flex;
     gap:50px;
     justify-content: center;
+    padding-bottom: 20px;
 }
 
 .boxes{
@@ -93,8 +73,4 @@ section{
 
 .local_box:hover{
     border: 2px solid black; /* Borde amarillo */
-}
-
-.icons a:hover {
-  color: #ffb100;
 }

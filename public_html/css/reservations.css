@@ -1,23 +1,11 @@
-@import "general_css.css";
-@import "main.css";
+@import "general.css";
+
 body{
     min-height: 100vh;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-a{
-    text-decoration: none;
-    color: black;
-}
-
-ul{
-    display: flex;
-    list-style: none;
-    gap:20px;
-    font-size:18px;
 }
 
 main{
@@ -27,28 +15,6 @@ main{
     flex-direction: column;
     margin: 50px 0;
 }
-
-.restaurant_name{
-    color: #ffb100;
-    font-weight: 600;
-    font-size: 30px;
-}
-
-.link{
-    color: #ffb100;
-    transition: 0.3s;
-}
-
-.link:hover{
-    color: white;
-    border-bottom: 1px solid white;
-}
-
-.active{
-    color: white;
-    border-bottom: 1px solid white;
-}
-
 
 .title_section{
     display: flex;
@@ -103,21 +69,4 @@ section{
 
 .final_form>p{
     font-size:12px
-
-footer{
-    color: black;
-    padding: 20px 100px;
-    display: flex;
-    align-items:center;
-    justify-content: space-between;
-    gap: 10px;
-
-}
-
-.logo{
-    height:70px;
-    width:70px;
-}
-.icons a:hover{
-    color: white;
 }

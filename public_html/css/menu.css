@@ -1,4 +1,4 @@
-@import "general_css.css";
+@import "general.css";
 
 body{
     min-height: 100vh;
@@ -6,21 +6,6 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-a{
-    text-decoration: none;
-    color: black;
-    display:inline-block;
-}
-
-
-ul{
-    display: flex;
-    list-style: none;
-    flex-wrap: wrap;
-    gap:20px;
-    font-size:18px;
 }
 
 main{
@@ -31,27 +16,6 @@ main{
     padding:20px;
     position:relative;
     z-index:10;
-}
-
-.restaurant_name{
-    color: #ffb100;
-    font-weight: 600;
-    font-size: 30px;
-}
-
-.link{
-    color: #ffb100;
-    transition: 0.3s;
-}
-
-.link:hover{
-    color: white;
-    border-bottom: 1px solid white;
-}
-
-.active{
-    color: white;
-    border-bottom: 1px solid white;
 }
 
 .container_menu{
