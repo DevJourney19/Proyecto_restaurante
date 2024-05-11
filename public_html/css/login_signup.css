@@ -1,8 +1,8 @@
 @import "general.css";
 
 body{
-    min-height: 100vh;
-    background-image: url(../assets/img/fondo_login.jpg);
+    /*min-height: 100vh;*/
+    background-image: url(../assets/img/fondo_login_register.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -10,14 +10,24 @@ body{
 }
 
 main{
-    height: 70vh;
+    /*    height: ;*/
     display:flex;
     align-items: center;
     justify-content: center;
+    padding: 30px 20px 120px 20px;
+    margin: auto;
+    /*    margin-top: 155px;*/
 }
-
+.contenedor_todo{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    /*Usamos el relativo porque cuando se use una posicion absoluta se pueda acomodar de la mejor manera*/
+    position: relative;
+}
 .caja_trasera{
     width: 100%;
+    padding: 10px 15px;
     display: flex;
     justify-content: center;
     backdrop-filter: blur(10px);
@@ -25,8 +35,8 @@ main{
 }
 
 .caja_trasera div{
-    text-align: center;
-    flex: 1 1 0%;
+    /*text-align: center;*/
+    /*flex: 1 1 0%;*/
     margin: 100px 40px;
     color: white;
     transition: all 500ms;
@@ -63,16 +73,27 @@ main{
 /*Trabajando en el Responsive Design*/
 
 @media screen and (max-width: 850px){
-
+    main{
+        margin-top: 50px;
+        /*        height: 100vh;*/
+    }
     .caja_trasera{
-        /*Lo que medía antes 850px ahora medirá 350px*/
+        /*        Lo que medÃ­a antes 850px ahora medirÃ¡ 350px*/
         max-width: 350px;
-        height: 300px;
+        height: 700px;
         flex-direction: column;
         margin: auto;
     }
     .caja_trasera div{
+        margin: 0px;
         position: absolute;
+    }
+    .caja_trasera div h3{
+        /*padding: 2px;*/
+        margin-top: -310px;
+    }
+    .caja_trasera div p{
+        /*margin: 2px;*/
     }
     /*Formularios*/
     .contenedor_login_register{
@@ -82,5 +103,30 @@ main{
     }
     .contenedor_login_register form{
         position: relative;
+    }
+    /*Footer*/
+    .loginFooter div {
+        display: block;
+        /*        margin: 0 auto;*/
+        /*        padding: 100px;*/
+        margin: 0% 70% 20% 70%;
+    }
+
+}
+@media screen and (max-width: 344px){
+    .caja_trasera {
+        height: 725px;
+    }
+
+    .caja_trasera_login {
+        top: 320px;
+        height: 500px;
+    }
+    .caja_trasera_register {
+        top: 350px;
+        height: 500px;
+    }    
+    .contenedor_login_register form #registrar{
+        width: 38%;
     }
 }

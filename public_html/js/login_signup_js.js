@@ -22,8 +22,9 @@ function anchoPagina() {
         caja_trasera_register.style.display = "block";
         caja_trasera_register.style.opacity = "1";
         caja_trasera_login.style.display = "none";
-        formulario_login.style.display = "flex";
+        formulario_login.style.display = "block";
         formulario_register.style.display = "none";
+        contenedor_login_register.style.left = "0px";
     }
 }
 anchoPagina();
@@ -31,8 +32,8 @@ anchoPagina();
 function register() {
     if (window.innerWidth > 850) {
         /*Cambiamos de none a block*/
-        formulario_register.style.display = "flex";
-        contenedor_login_register.style.left = "430px";
+        formulario_register.style.display = "block";
+        contenedor_login_register.style.left = "410px";
         /*Cambiamos de block a none - para que de esta manera aparezca el register y se oculte el login*/
         formulario_login.style.display = "none";
         /*Ocultamos la caja trasera de register*/
@@ -52,24 +53,36 @@ function register() {
 /*52:20*/
 function iniciarSesion() {
     /*Cambiamos de none a block*/
-    formulario_register.style.display = "none";
-    /*Cambiamos de none a block - para que de esta manera aparezca el login y se oculte el register*/
-    formulario_login.style.display = "flex";
+
     if (window.innerWidth > 850) {
+        //Cambiamos de none a block
+        formulario_register.style.display = "none";
+        
         contenedor_login_register.style.left = "10px";
+        /*Cambiamos de none a block - para que de esta manera aparezca el login y se oculte el register*/
+        formulario_login.style.display = "block";
         /*Aparecemos la caja trasera de register*/
         caja_trasera_register.style.opacity = "1";
         /*Ocultamos la caja trasera de login - para que de esta manera el formulario register esté a la par con el botón trasero de login*/
         caja_trasera_login.style.opacity = "0";
     } else {
+        formulario_register.style.display = "none";
         contenedor_login_register.style.left = "0px";
+        formulario_login.style.display = "block";
+        /*Ya no trabajamos con la opacidad, ahora trabajamos con el display*/
         caja_trasera_register.style.display = "block";
         caja_trasera_login.style.display = "none";
+        
+        
+        
+//        contenedor_login_register.style.left = "0px";
+//        caja_trasera_register.style.display = "block";
+//        caja_trasera_login.style.display = "none";
     }
 }
 
 
-function enter(event){
+function enter(event) {
     event.preventDefault();
     window.location.href = "index.html";
 }
