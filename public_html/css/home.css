@@ -299,9 +299,4 @@ footer .der_res{
         margin: -122% 0px 0px 0px;
         /* margin-top: -123131213120px; */
     }
-    @media screen and (min-width: 1600px){
-        .index_footer > .dir_registrarse_login {
-        margin-top: -26%;
-    }
-    }
 }
