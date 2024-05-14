@@ -1,4 +1,3 @@
-
 /* Home */
 .titulo {
     color: #FFB100;
@@ -48,7 +47,7 @@
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 220px;
+    height: 240px;
 }
 nav {
     position:relative;
@@ -90,7 +89,7 @@ ul {
     display: flex;
     list-style: none;
     gap: 20px;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 nav .nav-link {
@@ -197,6 +196,10 @@ footer {
 }
 /* Login_signup */
 
+.loginFooter{
+    padding-top: 70px;
+}
+
 .loginFooter a{
     display:inline-block;
     color:white;
@@ -204,6 +207,7 @@ footer {
     padding:10px 30px;
     background-color:#FFB100;
     font-weight: 600;
+    font-size:1.5rem;
     border-radius:30px;
     transition:0.3s;
 }

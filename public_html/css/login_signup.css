@@ -10,22 +10,19 @@ body{
 }
 
 main{
-    /*    height: ;*/
     display:flex;
     align-items: center;
     justify-content: center;
-    padding: 30px 20px 120px 20px;
-    margin: auto;
-    /*    margin-top: 155px;*/
+    margin: 0 auto;
+    min-height: 70vh;
 }
 .contenedor_todo{
     width: 100%;
     max-width: 800px;
     margin: auto;
-    /*Usamos el relativo porque cuando se use una posicion absoluta se pueda acomodar de la mejor manera*/
-    position: relative;
 }
 .caja_trasera{
+    position:relative;
     width: 100%;
     padding: 10px 15px;
     display: flex;
@@ -35,8 +32,7 @@ main{
 }
 
 .caja_trasera div{
-    /*text-align: center;*/
-    /*flex: 1 1 0%;*/
+    text-align: center;
     margin: 100px 40px;
     color: white;
     transition: all 500ms;
@@ -45,18 +41,19 @@ main{
 .caja_trasera div p,
 .caja_trasera div button{
     margin-top: 30px;
+    font-size: 1.3rem;
 }
 
 .caja_trasera div h3{
     font-weight: 400;
-    font-size: 26px;
+    font-size: 2rem;
 }
 
 .caja_trasera div button{
     padding: 10px 40px;
     border: 2px solid #fff;
     background: transparent;
-    font-size: 14px;
+    font-size: 1.5rem;
     font-weight: 600;
     cursor: pointer;
     color: white;
@@ -75,41 +72,28 @@ main{
 @media screen and (max-width: 850px){
     main{
         margin-top: 50px;
-        /*        height: 100vh;*/
     }
     .caja_trasera{
-        /*        Lo que medÃ­a antes 850px ahora medirÃ¡ 350px*/
         max-width: 350px;
         height: 700px;
         flex-direction: column;
         margin: auto;
     }
-    .caja_trasera div{
-        margin: 0px;
-        position: absolute;
-    }
+
     .caja_trasera div h3{
-        /*padding: 2px;*/
         margin-top: -310px;
     }
-    .caja_trasera div p{
-        /*margin: 2px;*/
-    }
+
+
     /*Formularios*/
     .contenedor_login_register{
         top: -10px;
         left: -5px;
         margin: auto;
     }
-    .contenedor_login_register form{
-        position: relative;
-    }
     /*Footer*/
     .loginFooter div {
         display: block;
-        /*        margin: 0 auto;*/
-        /*        padding: 100px;*/
-        margin: 0% 70% 20% 70%;
     }
 
 }
