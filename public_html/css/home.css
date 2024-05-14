@@ -134,7 +134,6 @@ footer .der_res{
     width: 100%;
     text-align: center;
 }
-/*Small*/
 @media screen and (min-width: 576px){
     .food_1 img{
         left: 14%;
@@ -144,7 +143,6 @@ footer .der_res{
         width: 18%;
     }
 }
-/*Medium*/
 @media screen and (min-width: 768px){
     html{
         font-size:  20px;
@@ -165,7 +163,6 @@ footer .der_res{
         width: 18%;
     }
 }
-/*Large*/
 @media screen and (min-width: 992px){
     .texto_1 .p1 {
         font-size: 1.9em;
@@ -193,7 +190,6 @@ footer .der_res{
                 padding: 0px 100px 0px 100px;
     }
 }
-/*Extra large*/
 @media screen and (min-width: 1200px){
     .texto_1 .p1 {
         font-size: 2.2em;
@@ -253,7 +249,6 @@ footer .der_res{
         margin-top: -100px;
     }
 }
-/*Extra extra large*/
 @media screen and (min-width: 1400px){
     main > div {
         padding: 2% 0% 0% 6%;
