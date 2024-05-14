@@ -7,10 +7,12 @@
 }
 
 body {
-    min-height: 100vh;
-    overflow: hidden;
-    background: #100B00;
-    color:white;
+    overflow: visible;
+    /*background: #100B00;*/
+
+    color:#fff3cd;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 a{
@@ -20,79 +22,88 @@ a{
 }
 
 main{
-    height:70vh;
     display:flex;
     align-items: center;
     justify-content: space-between;
-    margin-left: 150px;
+    flex-flow: row wrap;
+    /*    height: 100%;*/
+    width: 100%;
+}
+main > div {
+    /*left: 10%; (static)*/
+    padding: 2% 0% 0% 2%;
+    background: #ffffff;
+    width: 100%;
+    color: black;
+}
+.food_1{
+    padding-bottom: 14%;
 }
 
 .texto_1 .p1 {
     font-style: italic;
-    font-size: 50px;
-    margin-bottom:20px;
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 .texto_1 .p2 {
-    font-size: 120px;
-    width: 80%;
+    font-size: 3.5em;
+    width: 95%;
     line-height: 1em;
-    margin-bottom:20px;
+    /* margin-bottom:20px; */
 }
 
 .texto_1 .p3 {
-    font-size: 30px;
+    font-size: 1.2em;
     color: #FFB100;
     font-style: italic;
 }
 
 .button_menu{
-    margin-top:20px;
-    padding: 6px 10px; 
-    background: transparent;
-    border: 2px solid white;
-    color: white;
+    margin-top:0px;
+    padding: 6px 10px;
+    background: #ffc107;
+    border: 2px solid black;
+    color: black;
     cursor: pointer;
     border-radius: 25px;
-    font-size:20px;
+    font-size:14.1px;
     font-weight:600;
     transition: color 350ms, background 350ms;
+    /* z-index: 2; */
 }
 .button_menu:hover{
-    background: white;
-    color: black;
+    background: black;
+    color: white;
 }
-
-.elemento_amarillo {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-image: url(../assets/img/fondo-home.svg);
-    background-size: cover;
-    height: 345px;
-    z-index: -1;
-}
-
-
 .food_1 img {
     object-fit: cover;
     position: relative;
-    width: 520px;
-    height: 100%;   
+    width: 88%;
+    height: 100%;
+    left: 4%;
     transition: transform 2030ms;
+    top: 22px;
 }
-
 .food_1 .img_top:hover{
     transform: rotate(180deg);
 }
-
-.redes a{
-    color:#100B00;
-    transition:0.3s;
+.foot_home {
+    display: flex;
+    padding: 0px;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+    flex-wrap: wrap;
+    background: #ffffff;
 }
+.redes a{
+    color: #fff;
+    transition:0.3s;
 
+    z-index:1;
+}
 .redes a:hover{
-    color:#FFB100;
+    color:#000000;
 }
 p{
     font-size:15px;
@@ -100,15 +111,16 @@ p{
 
 .dir_registrarse_login{
     color: black;
-    padding: 10px;
-    width: 390px;
-    transform: translate(-15%,-25%)
+    padding-left: 0px;
+    width: 118%;
+    transform: translate(-15%,-25%);
+    /* margin-left: 20%; */
 }
 
 .dir_registrarse_login h4{
     text-align: center;
+    z-index: 2;
 }
-
 .dir_registrarse_login>div{
     width: 100%;
     display:flex;
@@ -116,10 +128,9 @@ p{
     justify-content: center;
     margin-top: 10px;
 }
-
 .dir_registrarse_login a{
     text-align:center;
-    padding: 8px 0px;
+    padding: 10px 10px;
     background: black;
     color: white;
     width: 40%;
@@ -129,83 +140,168 @@ p{
 
 .dir_registrarse_login a:hover{
     cursor: pointer;
-    background: white;
+    background: #ffb100;
     color: black;
 }
-
-@media screen and (max-width: 1330px) {
-    .coleccion_nav {
-        display: block;
+footer .der_res{
+    margin: auto;
+    padding-top: 20px;
+    background: #212529;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+/*Small*/
+@media screen and (min-width: 576px){
+    .food_1 img{
+        left: 14%;
+        width: 76%;
+    }
+    .dir_registrarse_login a{
+        width: 18%;
+    }
+}
+/*Medium*/
+@media screen and (min-width: 768px){
+    html{
+        font-size:  20px;
+    }
+    .food_1 img{
+        left: 20%;
+        width: 60%;
+    }
+    .dir_registrarse_login h4 {
+        text-align: center;
+        font-size: 24px;
+        padding: 0px 10px 0px 10px;
+        z-index: 4;
+        background: #fff3cd;
+        border-radius: 25px;
+    }
+    .dir_registrarse_login a{
+        width: 18%;
+    }
+}
+/*Large*/
+@media screen and (min-width: 992px){
+    .texto_1 .p1 {
+        font-size: 1.9em;
+    }
+    .texto_1 .p2 {
+        font-size: 3.8em;
+        width: 95%;
+    }
+    .texto_1 .p3 {
+        font-size: 1.5em;
+    }
+    .button_menu{
+        padding: 10px 10px;
+    }
+    .boxes_footer {
+        padding: 6%;
+        max-width: 100%;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    .dir_registrarse_login a{
+        width: 12%;
+    }
+    .dir_registrarse_login > h4{
+                padding: 0px 100px 0px 100px;
+    }
+}
+/*Extra large*/
+@media screen and (min-width: 1200px){
+    .texto_1 .p1 {
+        font-size: 2.2em;
+    }
+    .texto_1 .p2 {
+        font-size: 3.9em;
+        width: 49.9%;
+        margin-bottom:20px;
+    }
+    .texto_1 .p3 {
+        font-size: 1.7em;
+    }
+    .button_menu{
+        padding: 12px 14px;
+        z-index: auto;
+    }
+    .food_1 img{
+        width: 42%;
+        left: 55%;
+        top: -415px;
+        z-index: 2;
+    }
+    .texto_1{
+        padding: 8% 0% 0% 4%;
+        z-index: 2;
+    }
+    .boxes_footer {
         position: absolute;
-        padding: 6.5px 2000px 0px 0px;
-        top: 9px;
-        left: 86%;
-        width: 10%;
-        height: 60px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 6%;
+        max-width: 100%;
+        top: 600px;
+        width: 50%;
+        left: 40px;
     }
-    .coleccion_nav img {
-        height: 48px;
-        width: 50px;
-    }
-    .coleccion_nav img:hover {
-        cursor: pointer;
-    }
-    .etiqueta_nav, .icono_cs {
+    .boxes_footer > h3{
         display: none;
     }
-}
-@media screen and (max-width: 583px) {
-    .titulo {
-        left: 25%;
-        transition: transform 0ms, left 0ms;
-        font-size: 36px;
+    .boxes_footer > div > h3{
+        font-size: 1rem;
     }
-    .titulo:hover {
-        color: white;
-        text-decoration: none;
-        transform: none;
+    .boxes_footer > div > p {
+        font-size: 0.8rem;
     }
-    .coleccion_nav {
-        /*left: 86%;*/
-        padding: 0px 0px 0px 0px;
-        width: 100vw;
-        top: 102px;
-        left: 0;
+    .foot_home > h3{
+        display: none;
     }
-    .coleccion_nav img {
-        opacity: 1;
-        /*Ojo: aqui solo puse el left de 5vw porque me estoy ayudando del width 
-        de 88vw*/
-        margin: 0px 0px 0px 5vw;
-        width: 88vw;
-        padding: 0px;
+    .dir_registrarse_login a{
+        width: 12%;
     }
-    .coleccion_nav img:hover {
-        cursor: pointer;
+    .food_1{
+        padding-bottom: 0px;
+    }
+    .index_footer > .dir_registrarse_login {
+        margin-top: -100px;
     }
 }
-@media screen and (max-width: 384px) {
-    .titulo {
-        left: 3vw;
-        padding: 0px 10% 0px 5%;
-        font-size: 36px;
+/*Extra extra large*/
+@media screen and (min-width: 1400px){
+    main > div {
+        /*left: 10%; (static)*/
+        padding: 2% 0% 0% 6%;
     }
-}
-@media screen and (max-width: 215px) {
-    .coleccion_nav {
-        top: 137px;
+    .food_1 img{
+        width: 36%;
+        left: 60%;
+        top: -440px;
     }
-}
-@media screen and (max-width: 170px) {
-    .titulo {
-        left: 0vw;
-        padding: 0px 0px 0px 0px;
-        font-size: 36px;
+    .texto_1 .p1 {
+        font-size: 2.8em;
     }
-    .titulo:hover {
-        transition: none;
-        text-decoration: none;
-        transform: none;
-        left: 0px;
+    .texto_1 .p2 {
+        font-size: 4.5em;
+        width: 57.9%;
+        margin-bottom:20px;
+    }
+    .texto_1 .p3 {
+        font-size: 2.3em;
+    }
+    .dir_registrarse_login a{
+        width: 10%;
+    }
+    .index_footer > .dir_registrarse_login {
+        margin: -122% 0px 0px 0px;
+        /* margin-top: -123131213120px; */
+    }
+    @media screen and (min-width: 1600px){
+        .index_footer > .dir_registrarse_login {
+        margin-top: -26%;
+    }
     }
 }
