@@ -5,32 +5,25 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
 }
-
 body {
     overflow: visible;
-    /*background: #100B00;*/
-
     color:#fff3cd;
     max-width: 100%;
     max-height: 100%;
 }
-
 a{
     text-decoration: none;
     color: white;
     display:inline-block;
 }
-
 main{
     display:flex;
     align-items: center;
     justify-content: space-between;
     flex-flow: row wrap;
-    /*    height: 100%;*/
     width: 100%;
 }
 main > div {
-    /*left: 10%; (static)*/
     padding: 2% 0% 0% 2%;
     background: #ffffff;
     width: 100%;
@@ -39,7 +32,6 @@ main > div {
 .food_1{
     padding-bottom: 14%;
 }
-
 .texto_1 .p1 {
     font-style: italic;
     font-size: 1.5em;
@@ -49,15 +41,12 @@ main > div {
     font-size: 3.5em;
     width: 95%;
     line-height: 1em;
-    /* margin-bottom:20px; */
 }
-
 .texto_1 .p3 {
     font-size: 1.2em;
     color: #FFB100;
     font-style: italic;
 }
-
 .button_menu{
     margin-top:0px;
     padding: 6px 10px;
@@ -69,7 +58,6 @@ main > div {
     font-size:14.1px;
     font-weight:600;
     transition: color 350ms, background 350ms;
-    /* z-index: 2; */
 }
 .button_menu:hover{
     background: black;
@@ -99,7 +87,6 @@ main > div {
 .redes a{
     color: #fff;
     transition:0.3s;
-
     z-index:1;
 }
 .redes a:hover{
@@ -108,15 +95,12 @@ main > div {
 p{
     font-size:15px;
 }
-
 .dir_registrarse_login{
     color: black;
     padding-left: 0px;
     width: 118%;
     transform: translate(-15%,-25%);
-    /* margin-left: 20%; */
 }
-
 .dir_registrarse_login h4{
     text-align: center;
     z-index: 2;
@@ -137,7 +121,6 @@ p{
     border-radius:25px;
     transition: background 350ms, color 350ms;
 }
-
 .dir_registrarse_login a:hover{
     cursor: pointer;
     background: #ffb100;
@@ -273,7 +256,6 @@ footer .der_res{
 /*Extra extra large*/
 @media screen and (min-width: 1400px){
     main > div {
-        /*left: 10%; (static)*/
         padding: 2% 0% 0% 6%;
     }
     .food_1 img{
@@ -294,9 +276,5 @@ footer .der_res{
     }
     .dir_registrarse_login a{
         width: 10%;
-    }
-    .index_footer > .dir_registrarse_login {
-        margin: -122% 0px 0px 0px;
-        /* margin-top: -123131213120px; */
     }
 }
