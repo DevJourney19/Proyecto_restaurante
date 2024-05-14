@@ -85,6 +85,7 @@ form>div, .double_input>div{
 
 label, legend{
     font-weight: 600;
+    font-size: 1rem !important;
 }
 
 .double_input{
@@ -108,18 +109,18 @@ textarea{
     outline: none;
     resize: none;
     border:none;
-    padding: 10px;
+    padding: 10px 0 0;
     width: 100%;
 }
 
 button{
     font-weight: 600;
-    padding: 10px 20px;
+    padding: 1rem;
     background: #ffb100;
     color: black;
     border: none;
     cursor: pointer;
-    border-radius: 30px;
+    border-radius: 30px !important;
     transition: 0.3s;
 }
 

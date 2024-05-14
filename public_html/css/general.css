@@ -33,3 +33,17 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #333; 
 }
+
+/*min*/
+@media only screen and (min-width:1px){
+    html{
+        font-size:10px;
+    }
+}
+
+/*md*/
+@media only screen and (min-width:768px){
+    html{
+        font-size:12px;
+    }
+}

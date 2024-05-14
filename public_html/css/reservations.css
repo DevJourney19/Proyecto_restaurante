@@ -1,56 +1,64 @@
 @import "general.css";
 
 body{
+    position:relative;
     min-height: 100vh;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
+main p{
+    margin:0;
+}
+
 main{
+    position:relative;
+    z-index:10;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 50px 0;
+    margin: 3rem auto;
 }
 
 .title_section{
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 10px;
-    margin: 30px 0;
+    gap: 5px;
+    margin: 3rem 1rem 1rem;
+    
 }
 
-.title_section>h3{
-    font-size: 40px;
+.title_section>h3 {
+    font-size: 2rem;
 }
 
-.container{
+.container_res{
     display:grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr;
     gap: 20px;
     justify-content: center;
 }
 
 section{
     border: 2px solid black ;
-    padding: 20px 40px;
+    padding: 1.5rem;
 }
 
 .contact_info{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 20px;
+    gap: 0.5rem;
 }
 
 .contact_info>h4{
     text-align: center;
-    font-size: 20px;
+    font-size: 1.5rem;
 }
 
 .contact_info>div{
@@ -68,5 +76,19 @@ section{
 }
 
 .final_form>p{
-    font-size:12px
+    font-size:2rem;
+}
+
+
+@media only screen and (min-width:768px){
+    .container_res{
+        grid-template-columns: 1fr auto;
+    }
+    main{
+        margin:2rem auto;
+    }
+    
+    .title_section{
+        margin: 2rem 1rem 1rem;
+    }
 }
