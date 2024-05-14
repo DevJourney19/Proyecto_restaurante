@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/x-icon" href="assets/img/logo.png">
-        <link href="css/login_signup.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="css/login_signup.css"/>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/form.css">
     
@@ -43,8 +43,8 @@
                             <h2>Iniciar sesión</h2>
                             <input title="email de inicio de sesion" type="email" placeholder="Correo Electrónico" name="correo" required/>
                             <input title="password de inicio de sesion" type="password" placeholder="Contraseña" name="contrasena" required/>
-                        </div>
-                        <button id="entrar" type="submit">Entrar</button>
+                            <button id="entrar" type="submit">Entrar</button>
+                        </div>                       
                     </form>
                     <!-- Register -->
                     <!-- Si no se pone el method, entonces por defecto es "GET" -->
@@ -54,9 +54,10 @@
                             <input title="nombre completo para registro" type="text" placeholder="Nombre completo" name="nombre_completo" required/>
                             <input title="email para registro" type="email" placeholder="Correo Electrónico" name="correoR" required/>
                             <input title="nombre de usuario para registro" type="text" placeholder="Usuario" name="usuario" required/>
-                            <input title="contraseña para registro" type="password" placeholder="Contraseña" name="contrasenaR" required/>
+                            <input title="contrasena para registro" type="password" placeholder="Contraseña" name="contrasenaR" required/>
+                            <button id="registrar" type="submit">Registrarse</button> <!-- Cuando se presione el botón tendrá referencia a la dirección de action  -->
                         </div>
-                        <button id="registrar" type="submit">Registrarse</button> <!-- Cuando se presione el botón tendrá referencia a la dirección de action  -->
+                        
                     </form>
                 </div>
             </div> 
