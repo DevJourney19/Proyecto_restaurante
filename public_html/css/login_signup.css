@@ -84,6 +84,10 @@ main{
         margin-top: -310px;
     }
 
+    .caja_trasera>div{
+        margin: 30px;
+    }
+
 
     /*Formularios*/
     .contenedor_login_register{
@@ -96,21 +100,4 @@ main{
         display: block;
     }
 
-}
-@media screen and (max-width: 344px){
-    .caja_trasera {
-        height: 725px;
-    }
-
-    .caja_trasera_login {
-        top: 320px;
-        height: 500px;
-    }
-    .caja_trasera_register {
-        top: 350px;
-        height: 500px;
-    }    
-    .contenedor_login_register form #registrar{
-        width: 38%;
-    }
 }
