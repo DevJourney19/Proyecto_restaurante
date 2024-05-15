@@ -34,7 +34,6 @@
     transform: scale(1.2);
 }
 /*About*/
-/*la imagen de la curva para el encabezado del html*/
 .curve_header {
     position: absolute;
     top: 0;
@@ -55,13 +54,11 @@ nav {
     padding: 20px 100px;
     gap: 50px;
     background: #100B00;
-    
-    
 }
 .restaurant_name {
     color: #ffb100;
     font-weight: 600;
-    font-size: 36px;
+    font-size: 2rem;
 }
 /* espaciado entre el titulo los subindices y los iconos del encabezado*/
 nav > div {
@@ -87,14 +84,13 @@ nav > .nav_icons {
 a {
     text-decoration: none;
     color: #ffffff;
-
     display: inline-block;
 }
 ul {
     display: flex;
     list-style: none;
     gap: 20px;
-    font-size: 18px;
+    font-size: 1.5rem;
 }
 .link {
     color: #ffb100;
