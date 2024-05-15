@@ -1,38 +1,34 @@
+/* Home */
 .titulo {
     color: #FFB100;
-    font-size: 36px;
-    top: 10px;
+    font-size: 2.2rem;
+    text-align: center;
     transition: color 350ms, transform 350ms;
-}
-.titulo:hover {
-    color: white;
-    text-decoration: underline wavy;
-    transform: skew(-15deg);
-    cursor: default;
 }
 .primera_ul {
     display: flex;
     justify-content: space-evenly;
     list-style-type: none;
-    gap: 10px;
+    gap:10px;
     flex-wrap: wrap;
-    margin: 10px 0px 0px 0px;
 }
 .primera_ul li a {
-    margin: 0px 10px 0px 10px;
-    padding: 5px 10px;
-    font-size: 18px;
+    font-size: 1.2rem;
     color: white;
+    padding:5px 10px !important;
     font-weight: 600;
     text-align: center;
     transition: color 350ms, transform 350ms, background 350ms;
-    border-radius: 25px;
+    border-radius: 30px ;
 }
-.primera_ul li a:hover, .primera_ul li a.active {
+.primera_ul li .nav-link:hover, .primera_ul li a.active_home {
     color: black;
     background: #FFB100;
     transform: scale(1.2);
+    border:none;
 }
+
+
 /*About*/
 .curve_header {
     position: absolute;
@@ -43,223 +39,256 @@
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 260px;
+    height: 240px;
 }
 nav {
-    position: relative;
-    z-index: 10;
+    position:relative;
+    z-index:10;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 100px;
-    gap: 50px;
-    background: #100B00;
+    gap: 30px;
 }
 .restaurant_name {
     color: #ffb100;
     font-weight: 600;
     font-size: 2rem;
 }
-/* espaciado entre el titulo los subindices y los iconos del encabezado*/
+
 nav > div {
     display: flex;
     align-items: center;
-    gap: 16px;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: flex-start;
-}
-nav > .nav_icons {
-    display: flex;
     gap: 20px;
-    font-size: 32px;
-    flex-wrap: wrap;
-    align-content: flex-end;
-    justify-content: flex-end;
-    align-items: flex-end;
-    /* color: white; */
-    margin: 5px 0px 0px 0px;
 }
-a {
+
+.nav_icons{
+    display: flex;
+    gap:5px;
+}
+
+.nav_icons>a{
+    font-size:2rem;
     text-decoration: none;
-    color: #ffffff;
+    color: white;
     display: inline-block;
 }
+
+.icons_xl{
+    display:none;
+}
+
 ul {
     display: flex;
     list-style: none;
     gap: 20px;
     font-size: 1.5rem;
 }
-.link {
+
+nav .nav-link {
+    display: inline-block;
+    text-decoration: none;
     color: #ffb100;
     transition: 0.3s;
 }
-.link:hover, .active {
+
+nav .nav-link:hover, .nav-link.active{
     color: white;
     border-bottom: 1px solid white;
 }
+
+.navbar>.container-fluid{
+    justify-content: center !important;
+}
+
 /* Login Signup*/
-header>div {
-    display: flex;
+header>div{
+    display:flex;
     align-items: center;
-    gap: 20px;
+    gap:20px;
     padding: 20px 50px;
 }
-header img {
+header img{
     width: 100px;
     height: 100px;
 }
+
 /* ------------------------------------------------- FOOTER--------------------------------*/
+
 .footer_icons, .footer_icons.white {
     display: flex;
     flex-direction: row;
     gap: 20px;
     justify-content: center;
 }
-.footer_icons.white > a {
+
+.footer_icons.white > a{
     color: black;
 }
-.footer_icons > a {
+
+.footer_icons > a{
     text-decoration: none;
     color: white;
-    font-size: 30px;
+    font-size:2rem;
 }
+
 /* About*/
 footer {
-    color: white;
+    color: black;
     display: flex;
-    padding: 0px 70px;
+    align-items: center;
+    padding: 0 70px;
     padding-bottom: 20px;
     justify-content: center;
-    align-items: flex-start;
-    align-content: center;
-    flex-wrap: wrap;
 }
 /* index*/
-footer .redes {
-    display: flex;
-    flex-direction: row;
-    gap: 0px;
-    font-size: 38px;
-    padding: 0px 26.5% 0px 26.5%;
-    background-color: #ffffff00;
-    /* box-shadow: 0 0 10px #f2f2f2; */
-    background: #ffb100;
-    max-width: 100%;
-    width: 100%;
-    justify-content: space-evenly;
-}
-.boxes_footer {
-    background: #100B00;
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    gap: 20px;
-    padding: 5%;
-    max-width: 100%;
-    flex-direction: row;
-    z-index: 1;
-    top: 610px;
-}
-.boxes_footer > h3{
-    gap:22px;
-    margin-bottom: auto;
-}
-.boxes_footer>div {
-    background: #ffb100;
-    position: relative;
-    bottom: 12px;
-    display: flex;
+.redes {
+    display:flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    /* gap:5px; */
+    gap:30px;
+    font-size:38px;
+    padding:30px 20px;
+    background-color: white;
+    border-radius: 10px 0 0 10px;
+    box-shadow: 0 0 10px #f2f2f2;
+}
+.boxes_footer{
+    display:flex;
+    align-items:flex-end;
+    gap:30px;
+}
+
+.boxes_footer p{
+    font-size: 0.8em;
+}
+
+.boxes_footer>div{
+    font-size: 1.5rem;
+    display:flex;
+    flex-direction: column;
+    gap:5px;
     color: black;
-    /* border: 2px solid black; */
+    border: 2px solid black;
     border-radius: 25px;
-    /*el tamanio de las cajas*/
-    width: 100%;
-    padding: 10px 10px;
+    width: 250px;
+    padding: 20px;
     box-shadow: 2px 2px 10px black;
-    color: black;
-    text-align: center;
+
 }
-.boxes_footer>div:nth-child(2) {
-    position: relative;
-    bottom: 20px;
-}
-/*Donde estan las tarjetitas y el vamos*/
 .index_footer {
-    background: #100B00;
-    padding: 0px 0px;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
+    padding-top: 30px;
+    display:flex;
+    align-items:center;
     justify-content: space-between;
-    gap: 90px;
-}
-.index_footer .redes {
-    padding: 20px 35px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 80px;
-}
-.index_footer > .dir_registrarse_login {
-    margin-top: -9.5%;
-    align-items: center;
-    gap: 140px;
-    width: 100%;
-    margin-left: 20%;
-    padding-left: 10%;
-    z-index: 2;
-}
-.boxes_footer>div:nth-child(2) {
-    position: relative;
-    bottom: 10px;
+    gap:30px;
 }
 /* Login_signup */
-.loginFooter a {
-    display: inline-block;
-    color: white;
-    text-decoration: none;
-    padding: 10px 30px;
-    background-color: #FFB100;
+
+.loginFooter{
+    padding-top: 70px;
+}
+
+.loginFooter a{
+    display:inline-block;
+    color:white;
+    text-decoration:none;
+    padding:10px 30px;
+    background-color:#FFB100;
     font-weight: 600;
-    border-radius: 30px;
-    transition: 0.3s;
+    font-size:1.5rem;
+    border-radius:30px;
+    transition:0.3s;
 }
-.loginFooter a:hover {
-    color: black;
-    background-color: white;
+
+.loginFooter a:hover{
+    color:black;
+    background-color:white;
 }
-.loginFooter div {
+
+.loginFooter div{
     width: 100%;
     text-align: right;
 }
 /* Reservation */
-.footer_reservation {
+.footer_reservation{
     color: black;
-    padding: 20px 100px;
+    padding: 2rem 3rem;
     display: flex;
-    align-items: center;
+    align-items:center;
     justify-content: space-between;
     gap: 10px;
 }
-.footer_desc {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+
+.footer_desc{
+    display:flex;
+    gap:10px;
+    align-items: center;
 }
-.curve_footer {
-    position: absolute;
-    bottom: 0px;
-    left: 0;
+
+.footer_desc>p{
+    display:none;
+}
+
+.contenedor_curve{
+    z-index: -10;
+    position:absolute;
+    left:0;
+    bottom:0;
+    height: 250px;
     width: 100%;
-    height: 260px;
-    z-index: -1;
+}
+
+.contenedor_curve_home{
+    z-index: -10;
+    position:absolute;
+    left:0;
+    bottom:0;
+    width: 100%;
+}
+
+.curve_footer{
+    height: 250px;
     background: url(../assets/img/curve-footer.svg);
     background-size: cover;
     background-position: center;
+}
+
+/*md*/
+@media only screen and (min-width:768px){
+
+    .nav_icons{
+        gap:20px;
+    }
+
+}
+/*@media screen and */
+
+/*lg*/
+@media only screen and (min-width:992px){
+}
+
+@media (min-width: 1200px) {
+    .navbar-expand-xl {
+        background-color: transparent !important;
+    }
+
+    .icons_xl{
+        display:flex;
+    }
+
+    .icons_initial{
+        display:none;
+    }
+
+    .footer_desc>p{
+        width: 40%;
+        display:block;
+        margin-top:5px;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    .navbar-expand-xl {
+        background-color: black;
+    }
 }
