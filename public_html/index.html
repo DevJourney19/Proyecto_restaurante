@@ -15,45 +15,61 @@
 
         <header>
 
-            <nav class="navbar navbar-expand-xl bg-body-tertiary" data-bs-theme="dark">
-
-                <div class="container-fluid">
-                    <!--El titulo que se quedara incluso si el tamaño de la pantalla es pequeño-->
-                    <a class="navbar-brand" href="#"><img src="assets/img/logo.png" alt="icono" style="width: 100px">&nbsp;La Trattoria Secreta</a>
-                    <!-- Aqui es la cosa -->
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu_principal"
-                            aria-controls="menu_principal" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <!-- El menu a abrirse-->
-                    <div class="collapse navbar-collapse px-5" id="menu_principal">
-                        <!-- margin bottom cuando el tamaño sea de una computadora >1024px va a tener un margin buttom de 1rem-->
-                        <ul class="navbar-nav me-auto mb-2 mb-sm-0 ">
-                            <li class="nav-item">
-                                <a class="nav-link disabled" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="about.html">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="menu.html">Menu</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="location.html">Location</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="reservations.html">Contact</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active text-warning" aria-current="page" href="login_signup.html">Sign/Log</a>
-                            </li>
-
-                        </ul>
-
-                    </div>
+            <!--            <nav class="navbar navbar-expand-xl bg-body-tertiary" data-bs-theme="dark">
+            
+                            <div class="container-fluid">
+                                El titulo que se quedara incluso si el tamaño de la pantalla es pequeño
+                                <a class="navbar-brand" href="#"><img src="assets/img/logo.png" alt="icono" style="width: 100px">&nbsp;La Trattoria Secreta</a>
+                                 Aqui es la cosa 
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu_principal"
+                                        aria-controls="menu_principal" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+            
+                                 El menu a abrirse
+                                <div class="collapse navbar-collapse px-5" id="menu_principal">
+                                     margin bottom cuando el tamaño sea de una computadora >1024px va a tener un margin buttom de 1rem
+                                    <ul class="navbar-nav me-auto mb-2 mb-sm-0 ">
+                                        <li class="nav-item">
+                                            <a class="nav-link disabled" aria-current="page" href="#">Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="about.html">About</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="menu.html">Menu</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="location.html">Location</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="reservations.html">Contact</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link active text-warning" aria-current="page" href="login_signup.html">Sign/Log</a>
+                                        </li>
+            
+                                    </ul>
+            
+                                </div>
+                            </div>
+                        </nav> -->
+            <nav class="home_nav">
+                <div>
+                    <h1 class="titulo">La Trattoria Secreta</h1>
+                    <ul class="primera_ul">
+                        <li><a href="#" class="active">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="location.html">Location</a></li>
+                        <li><a href="reservations.html">Reservations</a></li>
+                    </ul>
                 </div>
-            </nav> 
+                <div class="nav_icons">
+                    <a href="menu.html"><i class='bx bx-cart' style='color:#ffb100'  ></i></a>
+                    <a href="login_signup.html"><i class='bx bx-user' style='color:#ffb100'  ></i></a>
+                </div>
+            </nav>
         </header>
 
         <main>

@@ -5,63 +5,74 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
 }
-
 body {
     overflow: visible;
-    /*background: #100B00;*/
-
     color:#fff3cd;
     max-width: 100%;
     max-height: 100%;
-}
 
+}
 a{
     text-decoration: none;
     color: white;
     display:inline-block;
 }
-
 main{
     display:flex;
     align-items: center;
     justify-content: space-between;
     flex-flow: row wrap;
-    /*    height: 100%;*/
     width: 100%;
+
 }
 main > div {
     /*left: 10%; (static)*/
     padding: 2% 0% 0% 2%;
-    background: #ffffff;
+    background: #100B00;
     width: 100%;
-    color: black;
+    color: white;
+}
+.home_nav{
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    padding: 20px 7px 10px 7px;
+    gap: 0px;
+    background: #100b00;
+    align-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.home_nav .titulo{
+    color: #ffb100;
+    text-shadow: 0px 6px 10px #000000;
 }
 .food_1{
     padding-bottom: 14%;
 }
-
 .texto_1 .p1 {
     font-style: italic;
     font-size: 1.5em;
     margin-bottom: 10px;
+    color: white;
 }
 .texto_1 .p2 {
     font-size: 3.5em;
     width: 95%;
     line-height: 1em;
-    /* margin-bottom:20px; */
+    color: white;
 }
-
 .texto_1 .p3 {
     font-size: 1.2em;
     color: #FFB100;
     font-style: italic;
 }
-
 .button_menu{
     margin-top:0px;
     padding: 6px 10px;
-    background: #ffc107;
+    background: #ffb100;
     border: 2px solid black;
     color: black;
     cursor: pointer;
@@ -69,11 +80,10 @@ main > div {
     font-size:14.1px;
     font-weight:600;
     transition: color 350ms, background 350ms;
-    /* z-index: 2; */
 }
 .button_menu:hover{
-    background: black;
-    color: white;
+    background: white;
+    color: black;
 }
 .food_1 img {
     object-fit: cover;
@@ -94,12 +104,11 @@ main > div {
     align-items: flex-start;
     align-content: center;
     flex-wrap: wrap;
-    background: #ffffff;
+    background: #100B00;
 }
 .redes a{
     color: #fff;
     transition:0.3s;
-
     z-index:1;
 }
 .redes a:hover{
@@ -108,15 +117,12 @@ main > div {
 p{
     font-size:15px;
 }
-
 .dir_registrarse_login{
-    color: black;
+    color: white;
     padding-left: 0px;
     width: 118%;
     transform: translate(-15%,-25%);
-    /* margin-left: 20%; */
 }
-
 .dir_registrarse_login h4{
     text-align: center;
     z-index: 2;
@@ -131,16 +137,15 @@ p{
 .dir_registrarse_login a{
     text-align:center;
     padding: 10px 10px;
-    background: black;
-    color: white;
+    background: #ffb100;
+    color: black;
     width: 40%;
     border-radius:25px;
     transition: background 350ms, color 350ms;
 }
-
 .dir_registrarse_login a:hover{
     cursor: pointer;
-    background: #ffb100;
+    background: white;
     color: black;
 }
 footer .der_res{
@@ -150,6 +155,11 @@ footer .der_res{
     color: white;
     width: 100%;
     text-align: center;
+}
+@media screen and (min-width: 1px){
+    .home_nav > div > .titulo {
+        text-align: center;
+    }
 }
 /*Small*/
 @media screen and (min-width: 576px){
@@ -175,8 +185,9 @@ footer .der_res{
         font-size: 24px;
         padding: 0px 10px 0px 10px;
         z-index: 4;
-        background: #fff3cd;
+        background: #100B00;
         border-radius: 25px;
+        color: white;
     }
     .dir_registrarse_login a{
         width: 18%;
@@ -207,17 +218,18 @@ footer .der_res{
         width: 12%;
     }
     .dir_registrarse_login > h4{
-                padding: 0px 100px 0px 100px;
+        padding: 0px 100px 0px 100px;
     }
 }
 /*Extra large*/
 @media screen and (min-width: 1200px){
+    
     .texto_1 .p1 {
         font-size: 2.2em;
     }
     .texto_1 .p2 {
         font-size: 3.9em;
-        width: 49.9%;
+        width: 39.9%;
         margin-bottom:20px;
     }
     .texto_1 .p3 {
@@ -234,7 +246,7 @@ footer .der_res{
         z-index: 2;
     }
     .texto_1{
-        padding: 8% 0% 0% 4%;
+        padding: 2% 0% 0% 4%;
         z-index: 2;
     }
     .boxes_footer {
@@ -246,7 +258,7 @@ footer .der_res{
         max-width: 100%;
         top: 600px;
         width: 50%;
-        left: 40px;
+        left: 80px;
     }
     .boxes_footer > h3{
         display: none;
@@ -255,7 +267,7 @@ footer .der_res{
         font-size: 1rem;
     }
     .boxes_footer > div > p {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
     .foot_home > h3{
         display: none;
@@ -269,12 +281,43 @@ footer .der_res{
     .index_footer > .dir_registrarse_login {
         margin-top: -100px;
     }
+    /* Home */
+    .home_nav > div > .titulo {
+        font-size: 70px;
+    }
+
+    .titulo:hover {
+        color: white;
+    }
+    .primera_ul {
+        display: flex;
+        justify-content: space-evenly;
+        list-style-type: none;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .primera_ul li a {
+        margin: 0px 10px 0px 10px;
+        padding: 5px 10px;
+        font-size: 16px;
+        color: white;
+        font-weight: 600;
+        text-align: center;
+        transition: color 350ms, transform 350ms, background 350ms;
+        border-radius: 25px;
+    }
+
+ 
+    .foot_home .boxes_footer > div {
+    width: 40%;
+    
+    }
 }
 /*Extra extra large*/
 @media screen and (min-width: 1400px){
     main > div {
-        /*left: 10%; (static)*/
-        padding: 2% 0% 0% 6%;
+        padding: 5% 0% 0% 6%;
     }
     .food_1 img{
         width: 36%;
@@ -295,13 +338,11 @@ footer .der_res{
     .dir_registrarse_login a{
         width: 10%;
     }
-    .index_footer > .dir_registrarse_login {
-        margin: -122% 0px 0px 0px;
-        /* margin-top: -123131213120px; */
+    .home_nav > div > .titulo {
+        font-size: 70px;
     }
-    @media screen and (min-width: 1600px){
-        .index_footer > .dir_registrarse_login {
-        margin-top: -26%;
-    }
+    .foot_home .boxes_footer > div {
+        width: 40%;
+        
     }
 }
