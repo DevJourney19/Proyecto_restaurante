@@ -17,6 +17,7 @@ function anchoPagina() {
     if (window.innerWidth > 850) {
         caja_trasera_login.style.display = "block";
         caja_trasera_register.style.display = "block";
+        contenedor_login_register.style.left = "10px";
 
     } else {
         caja_trasera_register.style.display = "block";
@@ -57,7 +58,6 @@ function iniciarSesion() {
     if (window.innerWidth > 850) {
         //Cambiamos de none a block
         formulario_register.style.display = "none";
-        
         contenedor_login_register.style.left = "10px";
         /*Cambiamos de none a block - para que de esta manera aparezca el login y se oculte el register*/
         formulario_login.style.display = "block";
@@ -72,12 +72,6 @@ function iniciarSesion() {
         /*Ya no trabajamos con la opacidad, ahora trabajamos con el display*/
         caja_trasera_register.style.display = "block";
         caja_trasera_login.style.display = "none";
-        
-        
-        
-//        contenedor_login_register.style.left = "0px";
-//        caja_trasera_register.style.display = "block";
-//        caja_trasera_login.style.display = "none";
     }
 }
 
