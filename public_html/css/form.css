@@ -1,4 +1,3 @@
-
 /*Formularios*/
 .contenedor_login_register{
     display: flex;
@@ -12,10 +11,9 @@
 }
 
 .contenedor_login_register form{
+    
     width: 100%;
-/*    padding: 75px 20px;*/
     background: #fff;
-    /*Ponemos una posiciÃƒÂ³n absoluta para poderla mover*/
     position: absolute;
     border-radius: 20px;
 }
