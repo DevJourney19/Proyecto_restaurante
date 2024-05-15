@@ -10,7 +10,6 @@ body {
     color:#fff3cd;
     max-width: 100%;
     max-height: 100%;
-
 }
 a{
     text-decoration: none;
@@ -26,8 +25,7 @@ main{
 
 }
 main > div {
-    /*left: 10%; (static)*/
-    padding: 2% 0% 0% 2%;
+    padding: 3% 0% 0% 2%;
     background: #100B00;
     width: 100%;
     color: white;
@@ -63,11 +61,13 @@ main > div {
     width: 95%;
     line-height: 1em;
     color: white;
+
 }
 .texto_1 .p3 {
     font-size: 1.2em;
     color: #FFB100;
     font-style: italic;
+    margin: 10px 0px 5px 0px;
 }
 .button_menu{
     margin-top:0px;
@@ -77,7 +77,7 @@ main > div {
     color: black;
     cursor: pointer;
     border-radius: 25px;
-    font-size:14.1px;
+    font-size:17px;
     font-weight:600;
     transition: color 350ms, background 350ms;
 }
@@ -140,6 +140,7 @@ p{
     background: #ffb100;
     color: black;
     width: 40%;
+    font-size: 17px;
     border-radius:25px;
     transition: background 350ms, color 350ms;
 }
@@ -150,18 +151,20 @@ p{
 }
 footer .der_res{
     margin: auto;
-    padding-top: 20px;
+    padding: 20px;
     background: #212529;
     color: white;
     width: 100%;
     text-align: center;
 }
+
 @media screen and (min-width: 1px){
     .home_nav > div > .titulo {
         text-align: center;
     }
 }
 /*Small*/
+
 @media screen and (min-width: 576px){
     .food_1 img{
         left: 14%;
@@ -171,7 +174,6 @@ footer .der_res{
         width: 18%;
     }
 }
-/*Medium*/
 @media screen and (min-width: 768px){
     html{
         font-size:  20px;
@@ -192,8 +194,13 @@ footer .der_res{
     .dir_registrarse_login a{
         width: 18%;
     }
+    .foot_home .boxes_footer > div{
+        padding: 20px;
+    }
+    .button_menu {
+        padding: 11px;
+    }
 }
-/*Large*/
 @media screen and (min-width: 992px){
     .texto_1 .p1 {
         font-size: 1.9em;
@@ -221,7 +228,6 @@ footer .der_res{
         padding: 0px 100px 0px 100px;
     }
 }
-/*Extra large*/
 @media screen and (min-width: 1200px){
     
     .texto_1 .p1 {
@@ -246,7 +252,7 @@ footer .der_res{
         z-index: 2;
     }
     .texto_1{
-        padding: 2% 0% 0% 4%;
+        padding: 5% 0% 0% 4%;
         z-index: 2;
     }
     .boxes_footer {
@@ -267,7 +273,7 @@ footer .der_res{
         font-size: 1rem;
     }
     .boxes_footer > div > p {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
     .foot_home > h3{
         display: none;
@@ -314,15 +320,14 @@ footer .der_res{
     
     }
 }
-/*Extra extra large*/
 @media screen and (min-width: 1400px){
     main > div {
-        padding: 5% 0% 0% 6%;
+        padding: 2% 0% 0% 6%;
     }
     .food_1 img{
         width: 36%;
         left: 60%;
-        top: -440px;
+        top: -390px;
     }
     .texto_1 .p1 {
         font-size: 2.8em;
@@ -342,7 +347,9 @@ footer .der_res{
         font-size: 70px;
     }
     .foot_home .boxes_footer > div {
-        width: 40%;
-        
+        width: 40%; 
+    }
+    .home_nav > div{
+        gap:25px
     }
 }

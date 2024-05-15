@@ -1,43 +1,38 @@
-/* Home */
 .titulo {
     color: #FFB100;
     font-size: 36px;
     top: 10px;
     transition: color 350ms, transform 350ms;
 }
-
 .titulo:hover {
     color: white;
     text-decoration: underline wavy;
     transform: skew(-15deg);
     cursor: default;
 }
-
 .primera_ul {
     display: flex;
     justify-content: space-evenly;
     list-style-type: none;
     gap: 10px;
     flex-wrap: wrap;
+    margin: 10px 0px 0px 0px;
 }
-
 .primera_ul li a {
     margin: 0px 10px 0px 10px;
     padding: 5px 10px;
-    font-size: 16px;
+    font-size: 18px;
     color: white;
     font-weight: 600;
     text-align: center;
     transition: color 350ms, transform 350ms, background 350ms;
     border-radius: 25px;
 }
-
 .primera_ul li a:hover, .primera_ul li a.active {
     color: black;
     background: #FFB100;
     transform: scale(1.2);
 }
-
 /*About*/
 /*la imagen de la curva para el encabezado del html*/
 .curve_header {
@@ -51,7 +46,6 @@
     width: 100%;
     height: 260px;
 }
-
 nav {
     position: relative;
     z-index: 10;
@@ -64,14 +58,11 @@ nav {
     
     
 }
-
-/*        parte de la letra  del encabezado*/
 .restaurant_name {
     color: #ffb100;
     font-weight: 600;
     font-size: 36px;
 }
-
 /* espaciado entre el titulo los subindices y los iconos del encabezado*/
 nav > div {
     display: flex;
@@ -82,7 +73,6 @@ nav > div {
     justify-content: center;
     align-content: flex-start;
 }
-
 nav > .nav_icons {
     display: flex;
     gap: 20px;
@@ -92,32 +82,28 @@ nav > .nav_icons {
     justify-content: flex-end;
     align-items: flex-end;
     /* color: white; */
+    margin: 5px 0px 0px 0px;
 }
-
 a {
     text-decoration: none;
     color: #ffffff;
 
     display: inline-block;
 }
-
 ul {
     display: flex;
     list-style: none;
     gap: 20px;
     font-size: 18px;
 }
-
 .link {
     color: #ffb100;
     transition: 0.3s;
 }
-
 .link:hover, .active {
     color: white;
     border-bottom: 1px solid white;
 }
-
 /* Login Signup*/
 header>div {
     display: flex;
@@ -125,12 +111,10 @@ header>div {
     gap: 20px;
     padding: 20px 50px;
 }
-
 header img {
     width: 100px;
     height: 100px;
 }
-
 /* ------------------------------------------------- FOOTER--------------------------------*/
 .footer_icons, .footer_icons.white {
     display: flex;
@@ -138,17 +122,14 @@ header img {
     gap: 20px;
     justify-content: center;
 }
-
 .footer_icons.white > a {
     color: black;
 }
-
 .footer_icons > a {
     text-decoration: none;
     color: white;
     font-size: 30px;
 }
-
 /* About*/
 footer {
     color: white;
@@ -160,7 +141,6 @@ footer {
     align-content: center;
     flex-wrap: wrap;
 }
-
 /* index*/
 footer .redes {
     display: flex;
@@ -175,7 +155,6 @@ footer .redes {
     width: 100%;
     justify-content: space-evenly;
 }
-
 .boxes_footer {
     background: #100B00;
     display: flex;
@@ -186,14 +165,12 @@ footer .redes {
     max-width: 100%;
     flex-direction: row;
     z-index: 1;
-    top: 620px;
+    top: 610px;
 }
 .boxes_footer > h3{
     gap:22px;
     margin-bottom: auto;
-
 }
-/*Mejores cheff*/
 .boxes_footer>div {
     background: #ffb100;
     position: relative;
@@ -212,12 +189,10 @@ footer .redes {
     color: black;
     text-align: center;
 }
-
 .boxes_footer>div:nth-child(2) {
     position: relative;
     bottom: 20px;
 }
-
 /*Donde estan las tarjetitas y el vamos*/
 .index_footer {
     background: #100B00;
@@ -228,14 +203,6 @@ footer .redes {
     justify-content: space-between;
     gap: 90px;
 }
-@media screen and(max-width: 1320px){
-    .index_footer{
-        background: gold;
-        color: red;
-    }
-
-
-}
 .index_footer .redes {
     padding: 20px 35px;
     display: flex;
@@ -243,7 +210,6 @@ footer .redes {
     justify-content: space-between;
     gap: 80px;
 }
-
 .index_footer > .dir_registrarse_login {
     margin-top: -9.5%;
     align-items: center;
@@ -253,13 +219,10 @@ footer .redes {
     padding-left: 10%;
     z-index: 2;
 }
-
-/*Mejor restaurante unidad*/
 .boxes_footer>div:nth-child(2) {
     position: relative;
     bottom: 10px;
 }
-
 /* Login_signup */
 .loginFooter a {
     display: inline-block;
@@ -271,12 +234,10 @@ footer .redes {
     border-radius: 30px;
     transition: 0.3s;
 }
-
 .loginFooter a:hover {
     color: black;
     background-color: white;
 }
-
 .loginFooter div {
     width: 100%;
     text-align: right;
