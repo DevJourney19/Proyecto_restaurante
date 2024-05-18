@@ -77,6 +77,10 @@ nav > div {
     display:none;
 }
 
+.nav_icons>.logout{
+    display: none;
+}
+
 ul {
     display: flex;
     list-style: none;
