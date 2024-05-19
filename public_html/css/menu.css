@@ -1,4 +1,10 @@
 @import "general.css";
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
 
 body{
     min-height: 100vh;
@@ -20,6 +26,9 @@ main{
 
 .container_menu{
     max-width:1000px;
+    position: relative;
+    padding: 10px 0;
+    margin: 10px 0;
 }
 
 .title_section{
@@ -30,6 +39,8 @@ main{
     flex-direction: column;
     gap: 10px;
     padding: 10px 0;
+    margin: 10px 0;
+    position: relative;
 }
 
 .title_section>p{
@@ -44,7 +55,17 @@ main{
 .nav_categories{
     border-bottom: 1px solid #100b00;
     padding-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+    text-decoration: none;
+    list-style: none;
 }
+.nav_categories>a{
+    list-style: none;
+}
+
 
 .category_item{
     color:black;
@@ -171,5 +192,41 @@ main{
 .icons a:hover{
     color: #FFB100;
 }
+.description{
+    text-align: justify;
+}
 
 
+@media screen and (max-width: 480px)
+{
+.curve_header{
+    height: 150px;
+}
+main{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+}
+.title_section{
+  top: 20px;
+  gap: 5px;
+}
+.title_section>p{
+    font-size: 15px;
+}
+.title_section>h3{
+    font-size: 25px;
+}
+.nav_categories{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 15px;
+    list-style: none;
+    
+}
+
+
+}
