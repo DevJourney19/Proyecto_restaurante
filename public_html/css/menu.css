@@ -37,7 +37,7 @@ main{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     padding: 10px 0;
     margin: 10px 0;
     position: relative;
@@ -59,21 +59,25 @@ main{
     justify-content: center;
     gap: 20px;
     padding: 10px;
+    text-decoration: solid;
+    list-style: none;
+}
+.nav_categories a{
     text-decoration: none;
-    list-style: none;
+    font-size: 16px;
 }
-.nav_categories>a{
-    list-style: none;
-}
+
 
 
 .category_item{
     color:black;
+
 }
 
 .category_item:hover, .category_active{
     border-bottom:2px solid #FFB100;
     font-weight: 600;
+   
 }
 
 .menu{
@@ -195,7 +199,22 @@ main{
 .description{
     text-align: justify;
 }
+.footer_icons, .footer_icons.white {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+}
 
+.footer_icons.white > a{
+    color: black;
+}
+
+.footer_icons > a{
+    text-decoration: none;
+    color: black;
+    font-size:2rem;
+}
 
 @media screen and (max-width: 480px)
 {
@@ -224,9 +243,16 @@ main{
     justify-content: center;
     flex-direction: column;
     font-size: 15px;
-    list-style: none;
+    gap: 7px;
     
 }
+.nav_categories li {
+ list-style: outside;
+}
 
+.footer_icons > a{
+    font-size: 3.5rem !important;
+}
+    
 
 }
