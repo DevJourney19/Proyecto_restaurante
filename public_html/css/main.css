@@ -125,6 +125,11 @@ header img{
     justify-content: center;
 }
 
+.about_footer{
+    color:white;
+    background-color:black;
+}
+
 .footer_icons.white > a{
     color: black;
 }
