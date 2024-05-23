@@ -1,20 +1,23 @@
 @import "general.css";
 :root {
     --blanco: #ffffff;
-    --gris-oscuro: #333333;
-    --gris-claro: #d6d2d2;
-    --amarillo: #ffd700;
+    --amarillo: #ffb100;
     --titulo: "Pacifico", cursive;
     --parrafo: "Montserrat", sans-serif;
 }
 
 body {
-    background-color: var(--gris-oscuro);
+    background-color: black;
     font-size: 18px;
     color: var(--blanco);
     font-family: var(--parrafo);
     margin: 0;
     padding: 0;
+}
+
+a{
+    display:inline-block;
+    text-decoration: none !important;
 }
 
 p {
@@ -23,27 +26,33 @@ p {
 }
 
 img {
-    width: 100%;
+    width: 80%;
     object-fit: cover;
-    border: 3px solid var(--amarillo); 
+    border: 3px solid var(--amarillo);
+    border-radius: 10px;
+}
+
+.contenedor_encabezado{
+    background-color: black;
 }
 
 section {
-    max-width: 1200px;
+    color:var(--blanco);
     margin: auto;
-    padding: 40px;
+    padding: 20px 2.5rem;
     display: flex;
     flex-direction: column;
     gap: 30px;
     align-items: center;
     justify-content: center;
-    background-color: var(--gris-claro);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: black;
+}
+section:nth-child(even){
+    flex-direction: column-reverse;
 }
 
 @media (min-width: 768px) {
-    section {
+    section, section:nth-child(even) {
         flex-direction: row;
     }
 }
@@ -62,16 +71,16 @@ h2 {
 
 .contenido_header {
     position: relative;
-    bottom: 50px;
+    height: 50vh;
 }
 
 .video {
+    object-fit: cover;
     width: 100%;
-    height: 100%;
-    position: relative;
-    z-index: -2;
-    border-radius: 10px;
+    height: 50vh;
     overflow: hidden;
+    position: relative;
+    z-index:-2;
 }
 
 .contenido_header::before {
@@ -94,15 +103,28 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem;
     text-align: center;
     color: var(--amarillo);
     padding: 20px;
 }
 
+.texto_encabezado h2{
+    font-size: 3rem;
+}
+
 @media (min-width: 768px) {
-    .texto_encabezado {
-        font-size: 4rem;
+    .contenido_header {
+        height: initial;
+    }
+    .texto_encabezado h2 {
+        font-size: 6rem;
+    }
+    img{
+        width: 100%;
+    }
+
+    .video{
+        height: 100%;
     }
 }
 
@@ -116,20 +138,31 @@ h2 {
     margin: 0;
 }
 
-.btn_init, .btn {
+.btn_init {
     font-weight: 600;
-    color: var(--gris-oscuro);
+    color: var(--blanco);
     font-size: 1.25rem;
     padding: 1rem 2rem;
     border-radius: 5px;
     margin-top: 20px;
-    border: 2px solid var(--amarillo);
     background-color: var(--amarillo);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
 
-.btn_init:hover, .btn:hover {
+.btn_location{
+    font-weight: 600;
+    font-size: 1.25rem;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    color: black;
+    background-color: var(--amarillo);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn_init:hover, .btn_location:hover {
     background-color: var(--amarillo);
     border-color: var(--amarillo);
     color: var(--gris-oscuro);
@@ -137,17 +170,13 @@ h2 {
 
 .imagenes_nosotros {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     gap: 20px;
     width: 100%;
 }
 
-@media (min-width: 768px) {
-    .imagenes_nosotros {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-}
+
 
 .imagenes_nosotros img {
     border-radius: 10px;
