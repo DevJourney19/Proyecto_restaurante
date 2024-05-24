@@ -215,7 +215,7 @@ p{
     height: 100%;
     }
 }
-
+/*
 @media (min-width: 1024px) {
     .texto_principal {
         font-size: 5rem;
@@ -229,6 +229,7 @@ p{
 
   
 }
+*/
 
 @media screen and (max-width: 960px){
     p{
