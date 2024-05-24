@@ -1,17 +1,19 @@
 @import "general.css";
 
 body {
-  font-size: 16px;
+    font-size: 16px;
 }
 
 p {
-  line-height: 1.2rem;
-  margin-bottom: 10px;
+    line-height: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color:rgb(255, 177, 0);
 }
 
 img {
-  width: 100%;
-  object-fit: cover;
+    width: 100%;
+    object-fit: cover;
 }
 
 main{
@@ -21,31 +23,62 @@ main{
 
 /* letras*/
 .locals_title {
-  font-size: 30px;
-  color: #ffb100;
-  text-align: center;
-  letter-spacing: 4px;
-  margin: 70px auto 20px;
-  text-transform: uppercase;
+    color: #ffb100;
+    text-align: center;
+    letter-spacing: 4px;
+    margin: 70px auto 20px;
+    text-transform: uppercase;
+}
+.locals_title h2{
+    font-size: 3rem;
+     font-weight: 800;
 }
 
 section{
-    padding: 0 70px;
+    margin:0 auto;
+    max-width: 1200px;
+    padding: 0 15px 50px;
     display: flex;
+    flex-direction:column;
     gap:50px;
     justify-content: center;
     padding-bottom: 20px;
 }
 
+@media only screen and (min-width:768px){
+    section{
+        flex-direction: row;
+        padding: 0 50px 50px;
+    }
+    div.boxes{
+        flex-direction: column;
+    }
+
+    div.iframe{
+        height: auto;
+    }
+
+    div.local_box {
+        width:275px;
+    }
+}
+
 .boxes{
-    width:320px;
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    gap:25px;
+    flex: none;
+    justify-content: center;
 }
 
 .placeslocals_nombre {
     margin-bottom: 10px;
-  }
+}
 
 .local_link{
+    font-size: 1.2rem;
+    text-decoration: none;
     display: flex;
     width: fit-content;
     align-items: center;
@@ -65,12 +98,22 @@ section{
 
 /* Estilo para cada lugar */
 .local_box {
-  margin-bottom: 20px;
-  border: 2px solid #ffd700; /* Borde amarillo */
-  padding: 20px; /* Espaciado interior */
-  border-radius: 10px; /* Redondeado de bordes */
+    width:265px;
+    border: 2px solid #ffd700; /* Borde amarillo */
+    padding: 20px; /* Espaciado interior */
+    border-radius: 10px; /* Redondeado de bordes */
 }
 
 .local_box:hover{
     border: 2px solid black; /* Borde amarillo */
+}
+
+.iframe{
+    width: 100%;
+    height: 500px;
+}
+
+iframe{
+    width: 100%;
+    height: 100%;
 }
