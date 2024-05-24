@@ -32,10 +32,6 @@ img {
     border-radius: 10px;
 }
 
-.contenedor_encabezado{
-    background-color: black;
-}
-
 section {
     color:var(--blanco);
     margin: auto;
