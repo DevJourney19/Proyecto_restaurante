@@ -6,9 +6,17 @@ window.addEventListener("resize", anchoPagina);
 /*Código de Javascript*/
 function anchoPagina() {
     if (window.innerWidth > 850) {
+        /*El difuminado que te aparece para cambiar entre login y register*/
         caja_trasera_login.style.display = "block";
         caja_trasera_register.style.display = "block";
-        contenedor_login_register.style.left = "10px";
+        /*Detecta con una condicional, dependiendo si se seleccionó el login
+         * o el register*/
+        contenedor_login_register.style.left = isRegisterActive ? "410px" : "10px";
+        formulario_register.style.display = isRegisterActive ? "block" : "none";
+        formulario_login.style.display = isRegisterActive ? "none" : "block";
+        caja_trasera_register.style.opacity = isRegisterActive ? "0" : "1";
+        caja_trasera_login.style.opacity = isRegisterActive ? "1" : "0";
+
     } else {
         caja_trasera_register.style.display = "block";
         caja_trasera_register.style.opacity = "1";
@@ -18,6 +26,21 @@ function anchoPagina() {
         contenedor_login_register.style.left = "0px";
     }
 }
+
+/*function anchoPagina() {
+ if (window.innerWidth > 850) {
+ caja_trasera_login.style.display = "block";
+ caja_trasera_register.style.display = "block";
+ contenedor_login_register.style.left = "10px";
+ } else {
+ caja_trasera_register.style.display = "block";
+ caja_trasera_register.style.opacity = "1";
+ caja_trasera_login.style.display = "none";
+ formulario_login.style.display = "block";
+ formulario_register.style.display = "none";
+ contenedor_login_register.style.left = "0px";
+ }
+ }*/
 
 /*Declaración de variables*/
 /*Seleccionas esa clase del HTML para poder trabajarlo en Javascript*/
@@ -33,7 +56,12 @@ var caja_trasera_register = document.querySelector(".caja_trasera_register");
 /*59:53*/
 //anchopagina
 /*40:50*/
-function register() {
+function register(event) {
+
+    if (event) {
+        event.preventDefault(); //Previene que el formulario se envie
+    }
+    isRegisterActive = true;
     if (window.innerWidth > 850) {
         /*Cambiamos de none a block*/
         formulario_register.style.display = "block";
@@ -58,7 +86,7 @@ function register() {
 /*52:20*/
 function iniciarSesion() {
     /*Cambiamos de none a block*/
-
+    isRegisterActive = false;
     if (window.innerWidth > 850) {
         //Cambiamos de none a block
         formulario_register.style.display = "none";
