@@ -97,34 +97,6 @@ main{
     /*Footer*/
     .loginFooter div {
         display: block;
-    }
-    /*Si es menor a 850px*/
-    .caja_trasera_register{
-        display: block;
-        opacity: 1;
-    }
-    .caja_trasera_login{
-        display: none;
-    }
-    .formulario_login{
-        display: block;
-    }
-    .formulario_register{
-        display: none;
-    }
-    .contenedor_login_register{
-        left: 0px;
-    }
+    }  
 }
-@media screen and(min-width: 851px){
-    /*Si es mayor a 850px*/
-    .caja_trasera_login {
-        display: block;
-    }
-    .caja_trasera_register{
-        display: block;
-    }
-    .contenedor_login_register{
-        left: 10px;
-    }
-}
+
