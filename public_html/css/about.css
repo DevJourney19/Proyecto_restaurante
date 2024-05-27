@@ -22,8 +22,7 @@ p {
 img {
     width: 80%;
     object-fit: cover;
-   /* border: 3px solid var(--amarillo);
-    border-radius: 10px;*/
+
 }
 
 section {
@@ -151,8 +150,7 @@ p{
     display: flex;
     flex-direction: row;
     width: 100%;
-    /*justify-content: space-between;
-    gap: 20px;*/
+ 
 }
 
 .imagenes_nosotros img {
@@ -169,13 +167,7 @@ p{
 .imagen2 img {
     margin-bottom: 1rem;
 }
-/*
-@media (min-width: 768px) {
-    .imagen1, .imagen2 {
-        flex: 0 0 calc(50% - 1rem);
-    }
-}
-*/
+
 
 @media (min-width: 913px) {
     section, section:nth-child(even) {
