@@ -17,14 +17,14 @@ main{
     min-height: 70vh;
 }
 .contenedor_todo{
-    width: 100%;
-    max-width: 800px;
+    width: 94%;
+    max-width: 700px;
     margin: auto;
 }
 .caja_trasera{
     position:relative;
-    width: 100%;
-    padding: 10px 15px;
+    width: 110%;
+    padding: 10px 0px 10px 360px;
     display: flex;
     justify-content: center;
     backdrop-filter: blur(10px);
@@ -66,24 +66,33 @@ main{
     color: black;
 }
 
+/*Adaptarlo para hacer el respectivo adaptaciÃ³n*/
 
+
+/*De inicio a 850px*/
 /*Trabajando en el Responsive Design*/
-
 @media screen and (max-width: 850px){
     main{
         margin-top: 50px;
     }
     .caja_trasera{
-        max-width: 350px;
+        max-width: 320px;
         height: 700px;
         flex-direction: column;
         margin: auto;
+        padding: 0px;
     }
 
     .caja_trasera div h3{
         margin-top: -310px;
+        
     }
-
+    .caja_trasera #btn_iniciarSesion{
+        font-size:15px;
+    }
+    .caja_trasera > div > p{
+        font-size: 13px;
+    }
     .caja_trasera>div{
         margin: 30px;
     }
@@ -95,7 +104,7 @@ main{
         margin: auto;
     }
     /*Footer*/
-    .loginFooter div {
+    .regresar_footer div {
         display: block;
     }  
 }
