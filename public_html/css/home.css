@@ -62,7 +62,6 @@ main {
   font-size: 20px;
   font-weight: 600;
   transition: color 350ms, background 350ms;
-  font-size: 1.5rem;
 }
 .button_menu:hover {
   border-color: #ffb100;
@@ -193,6 +192,7 @@ h3 {
 
   .button_menu {
     margin: 0 auto;
+    font-size:15px;
   }
 
   .boxes_footer {
