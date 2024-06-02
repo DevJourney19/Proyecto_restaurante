@@ -71,7 +71,7 @@ main {
 
 .elemento_amarillo {
   width: 100%;
-  background-image: url(../assets/img/fondo-home.svg);
+  background-image: url(../assets/img/fondo_home.svg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
