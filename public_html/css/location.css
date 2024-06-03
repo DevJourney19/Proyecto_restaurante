@@ -99,13 +99,13 @@ section{
 /* Estilo para cada lugar */
 .local_box {
     width:265px;
-    border: 2px solid #ffd700; /* Borde amarillo */
-    padding: 20px; /* Espaciado interior */
-    border-radius: 10px; /* Redondeado de bordes */
+    border: 2px solid #ffd700; 
+    padding: 20px; 
+    border-radius: 10px; 
 }
 
 .local_box:hover{
-    border: 2px solid black; /* Borde amarillo */
+    border: 2px solid black; 
 }
 
 .iframe{
