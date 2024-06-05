@@ -281,6 +281,10 @@ footer {
         background-color: transparent !important;
     }
 
+    .navbar>.container-fluid {        
+        gap: 40px;
+    }
+
     .icons_xl{
         display:flex;
     }
