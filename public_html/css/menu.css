@@ -24,6 +24,7 @@ main{
     z-index:10;
 }
 
+
 .container_menu{
     max-width:1000px;
     position: relative;
@@ -62,7 +63,8 @@ main{
     text-decoration: solid;
     list-style: none;
 }
-.nav_categories a{
+.categories .nav_categories a{
+    cursor: pointer;
     text-decoration: none;
     font-size: 16px;
 }
@@ -71,7 +73,6 @@ main{
 
 .category_item{
     color:black;
-
 }
 
 .category_item:hover, .category_active{
@@ -142,6 +143,7 @@ main{
 }
 
 .card_img{
+    border-radius: 100%;
     object-fit: cover;
 }
 

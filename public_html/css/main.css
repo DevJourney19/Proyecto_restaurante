@@ -35,7 +35,7 @@
     top: 0;
     left: 0;
     z-index: -1;
-    background: url(../assets/img/curve-header.svg);
+    background: url(../assets/img/curve_header.svg);
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -257,7 +257,7 @@ footer {
 
 .curve_footer{
     height: 250px;
-    background: url(../assets/img/curve-footer.svg);
+    background: url(../assets/img/curve_footer.svg);
     background-size: cover;
     background-position: center;
 }
