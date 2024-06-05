@@ -1,118 +1,118 @@
 @import "general.css";
 
 body {
-  background-image: url(../assets/img/login_fondo.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
+    background-image: url(../assets/img/login_fondo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    min-height: 70vh;
 }
 
 h2,
 h3 {
-  font-size: 2rem;
+    font-size: 2rem;
 }
 
 p {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 .container {
-  background-color: white;
-  border-radius: 30px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
-  position: relative;
-  overflow: hidden;
-  width: 375px;
-  min-height: 700px;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+    width: 375px;
+    min-height: 700px;
 }
 
 .toggle-container {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 50%;
-  width: 100%;
-  overflow: hidden;
-  transition: all 0.6s ease-in-out;
-  border-radius: 150px 150px 0 0;
-  z-index: 1000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 50%;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    border-radius: 150px 150px 0 0;
+    z-index: 1000;
 }
 
 .container.active .toggle-container {
-  transform: translateY(-100%);
-  border-radius: 0 0 150px 150px;
+    transform: translateY(-100%);
+    border-radius: 0 0 150px 150px;
 }
 
-.toggle {
-  position: relative;
-  height: 100%;
-  padding: 10px 15px;
-  background: linear-gradient(to right, rgb(168, 120, 0), #ffb100);
-  left: -100%;
-  width: 200%;
-  transform: translateX(0);
-  transition: all 0.6s ease-in-out;
-}
+    .toggle {
+        position: relative;
+        height: 100%;
+        padding: 10px 15px;
+        background: linear-gradient(to right, rgb(168, 120, 0), #ffb100);
+        left: -100%;
+        width: 200%;
+        transform: translateX(0);
+        transition: all 0.6s ease-in-out;
+    }
 
-.toggle-panel {
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  gap: 10px;
-  padding: 0 35px;
-  top: 0;
-  transform: translateY(0);
-  transition: all 0.6s ease-in-out;
-}
+    .toggle-panel {
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding: 0 35px;
+        top: 0;
+        transform: translateY(0);
+        transition: all 0.6s ease-in-out;
+    }
 
-.toggle-left {
-  transform: translateX(-200%);
-}
+    .toggle-left {
+        transform: translateX(-200%);
+    }
 
-.container.active .toggle-left {
-  transform: translateX(95%);
-}
+    .container.active .toggle-left {
+        transform: translateX(95%);
+    }
 
-.toggle-right {
-  right: 0;
-  transform: translateX(0);
-}
+    .toggle-right {
+        right: 0;
+        transform: translateX(0);
+    }
 
-.container.active .toggle-right {
-  transform: translateX(200%);
-}
+    .container.active .toggle-right {
+        transform: translateX(200%);
+    }
 
-@media only screen and (min-width: 875px) {
-  .container {
-    width: 800px;
-    max-width: 100%;
-    min-height: 480px;
-  }
+    @media only screen and (min-width: 875px) {
+        .container {
+            width: 800px;
+            max-width: 100%;
+            min-height: 480px;
+        }
 
-  .toggle-container {
-    top: 0;
-    left: 50%;
-    width: 50%;
-    height: 100%;
-    border-radius: 150px 0 0 150px;
-  }
+        .toggle-container {
+            top: 0;
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            border-radius: 150px 0 0 150px;
+        }
 
-  .container.active .toggle-container {
-    transform: translateY(0) translateX(-100%);
-    border-radius: 0 150px 150px 0;
-  }
-}
+        .container.active .toggle-container {
+            transform: translateY(0) translateX(-100%);
+            border-radius: 0 150px 150px 0;
+        }
+    }

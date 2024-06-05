@@ -92,6 +92,5 @@ $menu = [
         'type' => 'Postre'
     ]
 ];
-
 echo json_encode($menu);
 ?>

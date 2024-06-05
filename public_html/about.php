@@ -34,33 +34,33 @@
           </button>
           <span class="restaurant_name">La Trattoria Secreta</span>
           <div class="nav_icons icons_initial">
-            <a href="menu.html"><i class="bx bx-cart"></i></a>
-            <a class="login" href="login_signup.html"><i class="bx bx-user"></i></a>
-            <a class="logout" href="login_signup.html"><i class='bx bx-log-out'></i></a>
+            <a href="menu.php"><i class="bx bx-cart"></i></a>
+            <a class="login" href="php/close_session.php"><i class='bx bx-exit'></i></a>
+            <a class="logout" href="php/close_session.php"><i class='bx bx-exit'></i></a>
           </div>
           <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a href="index.html" class="nav-link">Home</a>
+                <a href="home.php" class="nav-link">Home</a>
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link text-light active">About</a>
               </li>
               <li class="nav-item">
-                <a href="menu.html" class="nav-link">Menu</a>
+                <a href="menu.php" class="nav-link">Menu</a>
               </li>
               <li class="nav-item">
-                <a href="location.html" class="nav-link">Location</a>
+                <a href="location.php" class="nav-link">Location</a>
               </li>
               <li class="nav-item">
-                <a href="reservations.html" class="nav-link">Reservations</a>
+                <a href="reservations.php" class="nav-link">Reservations</a>
               </li>
             </ul>
           </div>
           <div class="nav_icons icons_xl">
-            <a href="menu.html"><i class="bx bx-cart"></i></a>
-            <a class="login" href="login_signup.html"><i class="bx bx-user"></i></a>
-            <a class="logout" href="login_signup.html"><i class='bx bx-log-out'></i></a>
+            <a href="menu.php"><i class="bx bx-cart"></i></a>
+            <a class="login" href="php/close_session.php"><i class='bx bx-exit'></i></a>
+            <a class="logout" href="php/close_session.php"><i class='bx bx-exit'></i></a>
           </div>
         </div>
       </nav>
@@ -168,7 +168,7 @@
             deleitarse con auténticos sabores peruanos en un ambiente acogedor y
             familiar.
           </p>
-          <a href="location.html" class="btn_location">Encuentranos</a>
+          <a href="location.php" class="btn_location">Encuentranos</a>
         </div>
 
         <div class="imagenes_nosotros">

@@ -193,11 +193,11 @@ footer {
 }
 /* Login_signup */
 
-.loginFooter{
+.regresar_footer{
     padding-top: 70px;
 }
 
-.loginFooter a{
+.regresar_footer a{
     display:inline-block;
     color:white;
     text-decoration:none;
@@ -209,12 +209,12 @@ footer {
     transition:0.3s;
 }
 
-.loginFooter a:hover{
+.regresar_footer a:hover{
     color:black;
     background-color:white;
 }
 
-.loginFooter div{
+.regresar_footer div{
     width: 100%;
     text-align: right;
 }
@@ -279,6 +279,10 @@ footer {
 @media (min-width: 1200px) {
     .navbar-expand-xl {
         background-color: transparent !important;
+    }
+
+    .navbar>.container-fluid {        
+        gap: 40px;
     }
 
     .icons_xl{

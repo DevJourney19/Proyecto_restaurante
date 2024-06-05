@@ -9,12 +9,10 @@
     padding:0 40px;
     height: 100%;
 }
-
 .container button.hidden{
     background-color: transparent ;
     border-color: black ;
 }
-
 .container .toggle button{
     color: black;
 }
@@ -50,6 +48,7 @@
     height: 100%;
     transition: all 0.6s ease-in-out;
 }
+
 
 .log-in{
     left: 0;
