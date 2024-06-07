@@ -11,7 +11,7 @@ if (!isset($_SESSION['usuario'])) {
     $row = $resultado->fetch_assoc();
     $nombre_completo = $row['nombre_completo'];
     $titulo = "<span class='restaurant_name'>La Trattoria Secreta</span>";
-    // "<span style='color: white; text-decoration:none;'>Bienvenido(a) $nombre_completo a </span><span style='text-decoration: underline #FFB100'>La Trattoria Secreta</span>";
+    "<span style='color: white; text-decoration:none;'>Bienvenido(a) $nombre_completo a </span><span style='text-decoration: underline #FFB100'>La Trattoria Secreta</span>";
 }
 $connection->close();
 ?>;
@@ -21,13 +21,9 @@ $connection->close();
 
 <head>
     <title>La Trattoria Secreta | Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <link rel="icon" type="image/x-icon" href="assets/img/logo.png" />
     <link rel="stylesheet" href="css/home.css" />
     <link rel="stylesheet" href="css/main.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <?php include 'fragments/head_links.php'; ?>
 </head>
 
 <body class="bg-black">

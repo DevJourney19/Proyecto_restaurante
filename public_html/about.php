@@ -2,57 +2,16 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/about.css" />
-  <link rel="icon" type="image/x-icon" href="assets/img/logo.png" />
   <title>La Trattoria Secreta | About</title>
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/table.css" />
   <link rel="stylesheet" href="css/main.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+<link rel="stylesheet" href="css/about.css" />
+  <?php include 'fragments/head_links.php'; ?>
 </head>
 
 <body>
   <header style="background-color: black;">
-    <nav class="navbar navbar-expand-xl pt-4 px-4">
-      <div class="curve_header"></div>
-      <div class="container-fluid">
-        <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="bx bx-menu-alt-left"></i>
-        </button>
-        <span class="restaurant_name">La Trattoria Secreta</span>
-        <div class="nav_icons icons_initial">
-          <a href="menu.php"><i class="bx bx-cart"></i></a>
-          <a class="user_login">
-          </a>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a href="home.php" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link text-light active">About</a>
-            </li>
-            <li class="nav-item">
-              <a href="menu.php" class="nav-link">Menu</a>
-            </li>
-            <li class="nav-item">
-              <a href="location.php" class="nav-link">Location</a>
-            </li>
-            <li class="nav-item">
-              <a href="reservations.php" class="nav-link">Reservations</a>
-            </li>
-          </ul>
-        </div>
-        <div class="nav_icons icons_xl">
-          <a href="menu.php"><i class="bx bx-cart"></i></a>
-          <a class="user_login">
-          </a>
-        </div>
-      </div>
-    </nav>
+    <?php include 'fragments/nav.php'; ?>
   </header>
   <main>
     <div class="apartado_principal">
@@ -204,11 +163,7 @@
     </section>
   </main>
   <footer class="about_footer">
-    <div class="footer_icons">
-      <a href="https://www.facebook.com/?locale=es_LA" target="blank"><i class="bx bxl-facebook-circle"></i></a>
-      <a href="https://www.instagram.com/" target="blank"><i class="bx bxl-instagram"></i></a>
-      <a href="https://www.tiktok.com/es/" target="blank"><i class="bx bxl-tiktok"></i></a>
-    </div>
+    <?php include 'fragments/footer.php'; ?>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="js/login_signup.js"></script>
