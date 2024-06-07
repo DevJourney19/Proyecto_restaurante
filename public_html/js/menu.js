@@ -1,6 +1,6 @@
 const fetchInfo = async () => {
     let menu;
-    await fetch("datos_menu.php")
+    await fetch("./php/datos_menu.php")
             .then((response) => response.json())
             .then((data) => {
                 // 'data' es la variable $menu de PHP convertida a un objeto JavaScript
