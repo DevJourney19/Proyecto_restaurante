@@ -3,7 +3,7 @@
 ```sql
 CREATE DATABASE restaurante;
 CREATE TABLE clientes(
-  id INT PRIMARY KEY AUTOINCREMENT,
+  id INT PRIMARY KEY AUTO_INCREMENT,
   nombre_completo VARCHAR(50),
   correo VARCHAR(50),
   usuario VARCHAR(150),
