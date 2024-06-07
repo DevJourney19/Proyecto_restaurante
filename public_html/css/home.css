@@ -53,6 +53,7 @@ main {
 }
 
 .button_menu {
+  background: black;
   width: fit-content;
   text-decoration: none;
   padding: 6px 10px;
