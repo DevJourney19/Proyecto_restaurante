@@ -131,7 +131,12 @@ header img{
     background-color:black;
 }
 
-.footer_icons.white > a{
+.about_footer>.footer_icons.white>a{
+    color:white;
+    text-decoration: none;
+}
+
+.footer_icons.white  a{
     color: black;
 }
 

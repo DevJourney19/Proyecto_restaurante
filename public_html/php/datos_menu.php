@@ -2,7 +2,7 @@
 $menu = [
     [
         'title' => 'Lomo Saltado',
-        'src' => "assets/img/Lomo_Saltado_1.png",
+        'src' => "assets/img/lomo_saltado.png",
         'alt' => 'Lomo Saltado',
         'description' => 'Delicioso plato peruano que combina tiernos trozos de lomo
         de res con cebolla, tomate y papas fritas',
