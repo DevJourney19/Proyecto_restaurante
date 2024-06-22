@@ -1,5 +1,5 @@
 ## Primera Actualizacion
-- Se requiere de una base de datos local en phpmyadmi llamada restaurante para poder ejecutar el proyecto y la tabla clientes para la lectura de los usuarios
+- Se requiere de una base de datos local en phpmyadmi llamada restaurante para poder ejecutar el proyecto y la tabla clientes para la lectura de los usuarios.
 ```sql
 CREATE DATABASE restaurante;
 CREATE TABLE clientes(
@@ -10,4 +10,5 @@ CREATE TABLE clientes(
   constrasena VARCHAR(150)
 );
 ```
-![Cambiar el puerto, dependiendo del servidor local (XAMPP) para evitar conflictos](puerto_mysql.jpg)
+- Cambiar el puerto, dependiendo del servidor local (XAMPP) para evitar conflictos.
+![Cambiar puerto](puerto_mysql.jpg)
