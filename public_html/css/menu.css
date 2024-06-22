@@ -28,7 +28,6 @@ main{
 .container_menu{
     max-width:1000px;
     position: relative;
-    padding: 10px 0;
     margin: 10px 0;
 }
 

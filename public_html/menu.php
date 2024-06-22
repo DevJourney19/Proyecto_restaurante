@@ -3,8 +3,8 @@
 
 <head>
     <title>La Trattoria Secreta | Menu</title>
-    <link rel="stylesheet" href="css/menu.css" />
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="./css/menu.css" />
+    <link rel="stylesheet" href="./css/main.css" />
     <?php include 'fragments/head_links.php'; ?>
 </head>
 
@@ -75,9 +75,10 @@
                 <button type="button" id="btn_seeAll" onclick="seeMore()">See All</button>
             </section>
         </div>
+        <?php include 'fragments/list_menu.php'; ?>
     </main>
     <footer>
-    <?php include 'fragments/footer.php'; ?>
+        <?php include 'fragments/footer.php'; ?>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="js/menu.js"></script>

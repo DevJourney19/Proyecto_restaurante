@@ -23,7 +23,7 @@
     </div>
     <div class="container_res">
       <section>
-        <form method="POST" action="./php/procesar_reservacion.php">
+        <form method="get" action="./php/procesar_reservacion.php">
           <div class="double_input">
             <div>
               <label for="full_name"> Nombre Completo </label>
