@@ -10,3 +10,4 @@ CREATE TABLE clientes(
   constrasena VARCHAR(150)
 );
 ```
+![Cambiar el puerto, dependiendo del servidor local (XAMPP) para evitar conflictos](puerto_mysql.jpg)
