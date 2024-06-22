@@ -1,5 +1,5 @@
 <?php
-$connection = mysqli_connect("localhost", "root", "", "restaurante");
+$connection = mysqli_connect("localhost:3308", "root", "", "restaurante");
 //if ($connection) {
 //    echo "Se conecto exitosamente a la BD";
 //} else {
