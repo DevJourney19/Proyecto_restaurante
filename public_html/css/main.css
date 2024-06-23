@@ -91,10 +91,10 @@ nav > div {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 7px;
   color: black;
   border-radius: 50%;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   width: 10px;
   height: 10px;
@@ -302,12 +302,14 @@ footer {
 }
 
 .container_cart {
-  height: 80vh;
+  width: 90%;
+  min-height: 80vh;
   background: #fff;
-  position: fixed;
-  top: 100px;
+  position: absolute;
+  top: 10px;
   right: 0;
   margin-inline: 20px;
+  margin-bottom: 20px;
   border-radius: 15px;
   border: 2px solid black;
   display: flex;
@@ -320,10 +322,10 @@ footer {
 .container_cart_content > h3 {
   font-size: 2rem;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-.card_list {
+.cart_list {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -393,7 +395,6 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  width: 30%;
 }
 
 .cart_card_description > h4 {
@@ -435,31 +436,36 @@ footer {
   font-weight: 700;
 }
 
-/*md*/
-@media only screen and (min-width: 768px) {
-  .nav_icons {
-    gap: 20px;
-  }
-
-  .container-cart {
+@media screen and (min-width: 576px){
+  .container_cart {
     width: 500px;
   }
-
+  .cart_list {
+    height: 575px;
+    overflow-y: auto;
+  }
   .cart_card_description > h4 {
     font-size: 20px;
   }
 
   .cart_card_description > p {
+    display: block;
     font-size: 12px;
   }
+}
 
+/*md*/
+@media only screen and (min-width: 768px) {
+  .nav_icons {
+    gap: 20px;
+  }
   .cart_card_details {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
-
   .cart_card_info{
+    align-items: center;
     flex-direction: row;
   }
 }

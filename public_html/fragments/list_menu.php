@@ -4,8 +4,8 @@
     <h3>Carrito de Compras <span id="quantity_cart">(2)</span></h3>
     <div class="cart_list">
       <div class="cart_list_card">
+        <img src="./assets/img/anticucho.png" alt="">
         <div class="cart_card_info">
-          <img src="../assets/img/anticucho.png" alt="">
           <div class="cart_card_details">
             <div class="cart_card_description">
               <h4>Lomo Saltado</h4>
@@ -29,8 +29,8 @@
         </button>
       </div>
       <div class="cart_list_card">
+        <img src="./assets/img/anticucho.png" alt="">
         <div class="cart_card_info">
-          <img src="../assets/img/anticucho.png" alt="">
           <div class="cart_card_details">
             <div class="cart_card_description">
               <h4>Lomo Saltado</h4>
@@ -54,8 +54,33 @@
         </button>
       </div>
       <div class="cart_list_card">
+        <img src="./assets/img/anticucho.png" alt="">
         <div class="cart_card_info">
-          <img src="../assets/img/anticucho.png" alt="">
+          <div class="cart_card_details">
+            <div class="cart_card_description">
+              <h4>Lomo Saltado</h4>
+              <p>Delicioso plato peruano que combina tiernos trozos de lomo
+                de res con cebolla, tomate y papas fritas</p>
+            </div>
+            <span>S/.10.00</span>
+          </div>
+        </div>
+        <div class="item_quantity">
+          <button>
+            <i class='bx bx-plus'></i>
+          </button>
+          <span>1</span>
+          <button>
+            <i class='bx bx-minus'></i>
+          </button>
+        </div>
+        <button class="item_remove">
+          <i class='bx bx-x'></i>
+        </button>
+      </div>
+      <div class="cart_list_card">
+        <img src="./assets/img/anticucho.png" alt="">
+        <div class="cart_card_info">
           <div class="cart_card_details">
             <div class="cart_card_description">
               <h4>Lomo Saltado</h4>
