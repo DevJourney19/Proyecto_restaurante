@@ -7,6 +7,12 @@ $consultType = $_GET["consulta"];
 $email = $_GET["email"];
 $phoneNumber = $_GET["phone_number"];
 
+// Obtener la URL completa
+$urlCompleta = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER["REQUEST_URI"];
+if (strlen($urlCompleta) > 1024) {
+    die("$urlCompleta </br> Error: La URL supera el límite de 1024 caracteres.");
+}
+
 if ($consultType == "mensaje") {
   $message = $_GET["message"];
 } else {
