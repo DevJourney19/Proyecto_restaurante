@@ -1,173 +1,182 @@
-/*Formularios login*/ 
+/*Formularios login*/
 
-.container form{
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding:0 40px;
-    height: 100%;
+.container form {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  height: 100%;
 }
-.container button.hidden{
-    background-color: transparent ;
-    border-color: black ;
+.container button.hidden {
+  background-color: transparent;
+  border-color: black;
 }
-.container .toggle button{
-    color: black;
-}
-
-.container input{
-    margin: 8px 0; 
-    padding: 10px;
-    border: none;
-    background: #f2f2f2;
-    font-size: 13px;
-    outline: none;
-    border-radius:8px;
-    width: 100%;
+.container .toggle button {
+  color: black;
 }
 
-.container button{
-    font-weight: 600;
-    margin-top:10px;
-    border: none;
-    font-size: 12px;
-    background: #FFB100;
-    color: white;
-    cursor: pointer;
-    outline: none;
-    padding:10px 45px;
-    border-radius:5px;
-    border: 1px solid transparent;
+.container input {
+  margin: 8px 0;
+  padding: 10px;
+  border: none;
+  background: #f2f2f2;
+  font-size: 13px;
+  outline: none;
+  border-radius: 8px;
+  width: 100%;
 }
 
-.form-container{
-    position: absolute;
-    top: 0;
-    height: 100%;
-    transition: all 0.6s ease-in-out;
+.container button {
+  font-weight: 600;
+  margin-top: 10px;
+  border: none;
+  font-size: 12px;
+  background: #ffb100;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  padding: 10px 45px;
+  border-radius: 5px;
+  border: 1px solid transparent;
 }
 
-.partners.hidden, .day_selected.hidden{
-    display: none;
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
 }
 
-.log-in{
-    left: 0;
-    width: 100%;
-    height: 50%;
-    z-index: 2
+.partners.hidden,
+.day_selected.hidden {
+  display: none;
 }
 
-.container.active .log-in{
-    transform: translateY(100%);
+.log-in {
+  left: 0;
+  width: 100%;
+  height: 50%;
+  z-index: 2;
 }
 
-.sign-up{
-    left: 0;
-    width: 100%;
-    height: 50%;
-    z-index: 1;
+.container.active .log-in {
+  transform: translateY(100%);
+}
+
+.sign-up {
+  left: 0;
+  width: 100%;
+  height: 50%;
+  z-index: 1;
+  opacity: 0;
+}
+
+.container.active .sign-up {
+  transform: translateY(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: move 0.6s;
+}
+
+@keyframes move {
+  0%,
+  49.99% {
     opacity: 0;
-}
+    z-index: 1;
+  }
 
-.container.active .sign-up{
-    transform: translateY(100%);
+  50%,
+  100% {
     opacity: 1;
     z-index: 5;
-    animation:move 0.6s;
+  }
 }
-
-@keyframes move{
-    0%,49.99%{
-        opacity: 0;
-        z-index: 1;
-    }
-
-    50%, 100%{
-        opacity: 1;
-        z-index: 5;
-    }
-}
-
-
 
 /*Formulario reserva*/
-form>div, .double_input>div, .reservation_consult>div{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 10px;
+form > div,
+.double_input > div,
+.reservation_consult > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
-label, legend{
-    font-weight: 600;
-    font-size: 1rem !important;
+label,
+legend {
+  font-weight: 600;
+  font-size: 1rem !important;
 }
 
-.double_input{
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+.double_input {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
 
-.double_input>div{
-    flex: 1;
+.double_input > div {
+  flex: 1;
 }
 
-.reservation_consult, .mensaje_consult{
-    display: flex;
+.reservation_consult {
+  display: flex;
 }
 
-.reservation_consult.hidden, .mensaje_consult.hidden{
-    display: none;
+.reservation_consult.hidden, .error.hidden{
+  display: none;
 }
 
-input{
-    outline: none;
-    border: none;
-    border-bottom: 1px solid black;
-    padding-bottom: 5px;
+input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
 }
 
-textarea{
-    outline: none;
-    resize: none;
-    border:1px solid black;
-    padding: 10px;
-    width: 100%;
+textarea {
+  outline: none;
+  resize: none;
+  border: 1px solid black;
+  padding: 10px;
+  width: 100%;
 }
 
-.send{
-    font-weight: 600;
-    padding: 1rem;
-    background: #ffb100;
-    color: black;
-    border: none;
-    cursor: pointer;
-    border-radius: 30px !important;
-    transition: 0.3s;
+.send {
+  font-weight: 600;
+  padding: 1rem;
+  background: #ffb100;
+  color: black;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px !important;
+  transition: 0.3s;
 }
 
-.send:hover{
-    background: black;
-    color: white;
+.send:hover {
+  background: black;
+  color: white;
 }
 
-.final_form{
-    display:flex;
-    gap:10px;
-    flex-direction:row;
-    align-items: center;
+.final_form {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  align-items: center;
 }
 
-.final_form>p{
-    font-size:12px
+.final_form > p {
+  font-size: 12px;
 }
 
-@media only screen and (min-width:850px){
-    .log-in,
+.error{
+  color: red;
+  font-size: 12px;
+}
+
+@media only screen and (min-width: 850px) {
+  .log-in,
   .sign-up {
     width: 50%;
     height: 100%;

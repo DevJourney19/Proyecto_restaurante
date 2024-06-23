@@ -17,48 +17,67 @@ if ($consultType == "mensaje") {
 }
 ?>
 
-<div>
-  <h2>Tabla resumen</h2>
-  <table class="table">
-    <tbody>
-      <tr>
-        <th>Nombres</th>
-        <td>
-          <pre><?= mayusculaFirstWord(limpiarEspacios(limpiarHtml($fullName))) ?></pre>
-        </td>
-      </tr>
-      <tr>
-        <th>Correo</th>
-        <td><?= minusculas(limpiarEspacios(limpiarHtml($email))) ?></td>
-      </tr>
-      <tr>
-        <th>Número de Celular</th>
-        <td><?= evaluarTelefono(limpiarEspacios(limpiarHtml($phoneNumber))) ?></td>
-      </tr>
-      <tr>
-        <th>Tipo Consulta</th>
-        <td><?= mayusculaFirst($consultType) ?></td>
-      </tr>
-      <?php if ($consultType == "reservacion") : ?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="../assets/img/logo.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../css/general.css" />
+  <link rel="stylesheet" href="../css/table.css" />
+  <title>Tabla Resumen Contactanos</title>
+</head>
+
+<body>
+  <div class="container_table">
+    <h2>Tabla resumen</h2>
+    <table class="table">
+      <tbody>
         <tr>
-          <th>Locacion</th>
-          <td><?= $location ?></td>
+          <th>Nombres</th>
+          <td>
+            <?= mayusculaFirstWord(minusculas(limpiarHtml(limpiarEspacios($fullName)))) ?>
+          </td>
         </tr>
         <tr>
-          <th>Acompañantes</th>
-          <td><?= $partners ?></td>
+          <th>Correo</th>
+          <td><?= minusculas(limpiarHtml(limpiarEspacios($email))) ?></td>
         </tr>
         <tr>
-          <th>Dia y Hora</th>
-          <td><?= $daySelected ?> a las <?= $timeSelected ?></td>
+          <th>Número de Celular</th>
+          <td><?= evaluarTelefono(limpiarHtml(limpiarEspacios($phoneNumber))) ?></td>
         </tr>
-      <?php endif; ?>
-      <?php if ($consultType == "mensaje") : ?>
         <tr>
-          <th>Mensaje</th>
-          <td><?= mayusculaFirst(limpiarEspacios(limpiarHtml($message)))?></td>
+          <th>Tipo Consulta</th>
+          <td><?= mayusculaFirst(minusculas($consultType)) ?></td>
         </tr>
-      <?php endif; ?>
-    </tbody>
-  </table>
-</div>
+        <?php if ($consultType == "reservacion") : ?>
+          <tr>
+            <th>Locacion</th>
+            <td><?= $location ?></td>
+          </tr>
+          <tr>
+            <th>Acompañantes</th>
+            <td><?= $partners ?></td>
+          </tr>
+          <tr>
+            <th>Dia y Hora</th>
+            <td><?= $daySelected ?> a las <?= $timeSelected ?></td>
+          </tr>
+        <?php endif; ?>
+        <?php if ($consultType == "mensaje") : ?>
+          <tr>
+            <th>Mensaje</th>
+            <td><?= mayusculaFirst(limpiarHtml(limpiarEspacios($message))) ?></td>
+          </tr>
+        <?php endif; ?>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>

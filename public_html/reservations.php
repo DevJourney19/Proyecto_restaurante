@@ -23,7 +23,7 @@
     </div>
     <div class="container_res">
       <section>
-        <form method="get" action="./php/procesar_consulta.php">
+        <form method="get" action="./php/procesar_consulta.php" onsubmit="checkRequired(event);">
           <div class="double_input">
             <div>
               <label for="full_name"> Nombre Completo </label>
@@ -40,11 +40,11 @@
           <div class="double_input">
             <div>
               <label for="email"> Email </label>
-              <input name="email" title="email para contacto" type="text" placeholder="Enter your email" id="email" required />
+              <input name="email" title="email para contacto" type="text" placeholder="Enter your email" id="email" />
             </div>
             <div>
               <label for="phone_number"> Número celular </label>
-              <input name="phone_number" title="numero de telefono para contacto" type="text" pattern="[0-9]{7,9}" placeholder="914703631" id="phone_number" required />
+              <input name="phone_number" title="numero de telefono para contacto" type="text" pattern="[0-9]{7,9}" placeholder="914703631" id="phone_number" />
             </div>
           </div>
           <div id="reservation" class="reservation_consult hidden">
@@ -58,7 +58,7 @@
             </div>
             <div>
               <label for="partners"> Acompañantes* </label>
-              <input name="partners" title="numero de acompañantes" type="number" placeholder="# of people" min="1" max="10" id="partners" />
+              <input name="partners" title="numero de acompañantes" type="number" placeholder="# of people" min="1" max="10" id="partners"/>
             </div>
             <div>
               <label for="day_selected">
@@ -66,21 +66,22 @@
               </label>
               <div class="double_input">
                 <div>
-                  <input title="hora de la reserva" type="time" id="time" name="time_selected" />
+                  <input title="hora de la reserva" type="time" id="time" name="time_selected"/>
                 </div>
                 <div>
-                  <input name="day_selected" title="dia de la reserva" type="date" id="day_selected" />
+                  <input name="day_selected" title="dia de la reserva" type="date" id="day_selected"/>
                 </div>
               </div>
             </div>
           </div>
-          <div id="message" class="mensaje_consult hidden">
+          <div class="mensaje_consult">
             <fieldset>
               <legend>Mensaje adicional</legend>
               <!--no se encontro atributo para accesibilidad-->
-              <textarea name="message" rows="4" cols="20" placeholder="Enter the message..."></textarea> 
+              <textarea name="message" rows="4" cols="20" placeholder="Enter the message..."></textarea id="message"> 
             </fieldset>
           </div>
+          <p id="error" class="error hidden"></p>
           <div class="final_form">
             <button class="send" type="submit">Send Message</button>
           </div>
