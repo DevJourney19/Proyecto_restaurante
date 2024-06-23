@@ -49,6 +49,9 @@
     transition: all 0.6s ease-in-out;
 }
 
+.partners.hidden, .day_selected.hidden{
+    display: none;
+}
 
 .log-in{
     left: 0;
@@ -91,7 +94,7 @@
 
 
 /*Formulario reserva*/
-form>div, .double_input>div{
+form>div, .double_input>div, .reservation_consult>div{
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -113,6 +116,14 @@ label, legend{
     flex: 1;
 }
 
+.reservation_consult, .mensaje_consult{
+    display: flex;
+}
+
+.reservation_consult.hidden, .mensaje_consult.hidden{
+    display: none;
+}
+
 input{
     outline: none;
     border: none;
@@ -128,7 +139,7 @@ textarea{
     width: 100%;
 }
 
-button{
+.send{
     font-weight: 600;
     padding: 1rem;
     background: #ffb100;
@@ -139,7 +150,7 @@ button{
     transition: 0.3s;
 }
 
-button:hover{
+.send:hover{
     background: black;
     color: white;
 }

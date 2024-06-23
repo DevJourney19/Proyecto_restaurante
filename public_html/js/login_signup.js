@@ -9,7 +9,6 @@ const existeUsuario = async () => {
           user.innerHTML = `
           <i class='bx bx-exit'></i>
           `;
-          console.log(userLogin);
         });
       } else {
         userLogin.forEach((user) => {
@@ -17,9 +16,8 @@ const existeUsuario = async () => {
           user.innerHTML = `
           <i class='bx bx-user'></i>
           `;
-          console.log(userLogin);
         });
-      }
+      } 
     });
 };
 

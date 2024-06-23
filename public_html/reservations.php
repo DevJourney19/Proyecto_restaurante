@@ -23,15 +23,18 @@
     </div>
     <div class="container_res">
       <section>
-        <form method="get" action="./php/procesar_reservacion.php">
+        <form method="get" action="./php/procesar_consulta.php">
           <div class="double_input">
             <div>
               <label for="full_name"> Nombre Completo </label>
               <input title="nombre completo para contacto" type="text" placeholder="Enter your full name" name="full_name" id="full_name" required />
             </div>
             <div>
-              <label for="partners"> Acompañantes* </label>
-              <input name="partners" title="numero de acompañantes" type="number" placeholder="# of people" min="1" max="10" id="partners" required />
+              <label for="consulta">Tipo de Consulta</label>
+              <select name="consulta" id="consulta" onchange="checkType();">
+                <option value="mensaje">Mensajes</option>
+                <option value="reservacion">Reservacion</option>
+              </select>
             </div>
           </div>
           <div class="double_input">
@@ -44,29 +47,42 @@
               <input name="phone_number" title="numero de telefono para contacto" type="text" pattern="[0-9]{7,9}" placeholder="914703631" id="phone_number" required />
             </div>
           </div>
-          <div>
-            <label for="day_selected">
-              Selecciona el dia y hora que planeas asistir*
-            </label>
-            <div class="double_input">
-              <div>
-                <input title="hora de la reserva" type="time" id="time" name="time_selected" />
-              </div>
-              <div>
-                <input name="day_selected" title="dia de la reserva" type="date" id="day_selected" />
+          <div id="reservation" class="reservation_consult hidden">
+            <div>
+              <label for="location">Locacion*</label>
+              <select name="location" id="location">
+                <option value="Miraflores">La Trattoria Secreta Miraflores</option>
+                <option value="Surco">La Trattoria Secreta Santiago de Surco</option>
+                <option value="San Isidro">La Trattoria Secreta San Isidro</option>
+              </select>
+            </div>
+            <div>
+              <label for="partners"> Acompañantes* </label>
+              <input name="partners" title="numero de acompañantes" type="number" placeholder="# of people" min="1" max="10" id="partners" />
+            </div>
+            <div>
+              <label for="day_selected">
+                Selecciona el dia y hora que planeas asistir*
+              </label>
+              <div class="double_input">
+                <div>
+                  <input title="hora de la reserva" type="time" id="time" name="time_selected" />
+                </div>
+                <div>
+                  <input name="day_selected" title="dia de la reserva" type="date" id="day_selected" />
+                </div>
               </div>
             </div>
           </div>
-          <div>
+          <div id="message" class="mensaje_consult hidden">
             <fieldset>
               <legend>Mensaje adicional</legend>
               <!--no se encontro atributo para accesibilidad-->
-              <textarea name="message" rows="4" cols="20" placeholder="Enter the message..."></textarea>
+              <textarea name="message" rows="4" cols="20" placeholder="Enter the message..."></textarea> 
             </fieldset>
           </div>
           <div class="final_form">
-            <button type="submit">Send Message</button>
-            <p>(* = opcional si solo desea contactar)</p>
+            <button class="send" type="submit">Send Message</button>
           </div>
         </form>
       </section>
@@ -103,5 +119,7 @@
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="./js/login_signup.js"></script>
+  <script src="./js/consultas.js"></script>
 </body>
+
 </html>

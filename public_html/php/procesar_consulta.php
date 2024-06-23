@@ -1,51 +1,64 @@
 <?php
-
+include_once './util/texto.php';
 // obtener los datos del formulario por su atributo name
 
-
-
 $fullName = $_GET["full_name"];
-$partners = $_GET["partners"];
+$consultType = $_GET["consulta"];
 $email = $_GET["email"];
 $phoneNumber = $_GET["phone_number"];
-$timeSelected = $_GET["time_selected"];
-$daySelected = $_GET["day_selected"];
-$message = $_GET["message"];
+
+if ($consultType == "mensaje") {
+  $message = $_GET["message"];
+} else {
+  $location = $_GET["location"];
+  $partners = $_GET["partners"];
+  $timeSelected = $_GET["time_selected"];
+  $daySelected = $_GET["day_selected"];
+}
 ?>
 
 <div>
-  <table>
-    <tr>
-      <td>Nombre completo:</td>
-      <td><?php echo $fullName; ?></td>
-    </tr>
-    <tr>
-      <td>Tipo de Consulta:</td>
-      <td><?php echo $partners; ?></td>
-    </tr>
-    <tr>
-      <td>Compañeros:</td>
-      <td><?php echo $partners; ?></td>
-    </tr>
-    <tr>
-      <td>Correo electrónico:</td>
-      <td><?php echo $email; ?></td>
-    </tr>
-    <tr>
-      <td>Número de teléfono:</td>
-      <td><?php echo $phoneNumber; ?></td>
-    </tr>
-    <tr>
-      <td>Hora seleccionada:</td>
-      <td><?php echo $timeSelected; ?></td>
-    </tr>
-    <tr>
-      <td>Día seleccionado:</td>
-      <td><?php echo $daySelected; ?></td>
-    </tr>
-    <tr>
-      <td>Mensaje:</td>
-      <td><?php echo $message; ?></td>
-    </tr>
+  <h2>Tabla resumen</h2>
+  <table class="table">
+    <tbody>
+      <tr>
+        <th>Nombres</th>
+        <td>
+          <pre><?= mayusculaFirstWord(limpiarEspacios(limpiarHtml($fullName))) ?></pre>
+        </td>
+      </tr>
+      <tr>
+        <th>Correo</th>
+        <td><?= minusculas(limpiarEspacios(limpiarHtml($email))) ?></td>
+      </tr>
+      <tr>
+        <th>Número de Celular</th>
+        <td><?= evaluarTelefono(limpiarEspacios(limpiarHtml($phoneNumber))) ?></td>
+      </tr>
+      <tr>
+        <th>Tipo Consulta</th>
+        <td><?= mayusculaFirst($consultType) ?></td>
+      </tr>
+      <?php if ($consultType == "reservacion") : ?>
+        <tr>
+          <th>Locacion</th>
+          <td><?= $location ?></td>
+        </tr>
+        <tr>
+          <th>Acompañantes</th>
+          <td><?= $partners ?></td>
+        </tr>
+        <tr>
+          <th>Dia y Hora</th>
+          <td><?= $daySelected ?> a las <?= $timeSelected ?></td>
+        </tr>
+      <?php endif; ?>
+      <?php if ($consultType == "mensaje") : ?>
+        <tr>
+          <th>Mensaje</th>
+          <td><?= mayusculaFirst(limpiarEspacios(limpiarHtml($message)))?></td>
+        </tr>
+      <?php endif; ?>
+    </tbody>
   </table>
 </div>
