@@ -2,5 +2,5 @@
 session_start();
 session_destroy();
 
-header("location: ../index.php?logout=true");
+header("location: ../login_signup.php?logout=true");
 ?>;

@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 include 'connection.php';
 
@@ -14,4 +15,7 @@ if (mysqli_num_rows($validar_login) > 0) {
 } else {
     echo false;
 }
+mysqli_free_result($validar_login);
+//Estamos llamando a $connection que se encuentra en otro archivo
+mysqli_close($connection);
 ?>
