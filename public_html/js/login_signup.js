@@ -11,6 +11,7 @@ const existe_usuario = async () => {
                         user.innerHTML = `
           <i class='bx bx-exit'></i>
           `;
+
                         console.log(usuario_login);
                     });
                     //Si la sesion no esta activa, el icono es de usuario

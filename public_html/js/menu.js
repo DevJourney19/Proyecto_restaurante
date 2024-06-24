@@ -44,8 +44,7 @@ const seeMore = async () => {
       </div>
     `;
     });
-
-    containerMenu.innerHTML = `<div class='menu_cards'>${cardsHTML}</div>`;
+    containerMenu.innerHTML = `<div class="menu_cards">${cardsHTML}</div>`;
 };
 
 const filtrarPlatos = async (categoria, event) => {
@@ -60,7 +59,6 @@ const filtrarPlatos = async (categoria, event) => {
             for (let i = 0; i < item["stars"]; i++) {
                 starsHTML += `<i class="bx bxs-star" style="color: #ffb100"></i>`;
             }
-
             cardsHTML += `
         <div class="card">
           <div>
@@ -85,9 +83,7 @@ const filtrarPlatos = async (categoria, event) => {
       `;
         }
     });
-
-
-    containerMenu.innerHTML = `<div class='menu_cards'>${cardsHTML}</div>`;
+    containerMenu.innerHTML = `<div class="menu_cards">${cardsHTML}</div>`;
 };
 
 // Selecciona todos los elementos <a>
