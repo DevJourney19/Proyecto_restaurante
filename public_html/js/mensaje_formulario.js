@@ -17,7 +17,7 @@ document.getElementById('reg_registrar').addEventListener('submit', function (ev
                         messageDiv.textContent = 'Error: Ese correo ya está en uso';
                         break;
                     case "usuario_ya_existe":
-                        rem_reg_exitoso()
+                        rem_reg_exitoso();
                         messageDiv.textContent = 'Error: Ese usuario ya está en uso';
                         break;
                     case "registrado":

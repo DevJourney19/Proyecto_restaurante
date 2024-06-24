@@ -305,7 +305,7 @@ footer {
 
 .container_cart {
   width: 90%;
-  min-height: 80vh;
+  /*min-height: 80vh;*/
   background: #fff;
   position: absolute;
   top: 10px;
@@ -319,6 +319,7 @@ footer {
   justify-content: space-between;
   gap: 20px;
   padding: 20px;
+  /*overflow: visible;C*/
 }
 
 .container_cart_content > h3 {
@@ -444,7 +445,7 @@ footer {
   }
   .cart_list {
     height: 575px;
-    overflow-y: auto;
+    overflow-y: scroll;
   }
   .cart_card_description > h4 {
     font-size: 20px;
