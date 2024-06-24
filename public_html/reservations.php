@@ -78,7 +78,7 @@
             <fieldset>
               <legend>Mensaje adicional</legend>
               <!--no se encontro atributo para accesibilidad-->
-              <textarea name="message" rows="4" cols="20" placeholder="Enter the message..."></textarea id="message"> 
+              <textarea id="message" name="message" rows="4" cols="20" placeholder="Enter the message..."></textarea> 
             </fieldset>
           </div>
           <p id="error" class="error hidden"></p>

@@ -1,32 +1,32 @@
-const type = document.getElementById('consulta').value;
 const checkType = () => {
-  const reservation = document.getElementById('reservation');
-  if (type === 'reservacion') {
-    reservation.classList.remove('hidden');
+  const type = document.getElementById("consulta").value;
+  const reservation = document.getElementById("reservation");
+  if (type === "reservacion") {
+    reservation.classList.remove("hidden");
   } else {
-    reservation.classList.add('hidden');
+    reservation.classList.add("hidden");
   }
-}
+};
 
 const checkRequired = (event) => {
-  const error = document.getElementById('error');
-  error.classList.add('hidden');
-  const partners = document.getElementById('partners').value;
-  const date = document.getElementById('date_selected').value;
-  const time = document.getElementById('time_selected').value;
-  const message = document.getElementById('message').value;
-  if (type === 'reservacion') {
-    console.log(partners, date, time);
-    if (partners === '' || date === '' || time === '', message === '') {
+  const type = document.getElementById("consulta").value;
+  const error = document.getElementById("error");
+  error.classList.add("hidden");
+  const message = document.getElementById("message");
+  if (type === "reservacion") {
+    const partners = document.getElementById("partners");
+    const date = document.getElementById("day_selected");
+    const time = document.getElementById("time");
+    if (!partners.value || !date.value || !time.value || !message.value) {
       event.preventDefault();
-      error.classList.remove('hidden');
-      error.innerHTML = 'Todos los campos requeridos, ingresalos por favor';
+      error.classList.remove("hidden");
+      error.innerHTML = "Todos los campos requeridos, ingresalos por favor";
     }
-  }else{
-    if (message === '') {
+  } else {
+    if (!message.value) {
       event.preventDefault();
-      error.classList.remove('hidden');
-      error.innerHTML = 'Todos los campos requeridos, ingresalos por favor';
+      error.classList.remove("hidden");
+      error.innerHTML = "Todos los campos requeridos, ingresalos por favor";
     }
   }
-}
+};

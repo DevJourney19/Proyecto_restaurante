@@ -173,6 +173,7 @@ textarea {
 .error{
   color: red;
   font-size: 12px;
+  margin-block: 10px;
 }
 
 @media only screen and (min-width: 850px) {
