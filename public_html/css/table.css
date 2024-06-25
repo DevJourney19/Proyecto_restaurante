@@ -26,3 +26,18 @@ table,th,td{
     border: 1px solid #212B2A;
     border-collapse: collapse;
 }
+
+.container_table{
+    padding: 20px;
+    margin: 0 auto;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.container_table > h2{
+    font-size: 3rem;
+}
+
+.container_table > table{
+    font-size:1.5rem;
+}
