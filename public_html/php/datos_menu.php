@@ -9,7 +9,7 @@ $menu = [
         de res con cebolla, tomate y papas fritas',
         'stars' => 5,
         'id' => 1,
-        'price' => 25.90,
+        'price' => 26.00,
         'amount' => 1,
         'type' => 'Principal'
     ],
@@ -64,7 +64,7 @@ $menu = [
         'description' => 'Guiso de cordero cocido lentamente con cilantro, ají amarillo y cerveza.',
         'stars' => 4,
         'id' => 6,
-        'price' => 28.50,
+        'price' => 29.00,
         'amount' => 1,
         'type' => 'Principal'
     ],
@@ -97,7 +97,7 @@ $menu = [
         'description' => 'Cóctel clásico peruano hecho con pisco, jugo de limón, jarabe de goma, clara de huevo y amargo de angostura.',
         'stars' => 5,
         'id' => 9,
-        'price' => 12.50,
+        'price' => 13.00,
         'amount' => 1,
         'type' => 'Bebida'
     ],

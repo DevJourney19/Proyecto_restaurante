@@ -12,11 +12,12 @@ if (isset($_GET["message"])) {
 
     <head>
         <title>La Trattoria Secreta | Home</title>
-        <link rel="stylesheet" href="css/home.css" />
-        <link rel="stylesheet" href="css/main.css" />
         <?php include 'fragments/head_links.php'; ?>
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/home.css" />
+        <link rel="stylesheet" href="./css/menu.css" />
     </head>
-
+    
     <body class="bg-black">
         <header>
             <!-- ESTOY DENTRO DEL INDEX.PHP -->
@@ -30,7 +31,7 @@ if (isset($_GET["message"])) {
                     </h1>
                     <!-- <a class="logout" href="php/close_session.php" onclick=""><i class='bx bx-exit'></i></a> -->
                     <div class="nav_icons icons_initial">
-                        <a href="menu.php"><i class="bx bx-cart"></i></a>
+                        <button onclick="open_cart();" class="btn-cart"><i class="bx bx-cart"></i><span class="notification" ></span></button>
                         <a class="user_login">
                         </a>
                     </div>
@@ -55,8 +56,8 @@ if (isset($_GET["message"])) {
                     </div>
                     <!-- <a class="login" href="php/close_session.php"><i class='bx bx-exit'></i></a> -->
                     <div class="nav_icons icons_xl">
-                        <a href="menu.php"><i class="bx bx-cart"></i></a>
-                        <a class="user_login" href="login_signup.php">
+                        <button onclick="open_cart();" class="btn-cart"><i class="bx bx-cart"></i><span class="notification"></span></button>
+                        <a class="user_login">
                         </a>
                     </div>
                 </div>
@@ -79,6 +80,8 @@ if (isset($_GET["message"])) {
                 <a href="https://www.instagram.com/" target="blank"><i class="bx bxl-instagram-alt"></i></a>
                 <a href="https://www.whatsapp.com/?lang=es_LA" target="blank"><i class="bx bxl-whatsapp"></i></a>
             </div>
+            <div id="container_cart" class="container_cart">                
+            </div>
         </main>
         <footer class="index_footer">
             <div class="boxes_footer">
@@ -97,6 +100,7 @@ if (isset($_GET["message"])) {
                     </p>
                 </div>
             </div>
+
             <?php if ($mensaje === true): ?>
                 <div class="dir_registrarse_login">
                     <h4>
@@ -108,12 +112,15 @@ if (isset($_GET["message"])) {
                     </div>
                 </div>
             <?php endif; ?>
+
             <div class="contenedor_curve_home">
                 <div class="elemento_amarillo"></div>
             </div>
+
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script src="./js/login_signup.js"></script>
+        <script src="js/go_productos.js"></script>
     </body>
 
 </html>

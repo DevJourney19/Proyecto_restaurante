@@ -6,14 +6,16 @@
         </button>
         <span class="restaurant_name">La Trattoria Secreta</span>
         <div class="nav_icons icons_initial">
-            <button onclick="openCart();" class="btn-cart"><i class="bx bx-cart"></i><span class="notification">2</span></button>
+            <button onclick="open_cart();" class="btn-cart"><i class="bx bx-cart"></i><span class="notification" ></span></button>
             <a class="user_login">
             </a>
         </div>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a href="home.php" class="nav-link">Home</a>
+
+                    <a href="index.php" class="nav-link">Home</a>
+
                 </li>
                 <li class="nav-item">
                     <a href="about.php" class="nav-link">About</a>
@@ -30,7 +32,7 @@
             </ul>
         </div>
         <div class="nav_icons icons_xl">
-            <button onclick="openCart();" class="btn-cart"><i class="bx bx-cart"></i><span class="notification"></span></button>
+            <button onclick="open_cart();" class="btn-cart"><i class="bx bx-cart"></i><span class="notification"></span></button>
             <a class="user_login">
             </a>
         </div>
