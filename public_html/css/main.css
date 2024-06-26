@@ -304,11 +304,13 @@ footer {
 }
 
 .container_cart {
+    color: black;
+    z-index: 1000;
     width: 90%;
     /*min-height: 80vh;*/
     background: #fff;
     position: absolute;
-    top: 10px;
+    top: 10%;
     right: 0;
     margin-inline: 20px;
     margin-bottom: 20px;
@@ -329,6 +331,7 @@ footer {
 }
 
 .cart_list {
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     gap: 10px;

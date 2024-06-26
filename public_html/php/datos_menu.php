@@ -9,7 +9,7 @@ $menu = [
         de res con cebolla, tomate y papas fritas',
         'stars' => 5,
         'id' => 1,
-        'price' => 26.00,
+        'price' => 26.50,
         'amount' => 1,
         'type' => 'Principal'
     ],
