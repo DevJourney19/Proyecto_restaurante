@@ -1,17 +1,22 @@
 <?php
 include_once './util/texto.php';
+
+// Obtener la URL completa para verificar que no supere el límite de 1024 caracteres
+$urlCompleta = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER["REQUEST_URI"];
+if (strlen($urlCompleta) > 1024) {
+  echo "<script>
+        alert('Error: La URL supera el límite de 1024 caracteres. Te redirigiremos a la página de reservaciones.');
+        window.location.href = '../reservations.php';
+      </script>";
+  exit;
+}
+
 // obtener los datos del formulario por su atributo name
 
 $fullName = $_GET["full_name"];
 $consultType = $_GET["consulta"];
 $email = $_GET["email"];
 $phoneNumber = $_GET["phone_number"];
-
-// Obtener la URL completa
-$urlCompleta = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER["REQUEST_URI"];
-if (strlen($urlCompleta) > 1024) {
-    die("$urlCompleta </br> Error: La URL supera el límite de 1024 caracteres.");
-}
 
 if ($consultType == "mensaje") {
   $message = $_GET["message"];
