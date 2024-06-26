@@ -13,6 +13,7 @@ const fetchInfo = async () => {
 const seeMore = async () => {
     const containerMenu = document.querySelector("#menu");
     const menu = await fetchInfo();
+
     let cardsHTML = "";
 
     menu.forEach((item) => {
@@ -35,17 +36,16 @@ const seeMore = async () => {
             <div class="review_starts">
               ${starsHTML}
             </div>
-          </div>
+              </div>
           <div class="price">
             <span>S/ ${item["price"]}</span>
-            <button type="submit">Agregar</button>
+            <button class="button" type="button" id="${item['id']}">Agregar</button>
           </div>
         </div>
       </div>
     `;
     });
-
-    containerMenu.innerHTML = `<div class='menu_cards'>${cardsHTML}</div>`;
+    containerMenu.innerHTML = `<div class="menu_cards">${cardsHTML}</div>`;
 };
 
 const filtrarPlatos = async (categoria, event) => {
@@ -60,9 +60,8 @@ const filtrarPlatos = async (categoria, event) => {
             for (let i = 0; i < item["stars"]; i++) {
                 starsHTML += `<i class="bx bxs-star" style="color: #ffb100"></i>`;
             }
-
             cardsHTML += `
-        <div class="card">
+        <div class="card" >
           <div>
             <div class="container_img">
               <img src=${item["src"]} alt=${item["alt"]} class="card_img" style="width: 95px; height: 100px" />
@@ -78,16 +77,14 @@ const filtrarPlatos = async (categoria, event) => {
             </div>
             <div class="price">
               <span>S/ ${item["price"]}</span>
-              <button type="submit">Agregar</button>
+              <button class="button" type="button" id=${item['id']}>Agregar</button>
             </div>
           </div>
         </div>
       `;
         }
     });
-
-
-    containerMenu.innerHTML = `<div class='menu_cards'>${cardsHTML}</div>`;
+    containerMenu.innerHTML = `<div class="menu_cards">${cardsHTML}</div>`;
 };
 
 // Selecciona todos los elementos <a>

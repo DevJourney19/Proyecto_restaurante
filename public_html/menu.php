@@ -20,12 +20,13 @@
         <div class="container_menu">
             <div class="categories">
                 <div class="nav_categories">
-                    <li><a data-categoria="Todo" href="#" class="category_active category_item">Todos</a></li>
-                    <li><a data-categoria="Principal" class="category_item">Platos Principales</a></li>
-                    <li><a data-categoria="Ensalada" class="category_item">Ensaladas</a></li>
-                    <li><a data-categoria="Aperitivo" class="category_item">Aperitivos</a></li>
-                    <li><a data-categoria="Bebida" class="category_item">Bebidas</a></li>
-                    <li><a data-categoria="Postre" class="category_item">Postres</a></li>
+                    <ul>
+                        <li><a data-categoria="Todo" href="#" class="category_active category_item">Todos</a></li>
+                        <li><a data-categoria="Principal" class="category_item">Platos Principales</a></li>
+                        <li><a data-categoria="Ensalada" class="category_item">Ensaladas</a></li>
+                        <li><a data-categoria="Aperitivo" class="category_item">Aperitivos</a></li>
+                        <li><a data-categoria="Bebida" class="category_item">Bebidas</a></li>
+                        <li><a data-categoria="Postre" class="category_item">Postres</a></li>
                     </ul>
                 </div>
             </div>
@@ -65,7 +66,7 @@
                             </div>
                             <div class="price">
                                 <span>S/ <?= $item['price'] ?></span>
-                                <button type="submit">Agregar</button>
+                                <button class="button" type="button" id="<?= $item['id'] ?>">Agregar</button>
                             </div>
                         </div>
                     <?php
@@ -75,7 +76,8 @@
                 <button type="button" id="btn_seeAll" onclick="seeMore()">See All</button>
             </section>
         </div>
-        <?php include 'fragments/list_menu.php'; ?>
+        <div id="container_cart" class="container_cart hidden">
+        </div>
     </main>
     <footer>
         <?php include 'fragments/footer.php'; ?>
@@ -83,6 +85,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="js/menu.js"></script>
     <script src="js/login_signup.js"></script>
+    <script src="js/go_productos.js"></script>
+
 </body>
 
 </html>

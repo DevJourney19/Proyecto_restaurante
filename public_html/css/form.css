@@ -28,18 +28,18 @@
   width: 100%;
 }
 
-.container button {
-  font-weight: 600;
-  margin-top: 10px;
-  border: none;
-  font-size: 12px;
-  background: #ffb100;
-  color: white;
-  cursor: pointer;
-  outline: none;
-  padding: 10px 45px;
-  border-radius: 5px;
-  border: 1px solid transparent;
+.container button{
+    font-weight: 600;
+    margin:10px;
+    border: none;
+    font-size: 12px;
+    background: #FFB100;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    padding:10px 45px;
+    border-radius:5px;
+    border: 1px solid transparent;
 }
 
 .form-container {

@@ -13,8 +13,6 @@ main p{
 }
 
 main{
-    position:relative;
-    z-index:10;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,7 +28,7 @@ main{
     flex-direction: column;
     gap: 5px;
     margin: 3rem 1rem 1rem;
-    
+
 }
 
 .title_section>h3 {
@@ -87,7 +85,7 @@ section{
     main{
         margin:2rem auto;
     }
-    
+
     .title_section{
         margin: 2rem 1rem 1rem;
     }

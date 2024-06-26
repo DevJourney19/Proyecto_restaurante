@@ -16,11 +16,6 @@ img {
     object-fit: cover;
 }
 
-main{
-    position:relative;
-    z-index:10;
-}
-
 /* letras*/
 .locals_title {
     color: #ffb100;

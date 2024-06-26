@@ -58,7 +58,7 @@
             </div>
             <div>
               <label for="partners"> Acompañantes* </label>
-              <input name="partners" title="numero de acompañantes" type="number" placeholder="# of people" min="1" max="10" id="partners"/>
+              <input name="partners" title="numero de acompañantes" type="number" placeholder="# of people" min="1" max="10" id="partners" />
             </div>
             <div>
               <label for="day_selected">
@@ -66,10 +66,10 @@
               </label>
               <div class="double_input">
                 <div>
-                  <input title="hora de la reserva" type="time" id="time" name="time_selected"/>
+                  <input title="hora de la reserva" type="time" id="time" name="time_selected" />
                 </div>
                 <div>
-                  <input name="day_selected" title="dia de la reserva" type="date" id="day_selected"/>
+                  <input name="day_selected" title="dia de la reserva" type="date" id="day_selected" />
                 </div>
               </div>
             </div>
@@ -78,7 +78,7 @@
             <fieldset>
               <legend>Mensaje adicional</legend>
               <!--no se encontro atributo para accesibilidad-->
-              <textarea id="message" name="message" rows="4" cols="20" placeholder="Enter the message..."></textarea> 
+              <textarea id="message" name="message" rows="4" cols="20" placeholder="Enter the message..."></textarea>
             </fieldset>
           </div>
           <p id="error" class="error hidden"></p>
@@ -103,10 +103,12 @@
         </div>
       </section>
     </div>
+    <div id="container_cart" class="container_cart hidden">
+    </div>
   </main>
   <footer class="footer_reservation">
     <div class="footer_desc">
-      <img src="assets/img/logo.png" alt="logo" class="Logo de la Trattoria Secreta" width="70" heigth="70" />
+      <img src="assets/img/logo.png" alt="logo" class="Logo de la Trattoria Secreta" style="width:70px; height:70px" />
       <p>
         Nos esforzamos para ofrecerle una experiencia gastronómica
         excepcional, donde cada plato es una obra maestra de sabor, calidad y
@@ -117,10 +119,12 @@
     <div class="contenedor_curve">
       <div class="curve_footer"></div>
     </div>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <script src="./js/login_signup.js"></script>
-  <script src="./js/consultas.js"></script>
+    </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="./js/login_signup.js"></script>
+    <script src="./js/consultas.js"></script>
+    <script src="js/go_productos.js"></script>
 </body>
 
 </html>
