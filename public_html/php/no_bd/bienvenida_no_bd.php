@@ -6,7 +6,7 @@ if (!isset($_SESSION['usuario'])) {
 } else {
     $user = $_SESSION['usuario'];
 }
-include '../verify_session.php';
+//include '../verify_session.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,8 +42,8 @@ include '../verify_session.php';
                     <p class="mensajito_bienvenida" style="color: white;" >Gracias por unirte a La Trattoria Secreta. Estamos 
                         emocionados de compartir nuestros deliciosos platos variados contigo. ¡Disfruta de una experiencia 
                         culinaria inolvidable!</p>
-                    <p class="p3">¡Vamos al home!</p>
-                    <a class="button_menu" href="../../index.php?message=true">Home</a>
+                    <p class="p3">¡Vamos a la página principal!</p>
+                    <a class="button_menu" href="../../index.php?message=true">Principal</a>
                 </div>
             </div>
         </main>

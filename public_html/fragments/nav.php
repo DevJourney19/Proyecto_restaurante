@@ -14,20 +14,20 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
 
-                    <a href="index.php" class="nav-link">Home</a>
+                    <a href="index.php" class="nav-link">Principal</a>
 
                 </li>
                 <li class="nav-item">
-                    <a href="about.php" class="nav-link">About</a>
+                    <a href="about.php" class="nav-link">Sobre nosotros</a>
                 </li>
                 <li class="nav-item">
-                    <a href="menu.php" class="nav-link">Menu</a>
+                    <a href="menu.php" class="nav-link">Menú</a>
                 </li>
                 <li class="nav-item">
-                    <a href="location.php" class="nav-link">Location</a>
+                    <a href="location.php" class="nav-link">Ubicación</a>
                 </li>
                 <li class="nav-item">
-                    <a href="reservations.php" class="nav-link">Reservations</a>
+                    <a href="reservations.php" class="nav-link">Reservación</a>
                 </li>
             </ul>
         </div>
