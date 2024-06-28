@@ -215,7 +215,7 @@ main{
     font-size:2rem;
 }
 
-@media screen and (max-width: 480px)
+@media screen and (max-width: 768px)
 {
     .curve_header{
         height: 150px;
@@ -236,7 +236,7 @@ main{
     .title_section>h3{
         font-size: 25px;
     }
-    .nav_categories{
+    .nav_categories> ul{
         padding: 10px;
         display: flex;
         justify-content: center;
