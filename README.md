@@ -2,14 +2,19 @@
 - Se requiere de una base de datos local en phpmyadmi llamada restaurante para poder ejecutar el proyecto y la tabla clientes para la lectura de los usuarios.
 ```sql
 -- Para avance 5 usar--
-CREATE TABLE clientes(
-  id INT PRIMARY KEY AUTOINCREMENT,
+CREATE DATABASE restaurante;
+USE restaurante;
+CREATE TABLE clientes (
+  id INT PRIMARY KEY AUTO_INCREMENT,
   nombre_completo VARCHAR(50),
   correo VARCHAR(50),
   usuario VARCHAR(150),
-  constrasena VARCHAR(150)
+  contrasena VARCHAR(150)
 );
------------------------
+```
+## Posterior Actualizacion
+- Todavia no usar esta base de datos
+```sql
 CREATE DATABASE restaurante;
 USE restaurante;
 CREATE TABLE Category
@@ -178,9 +183,9 @@ go
 INSERT INTO Location (location_id, district, direccion, city)
 VALUES (3, 'San Isidro', 'Av Primavera, Magna Loza 4157', 'Lima');
 go
-
-
-
 ```
+## Cambio de puertos
 - Cambiar el puerto, dependiendo de tu servidor local (XAMPP), para evitar conflictos.
+  
 ![Cambiar puerto](puerto_mysql.jpg)
+

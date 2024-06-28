@@ -214,7 +214,7 @@ $menu = [
     [
         'id' => 20,
         'title' => 'Picarones',
-        'src' => "assets/img/Mazamorra_morada.png",
+        'src' => "assets/img/Picarones.jpg",
         'alt' => 'Picarones',
         'description' => 'Irresistibles Picarones bañados en miel de chancaca. El postre perfecto para un dulce momento de placer.',
         'stars' => 4,
