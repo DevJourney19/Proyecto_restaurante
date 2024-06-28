@@ -185,8 +185,6 @@ VALUES (3, 'San Isidro', 'Av Primavera, Magna Loza 4157', 'Lima');
 go
 ```
 ## Cambio de puertos
-
-```
 - Cambiar el puerto, dependiendo de tu servidor local (XAMPP), para evitar conflictos.
 ![Cambiar puerto](puerto_mysql.jpg)
 
