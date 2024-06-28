@@ -34,7 +34,7 @@ if (!isset($_SESSION['usuario'])) {
         </header>
         <main class="main_bienvenida">
             <!--<!-- Agregar imagen con respecto a los comensales  -->
-            <img class="img_bienvenida" src="../../assets/img/mov_bienvenida.jpg" alt="imagen_bienvenida"/>
+            <img class="img_bienvenida" src="../../assets/img/mov_bienvenida.jpg" alt="imagen_bienvenida" style="object-fit: cover;"/>
             <div class="texto_1">
                 <div class="cuadrito_texto_bienvenida">
                     <p class="p1_bienvenida text-light" style="font-size: 32px">¡Bienvenid@!</p>
