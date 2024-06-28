@@ -189,4 +189,4 @@ go
 ```
 - Cambiar el puerto, dependiendo de tu servidor local (XAMPP), para evitar conflictos.
 ![Cambiar puerto](puerto_mysql.jpg)
-```
+
