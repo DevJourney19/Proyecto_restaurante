@@ -11,8 +11,8 @@ CREATE TABLE clientes (
   usuario VARCHAR(150),
   contrasena VARCHAR(150)
 );
------------------------
-## Segunda Actualizacion
+```
+## Posterior Actualizacion
 - Todavia no usar esta base de datos
 ```sql
 CREATE DATABASE restaurante;
@@ -183,9 +183,10 @@ go
 INSERT INTO Location (location_id, district, direccion, city)
 VALUES (3, 'San Isidro', 'Av Primavera, Magna Loza 4157', 'Lima');
 go
-
-
+```
+## Cambio de puertos
 
 ```
 - Cambiar el puerto, dependiendo de tu servidor local (XAMPP), para evitar conflictos.
 ![Cambiar puerto](puerto_mysql.jpg)
+```
