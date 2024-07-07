@@ -28,7 +28,7 @@ if (isset($_GET["e"])) {
             <div class="container" id="container">
                 <!-- Sign up -->
                 <div class="form-container sign-up">
-                    <form class="formulario_register" id="reg_registrar">
+                    <form class="formulario_register" method="post"  id="reg_registrar" action="php/user_register.php">
                         <h2>Registrarse</h2>
                         <input id="r_fname" title="nombre completo para registro" type="text" placeholder="Nombre completo" name="nombre_completo" autocomplete="off" required />
                         <input id="r_email" title="email para registro" type="email" placeholder="Correo Electrónico" name="correoR" autocomplete="off" required />
@@ -41,7 +41,7 @@ if (isset($_GET["e"])) {
                 </div>
                 <!-- Login -->
                 <div class="form-container log-in">
-                    <form class="formulario_login" action="php/no_bd/procesar_login.php" method="post">
+                    <form class="formulario_login" method="post" action="php/user_login.php">
                         <h2>Iniciar sesión</h2>
                         <input id="usuario-login" title="usuario de inicio de sesion" type="text" placeholder="Nombre de Usuario" name="usuario" autocomplete="off" required />
                         <input id="password-login" title="password de inicio de sesion" type="password" placeholder="Contraseña" name="contrasena" autocomplete="off" required />
@@ -77,8 +77,7 @@ if (isset($_GET["e"])) {
                 <a id="regresar_a_home" href="index.php">Regresar</a>
             </div>
         </footer>
-        <script src="js/login_signup.js" type="text/javascript"></script>
-        <script src="js/mensaje_formulario.js" type="text/javascript"></script>
-        <script src="js/ocultar_error.js" type="text/javascript"></script>
+        <script src="./js/login_signup.js" type="text/javascript"></script>
+        <script src="./js/mensaje_formulario.js" type="text/javascript"></script>
     </body>
 </html>
