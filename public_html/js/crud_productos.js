@@ -23,17 +23,9 @@ function cart_products() {
                     </div>
                 </div>
                 <div class="item_quantity">
-                    <button>
-                        <i class='bx bx-plus' id="${id}"></i>
-                    </button>
+                    <span><i class='bx bx-shopping-bag'></i></span>
                     <span>${amount}</span>
-                    <button>
-                        <i class='bx bx-minus' id="${id}"></i>
-                    </button>
                 </div>
-                <button class="item_remove">
-                    <i class='bx bx-x' id="${id}"></i>
-                </button>
         </div>    
 `;
   }
