@@ -98,7 +98,7 @@ function print_product() {
             <p>Total</p>
             <span>S/. ${precio_total}</span>
         </div>
-        <button>Pedir</button>
+        <button id="pagar" onclick="pagar()">Pedir</button>
     </div>
     `;
   //Mostraremos la carta en el slide
@@ -171,6 +171,15 @@ const metodos_generales = () => {
   window.localStorage.setItem("contador", count);
   window.localStorage.setItem("cart", JSON.stringify(cart));
   print_product();
+};
+
+const pagar = () => {
+  const total = precio_total;
+  if (total === 0) {
+    return alert("No hay productos en el carrito");
+  }else{
+    window.location.href = "./pago.php";
+  }
 };
 
 add_product();
