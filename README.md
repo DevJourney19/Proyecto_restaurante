@@ -103,7 +103,8 @@ CREATE TABLE Plato
 	title                 varchar(20)  NOT NULL ,
 	src 		TEXT NOT NULL,
 	price                float  NULL ,
-	stars		integer NOT NULL
+	stars		integer NOT NULL,
+	amount 		integer NULL DEFAULT 1,
 	description          varchar(50)  NOT NULL ,
 	category_id          integer  NULL 
 )
