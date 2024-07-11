@@ -12,4 +12,6 @@ btnOnline.addEventListener("click", () => {
 btnContraentrega.addEventListener("click", () => {
   contraentrega.classList.remove("hidden");
   online.classList.add("hidden");
+
 });
+
