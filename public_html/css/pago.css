@@ -1,21 +1,19 @@
+body {
+  background-color: #f7f7f7;
+}
 
 body {
   background-color: #f7f7f7;
 }
 
-
-body{
-  background-color: #F7F7F7;
-}
-
-main{
+main {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   justify-content: space-between;
 }
 
-input[type="text"]{
+input[type="text"] {
   color: white;
   outline: none;
   width: 100%;
@@ -25,7 +23,6 @@ input[type="text"]{
   border-bottom: 1px solid white;
   background-color: transparent;
 }
-
 
 .hidden {
   display: none;
@@ -44,13 +41,14 @@ input[type="text"]{
   gap: 10px;
 }
 
-.payment_title, .shopping_title{
+.payment_title,
+.shopping_title {
   font-size: 2rem;
-  font-weight:700;
+  font-weight: 700;
   margin-bottom: 25px;
 }
 
-.type_payment > div{
+.type_payment > div {
   display: flex;
   gap: 10px;
   align-items: center;
@@ -78,33 +76,33 @@ input[type="text"]{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: .4s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 
 .type_payment > div > input:checked {
-  background-color: #FFD700;
+  background-color: #ffd700;
 }
 
-.cart{
+.cart {
   padding: 25px;
 }
 
-.payment{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+.payment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 25px;
   color: white;
   background-color: #343434;
 }
 
 img.logo {
-  height:100px;
+  height: 100px;
   width: 100px;
   margin-bottom: 30px;
 }
 
-img{
+img {
   max-width: 150px;
   width: 100%;
   height: 100%;
@@ -265,7 +263,7 @@ img{
   .item_quantity {
     flex-direction: row;
   }
-
+}
 @media screen and (min-width: 768px) {
   .payment,
   .cart {
@@ -302,88 +300,90 @@ img{
   .cart_list_card img {
     width: 100%;
     height: 100%;
-=======
-.img_decoration{
-  position: absolute;
+  }
+  .img_decoration {
+    position: absolute;
+  }
+
+  .type_card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    border: 2px solid white;
+    justify-content: center;
+    margin: 20px 0px;
+    width: fit-content;
+    border-radius: 30px;
+  }
+
+  .type_card > div {
+    display: flex;
+  }
+
+  .type_card > div > input {
+    appearance: none;
+  }
+
+  .type_card > div > label {
+    border-radius: 0 30px 30px 0;
+    padding: 0px 40px;
+    color: white;
+    background-color: transparent;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+  }
+
+  .type_card > div:first-child > label {
+    border-radius: 30px 0 0 30px;
+  }
+
+  .type_card > div > input:checked + label {
+    background: white;
+    color: black;
+  }
+
+  .checkout {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .checkout > button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    background-color: #ffb100;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 30px;
+  }
+
+  .error {
+    color: red;
+    font-weight: 700;
+  }
+
+  .card_total {
+    border-top: 1px solid #343434;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    padding: 20px 0;
+    font-size: 3rem;
+  }
 }
 
-.type_card{
-  display: flex;
-  flex-wrap:wrap;
-  gap: 10px;
-  align-items: center;
-  border:2px solid white;
-  justify-content:center;
-  margin:20px 0px;
-  width:fit-content;
-  border-radius:30px;
-}
-
-.type_card>div{
-  display:flex;
-}
-
-.type_card > div > input{
-  appearance:none;
-}
-
-.type_card>div>label{
-  border-radius: 0 30px 30px 0;
-  padding:0px 40px;
-  color:white;
-  background-color: transparent;
-  font-size:2rem;
-  border:none;
-  cursor: pointer;
-}
-
-.type_card>div:first-child > label{
-  border-radius: 30px 0 0 30px ;
-}
-
-.type_card>div>input:checked + label{
-  background:white;
-  color:black;
-}
-
-.checkout{
-  display:flex;
-  justify-content:flex-end;
-}
-
-.checkout>button{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-weight:600;
-  background-color:#ffb100;
-  border:none;
-  border-radius:20px;
-  padding:5px 30px;
-}
-
-.error{
-  color:red;
-  font-weight:700;
-}
-
-.card_total{
-  border-top: 1px solid #343434;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin:20px 0;
-  padding: 20px 0;
-  font-size: 3rem;
-}
-
-@media screen and (min-width: 768px){
-  main{
+@media screen and (min-width: 768px) {
+  main {
     flex-direction: row;
     gap: 20px;
   }
 
-  .payment, .cart{
+  .payment,
+  .cart {
     padding: 50px;
   }
 }
