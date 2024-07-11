@@ -185,6 +185,29 @@ go
 INSERT INTO Location (location_id, district, direccion, city)
 VALUES (3, 'San Isidro', 'Av Primavera, Magna Loza 4157', 'Lima');
 go
+
+INSERT INTO platos (id, title, src, alt, description, stars, price, amount, type) VALUES
+(1, 'Lomo Saltado', 'assets/img/lomo_saltado.png', 'Lomo Saltado', 'Delicioso plato peruano que combina tiernos trozos de lomo de res con cebolla, tomate y papas fritas', 5, 26.50, 1, 'Principal'),
+(2, 'Ensalada César', 'assets/img/ensalada_cesar.png', 'Ensalada César', 'Clásica ensalada con lechuga romana, crutones, queso parmesano y aderezo César.', 4, 15.00, 1, 'Ensalada'),
+(3, 'Causa Limeña', 'assets/img/causa.png', 'Causa Limeña', 'Puré de papas sazonado con ají amarillo y relleno de pollo, atún o mariscos.', 5, 12.00, 1, 'Aperitivo'),
+(4, 'Chicha Morada', 'assets/img/chicha_morada.webp', 'Chicha Morada', 'Refrescante bebida peruana hecha de maíz morado, piña, manzana y especias.', 4, 8.00, 1, 'Bebida'),
+(5, 'Suspiro a la Limeña', 'assets/img/suspiro.gif', 'Suspiro a la Limeña', 'Delicioso postre peruano hecho de leche condensada, azúcar, yemas de huevo y merengue.', 5, 10.00, 1, 'Postre'),
+(6, 'Seco de Cordero', 'assets/img/seco.png', 'Seco de Cordero', 'Guiso de cordero cocido lentamente con cilantro, ají amarillo y cerveza.', 4, 29.00, 1, 'Principal'),
+(7, 'Ensalada de Quinoa', 'assets/img/ensalada_quinoa.png', 'Ensalada de Quinoa', 'Ensalada nutritiva con quinoa, tomates cherry, pepino, y vinagreta de limón.', 5, 23.00, 1, 'Ensalada'),
+(8, 'Anticuchos', 'assets/img/anticucho.png', 'Anticuchos', 'Brochetas de corazón de res marinadas en ají panca y especias, servidas con papas doradas.', 5, 14.00, 1, 'Aperitivo'),
+(9, 'Pisco Sour', 'assets/img/pisco_sour.png', 'Pisco Sour', 'Cóctel clásico peruano hecho con pisco, jugo de limón, jarabe de goma, clara de huevo y amargo de angostura.', 5, 13.00, 1, 'Bebida'),
+(10, 'Turrón de Doña Pepa', 'assets/img/turron.png', 'Turrón de Doña Pepa', 'Dulce tradicional hecho con barras de harina de trigo, bañadas en miel de chancaca y decoradas con caramelos.', 4, 9.00, 1, 'Postre'),
+(11, 'Ají de Gallina', 'assets/img/Ajide_gallina.jpeg', 'Ají de Gallina', 'Suave pollo desmenuzado en una cremosa salsa de ají amarillo y nueces. ¡Un clásico reconfortante!', 5, 25.00, 1, 'Principal'),
+(12, 'Arroz con Pato', 'assets/img/Arrozcon_pato.jpg', 'Arroz con Pato', 'Exquisito pato cocido a la perfección con arroz verde y especias. ¡Un deleite del norte del Perú!', 5, 35.00, 1, 'Principal'),
+(13, 'Solterito', 'assets/img/Solterito.jpg', 'Solterito', 'Fresca mezcla de choclo, habas y queso fresco. ¡Ideal para los días calurosos!', 4, 15.00, 1, 'Ensalada'),
+(14, 'Ensalada de Betarraga', 'assets/img/Betarraga.jpg', 'Ensalada de Betarraga', 'Dulce betarraga cocida con zanahoria y papa, aderezada con mayonesa. ¡Un toque dulce y salado!', 4, 12.00, 1, 'Ensalada'),
+(15, 'Papa a la Huancaína', 'assets/img/Huancaina.jpg', 'Papa a la Huancaína', 'Rodajas de papa cubiertas con una cremosa salsa de queso y ají. ¡Irresistiblemente deliciosa!', 5, 12.00, 1, 'Aperitivo'),
+(16, 'Tamalitos Verdes', 'assets/img/Tamal_verde.jpeg', 'Tamalitos Verdes', 'Tamales verdes de maíz con cilantro, rellenos de carne. ¡Sabor tradicional en cada bocado!', 4, 10.00, 1, 'Aperitivo'),
+(17, 'Emoliente', 'assets/img/Emoliente.png', 'Emoliente', 'Bebida caliente a base de granos tostados de cebada, extractos de hierbas medicinales. ¡Reconfortante y saludable!', 4, 8.00, 1, 'Bebida'),
+(18, 'Chicha de Jora', 'assets/img/Jora.jpg', 'Chicha de Jora', 'Maíz germinado, denominado Jora, diferentes frutos y especias aromáticas.', 4, 8.00, 1, 'Bebida'),
+(19, 'Mazamorra Morada', 'assets/img/Mazamorra_morada.png', 'Mazamorra Morada', 'Postre con frutas frescas y un toque de canela, tradicional peruano que te sorprenderá.', 5, 10.00, 1, 'Postre'),
+(20, 'Picarones', 'assets/img/Picarones.jpg', 'Picarones', 'Irresistibles Picarones bañados en miel de chancaca. El postre perfecto para un dulce momento de placer.', 4, 10.00, 1, 'Postre');
+go
 ```
 ## Cambio de puertos
 - Cambiar el puerto, dependiendo de tu servidor local (XAMPP), para evitar conflictos.
