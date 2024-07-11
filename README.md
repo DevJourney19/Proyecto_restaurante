@@ -99,7 +99,7 @@ go
 
 CREATE TABLE Plato
 ( 
-	id             varchar(20)  NOT NULL ,
+	id             id  NOT NULL ,
 	title                 varchar(20)  NOT NULL ,
 	src 		TEXT NOT NULL,
 	price                float  NULL ,
