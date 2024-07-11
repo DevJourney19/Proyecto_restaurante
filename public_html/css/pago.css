@@ -180,6 +180,7 @@ img {
 
 .cart_list_card span {
   font-weight: 600;
+  font-size: 20px;
 }
 
 .cart_card_info {
@@ -197,7 +198,7 @@ img {
 
 .item_quantity {
   border-radius: 10px;
-  padding: 5px;
+  padding: 5px 10px;
   font-weight: 600;
   background: #ffb100;
   display: flex;
@@ -227,6 +228,9 @@ img {
 }
 
 @media screen and (min-width: 576px) {
+  .item_quantity {
+    flex-direction: row;
+  }
   .cart_card_description > h4 {
     font-size: 20px;
   }
