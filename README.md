@@ -83,7 +83,7 @@ CREATE TABLE Reservation
 	phone_number            varchar(20)  NOT NULL ,
 	companions       integer  NULL ,
 	date_time          datetime NULL ,
-	message    varchar(20)  NULL ,
+	message    varchar(300)  NULL ,
 	location_id          integer  NULL,
     FOREIGN KEY fk_loc(location_id) REFERENCES location(id)
 );
