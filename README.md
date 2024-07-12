@@ -18,7 +18,7 @@ CREATE TABLE clientes (
 CREATE DATABASE restaurante;
 USE restaurante;
 
-CREATE TABLE Cliente
+CREATE TABLE Client
 ( 
 	id            integer  NOT NULL ,
 	fullname             varchar(30)  NOT NULL ,
@@ -29,18 +29,18 @@ CREATE TABLE Cliente
 )
 go
 
-ALTER TABLE Cliente
+ALTER TABLE Client
 	ADD CONSTRAINT XPKCliente PRIMARY KEY  CLUSTERED (id ASC)
 go
 
-CREATE TABLE Metodo_Pago
+CREATE TABLE Payment_method
 ( 
 	id       integer  NOT NULL ,
 	name                 varchar(20)  NOT NULL 
 )
 go
 
-ALTER TABLE Metodo_Pago
+ALTER TABLE Payment_method
 	ADD CONSTRAINT XPKMetodo_Pago PRIMARY KEY  CLUSTERED (id ASC)
 go
 
@@ -82,8 +82,8 @@ CREATE TABLE Reservation
 	email            varchar(100)  NOT NULL ,
 	phone_number            varchar(20)  NOT NULL ,
 	companions       integer  NULL ,
-	fecha_hora           datetime NULL ,
-	mensaje_adicional    varchar(20)  NULL ,
+	date_time          datetime NULL ,
+	message    varchar(20)  NULL ,
 	location_id          integer  NULL,
     FOREIGN KEY fk_loc(location_id) REFERENCES location(id)
 );
@@ -118,27 +118,21 @@ ALTER TABLE Orders
 		ON UPDATE NO ACTION
 go
 
-ALTER TABLE Reservation
-	ADD CONSTRAINT R_1 FOREIGN KEY (location_id) REFERENCES Location(id)
-		ON DELETE NO ACTION
-		ON UPDATE NO ACTION
-go
-
 CREATE TABLE Location
 ( 
 	id          integer  NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	district             varchar(50)  NOT NULL ,
-	direccion            varchar(20)  NOT NULL ,
+	address            varchar(150)  NOT NULL ,
 	city                 varchar(30)  NOT NULL 
 );
 
-INSERT INTO Location (district, direccion, city)
+INSERT INTO Location (district, address, city)
 VALUES ( 'Miraflores', 'Av La Colmena-Bellavista, Garcia Nelaza 1948', 'Lima');
 
-INSERT INTO Location (district, direccion, city)
+INSERT INTO Location (district, address, city)
 VALUES ('Santiago de Surco', 'Av Paraiso, Mendoza 1568', 'Lima');
 
-INSERT INTO Location (district, direccion, city)
+INSERT INTO Location (district, address, city)
 VALUES ('San Isidro', 'Av Primavera, Magna Loza 4157', 'Lima');
 
 CREATE TABLE `productos` (
