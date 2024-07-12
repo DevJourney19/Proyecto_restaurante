@@ -135,7 +135,7 @@ VALUES ('Santiago de Surco', 'Av Paraiso, Mendoza 1568', 'Lima');
 INSERT INTO Location (district, address, city)
 VALUES ('San Isidro', 'Av Primavera, Magna Loza 4157', 'Lima');
 
-CREATE TABLE `productos` (
+CREATE TABLE `products` (
   `id` int(11) NOT NULL,
   `title` varchar(20) NOT NULL,
   `src` text NOT NULL,
@@ -146,7 +146,7 @@ CREATE TABLE `productos` (
   `category_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-INSERT INTO `productos` (`id`, `title`, `src`, `price`, `stars`, `amount`, `description`, `category_id`) VALUES
+INSERT INTO `products` (`id`, `title`, `src`, `price`, `stars`, `amount`, `description`, `category_id`) VALUES
 (1, 'Lomo Saltado', 'assets/img/lomo_saltado.png', 26.5, 5, 1, 'Delicioso plato peruano que combina tiernos trozos', 1),
 (2, 'Ensalada César', 'assets/img/ensalada_cesar.png', 15, 4, 1, 'Clásica ensalada con lechuga romana, crutones, que', 2),
 (3, 'Causa Limeña', 'assets/img/causa.png', 12, 5, 1, 'Puré de papas sazonado con ají amarillo y relleno ', 3),
@@ -168,14 +168,14 @@ INSERT INTO `productos` (`id`, `title`, `src`, `price`, `stars`, `amount`, `desc
 (19, 'Mazamorra Morada', 'assets/img/Mazamorra_morada.png', 10, 5, 1, 'Postre con frutas frescas y un toque de canela, tr', 5),
 (20, 'Picarones', 'assets/img/Picarones.jpg', 10, 4, 1, 'Irresistibles Picarones bañados en miel de chancac', 5);
 
-ALTER TABLE `productos`
+ALTER TABLE `products`
   ADD PRIMARY KEY (`id`),
   ADD KEY `category_id` (`category_id`);
 
-ALTER TABLE `productos`
+ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
-ALTER TABLE `productos`
+ALTER TABLE `products`
   ADD CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;
 COMMIT;
 
