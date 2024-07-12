@@ -33,19 +33,6 @@ ALTER TABLE Cliente
 	ADD CONSTRAINT XPKCliente PRIMARY KEY  CLUSTERED (id ASC)
 go
 
-CREATE TABLE Location
-( 
-	id          integer  NOT NULL ,
-	district             varchar(50)  NOT NULL ,
-	direccion            varchar(20)  NOT NULL ,
-	city                 varchar(30)  NOT NULL 
-)
-go
-
-ALTER TABLE Location
-	ADD CONSTRAINT XPKLocation PRIMARY KEY  CLUSTERED (id ASC)
-go
-
 CREATE TABLE Metodo_Pago
 ( 
 	id       integer  NOT NULL ,
@@ -89,21 +76,17 @@ go
 
 CREATE TABLE Reservation
 ( 
-	id       varchar(20)  NOT NULL ,
-	fullname         varchar(100)  NULL ,
+	id       integer  NOT NULL PRIMARY KEY AUTO_INCREMENT ,
+	fullname         varchar(150) NOT NULL ,
 	consult_type 		varchar(50) NOT NULL,
-	email            varchar(20)  NOT NULL ,
+	email            varchar(100)  NOT NULL ,
 	phone_number            varchar(20)  NOT NULL ,
 	companions       integer  NULL ,
 	fecha_hora           datetime NULL ,
 	mensaje_adicional    varchar(20)  NULL ,
-	location_id          integer  NULL 
-)
-go
-
-ALTER TABLE Reservation
-	ADD CONSTRAINT XPKReservation PRIMARY KEY  CLUSTERED (id ASC)
-go
+	location_id          integer  NULL,
+    FOREIGN KEY fk_loc(location_id) REFERENCES location(id)
+);
 
 ALTER TABLE Order_Detail
 	ADD CONSTRAINT R_6 FOREIGN KEY (order_id) REFERENCES Orders(id)
@@ -141,17 +124,22 @@ ALTER TABLE Reservation
 		ON UPDATE NO ACTION
 go
 
-INSERT INTO Location (location_id, district, direccion, city)
-VALUES (1, 'Miraflores', 'Av La Colmena-Bellavista, Garcia Nelaza 1948', 'Lima');
-go
+CREATE TABLE Location
+( 
+	id          integer  NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	district             varchar(50)  NOT NULL ,
+	direccion            varchar(20)  NOT NULL ,
+	city                 varchar(30)  NOT NULL 
+);
 
-INSERT INTO Location (location_id, district, direccion, city)
-VALUES (2, 'Santiago de Surco', 'Av Paraiso, Mendoza 1568', 'Lima');
-go
+INSERT INTO Location (district, direccion, city)
+VALUES ( 'Miraflores', 'Av La Colmena-Bellavista, Garcia Nelaza 1948', 'Lima');
 
-INSERT INTO Location (location_id, district, direccion, city)
-VALUES (3, 'San Isidro', 'Av Primavera, Magna Loza 4157', 'Lima');
-go
+INSERT INTO Location (district, direccion, city)
+VALUES ('Santiago de Surco', 'Av Paraiso, Mendoza 1568', 'Lima');
+
+INSERT INTO Location (district, direccion, city)
+VALUES ('San Isidro', 'Av Primavera, Magna Loza 4157', 'Lima');
 
 CREATE TABLE `productos` (
   `id` int(11) NOT NULL,
