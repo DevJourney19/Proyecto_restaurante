@@ -82,7 +82,8 @@ CREATE TABLE Reservation
 	email            varchar(100)  NOT NULL ,
 	phone_number            varchar(20)  NOT NULL ,
 	companions       integer  NULL ,
-	date_time          datetime NULL ,
+	date          date NULL ,
+	time 	      time NULL,
 	message    varchar(300)  NULL ,
 	location_id          integer  NULL,
     FOREIGN KEY fk_loc(location_id) REFERENCES location(id)
