@@ -1,3 +1,17 @@
+<?php
+include 'php/util/connection.php';
+$sql = "SELECT * FROM products";
+try {
+  conectar();
+  $resultado = consultar($sql);
+  $menu = $resultado;
+  unset($resultado);
+  desconectar();
+} catch (Exception $exc) {
+  die($exc->getMessage());
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,21 +36,16 @@
                 <div class="nav_categories">
                     <ul>
                         <li><a data-categoria="Todo" href="#" class="category_active category_item">Todos</a></li>
-                        <li><a data-categoria="Principal" class="category_item">Platos Principales</a></li>
-                        <li><a data-categoria="Ensalada" class="category_item">Ensaladas</a></li>
-                        <li><a data-categoria="Aperitivo" class="category_item">Aperitivos</a></li>
-                        <li><a data-categoria="Bebida" class="category_item">Bebidas</a></li>
-                        <li><a data-categoria="Postre" class="category_item">Postres</a></li>
+                        <li><a data-categoria="1" class="category_item">Platos Principales</a></li>
+                        <li><a data-categoria="2" class="category_item">Ensaladas</a></li>
+                        <li><a data-categoria="3" class="category_item">Aperitivos</a></li>
+                        <li><a data-categoria="4" class="category_item">Bebidas</a></li>
+                        <li><a data-categoria="5" class="category_item">Postres</a></li>
                     </ul>
                 </div>
             </div>
             <section id="menu" class="menu">
                 <div class="menu_cards">
-                    <?php
-                    ob_start();  // Inicia el control de salida
-                    require './php/datos_menu.php';
-                    ob_end_clean();  // Termina el control de salida y descarta cualquier salida capturada
-                    ?>
                     <?php
                     $limit = isset($_GET['limit']) ? (int) $_GET['limit'] : 6;
                     $items = array_slice($menu, 0, $limit);
@@ -46,7 +55,7 @@
                         <div class="card">
                             <div>
                                 <div class="container_img">
-                                    <img src="<?= $item['src'] ?>" alt="<?= $item['alt'] ?>" class="card_img" style="width: 95px; height: 100px" />
+                                    <img src="<?= $item['src'] ?>" alt="<?= $item['title'] ?>" class="card_img" style="width: 95px; height: 100px" />
                                 </div>
                                 <div class="card_inner">
                                     <div class="description">

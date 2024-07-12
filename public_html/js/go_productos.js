@@ -29,7 +29,7 @@ function add_product() {
           .then((response) => response.json())
           .then((menu) => {
             //Trae el plato que tenga el mismo id que el button del menu
-            const product_find = menu.find((product) => product.id === id);
+            const product_find = menu.find((product) => Number(product.id) === id);
             //Si el producto no se encuentra en el cart, procede...
             if (!cart[product_find.id]) {
               //Esto se hace para no almacenar platillos repetidos en el slide
@@ -37,7 +37,7 @@ function add_product() {
               count++;
               notification_nav++;
               //Suma los precios de los productos seleccionados
-              precio_total += product_find.price;
+              precio_total += Number(product_find.price);
               //Almacenamos los datos en el navegador (persistencia)
               window.localStorage.setItem("notificacion", notification_nav);
               window.localStorage.setItem("cart", JSON.stringify(cart));
