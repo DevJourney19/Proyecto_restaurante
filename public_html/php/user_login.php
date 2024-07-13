@@ -6,6 +6,7 @@ include './util/connection.php';
 //Traemos los datos del html
 $user = $_POST['usuario'];
 $pass = $_POST['contrasena'];
+//!!BUSCAR LA MANERA PARA CAMBIAR DE HASH TIPO SHA512 A AESCRIPT, CLAVE CLAVE ---------------------------------------!!!
 $pass = hash('sha512', $pass);
 
 $validar_login = "SELECT * FROM clientes WHERE usuario = '$user' AND contrasena = '$pass'";

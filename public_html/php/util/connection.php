@@ -16,9 +16,12 @@ function desconectar(){
 function consultar($query) {
   global $cnx;
   $result = mysqli_query($cnx, $query);
+  //creamos una lista donde almacenaremos todos los registros de las filas que hemos hecho
   $lista = array();
+  //Retorna un array asociativo correspondiente de la fila obtenida o null si ya no hay más filas
   while ($registro = mysqli_fetch_assoc($result)) {
       $lista[] = $registro;
+      
   }
   mysqli_free_result($result);
   unset($registro);
