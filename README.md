@@ -12,129 +12,142 @@ CREATE TABLE clientes (
   contrasena VARCHAR(150)
 );
 ```
-## Posterior Actualizacion
-- Todavia no usar esta base de datos
+## Tablas
 ```sql
-CREATE DATABASE restaurante;
-USE restaurante;
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: localhost:3308
+-- Tiempo de generación: 13-07-2024 a las 02:02:43
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
-CREATE TABLE Client
-( 
-	id            integer  NOT NULL ,
-	fullname             varchar(30)  NOT NULL ,
-	password             varchar(20)  NOT NULL ,
-	direccion            varchar(30)  NULL ,
-	phone_number         char(9)  NULL ,
-	email                varchar(20)  NOT NULL 
-)
-go
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
 
-ALTER TABLE Client
-	ADD CONSTRAINT XPKCliente PRIMARY KEY  CLUSTERED (id ASC)
-go
 
-CREATE TABLE Payment_method
-( 
-	id       integer  NOT NULL ,
-	name                 varchar(20)  NOT NULL 
-)
-go
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
-ALTER TABLE Payment_method
-	ADD CONSTRAINT XPKMetodo_Pago PRIMARY KEY  CLUSTERED (id ASC)
-go
+--
+-- Base de datos: `restaurante`
+--
 
-CREATE TABLE Order_Detail
-( 
-	id      integer  NOT NULL ,
-	cantidad_platos      integer  NOT NULL ,
-	subtotal             integer  NOT NULL ,
-	order_id             integer  NULL ,
-	plato_id             varchar(20)  NULL 
-)
-go
+-- --------------------------------------------------------
 
-ALTER TABLE Order_Detail
-	ADD CONSTRAINT XPKOrder_Detail PRIMARY KEY  CLUSTERED (id ASC)
-go
+--
+-- Estructura de tabla para la tabla `category`
+--
 
-CREATE TABLE Orders
-( 
-	id             integer  NOT NULL ,
-	fecha_hora                datetime  NOT NULL ,
-	tipo_pedido          varchar(30)  NOT NULL ,
-	precio_total         float  NULL ,
-	location_id          integer  NULL ,
-	client_id            integer  NULL ,
-	metodo_pago_id       integer  NULL 
-)
-go
+CREATE TABLE `category` (
+  `id` int(11) NOT NULL,
+  `name` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-ALTER TABLE Orders
-	ADD CONSTRAINT XPKOrders PRIMARY KEY  CLUSTERED (id ASC)
-go
+--
+-- Volcado de datos para la tabla `category`
+--
 
-CREATE TABLE Reservation
-( 
-	id       integer  NOT NULL PRIMARY KEY AUTO_INCREMENT ,
-	fullname         varchar(150) NOT NULL ,
-	consult_type 		varchar(50) NOT NULL,
-	email            varchar(100)  NOT NULL ,
-	phone_number            varchar(20)  NOT NULL ,
-	companions       integer  NULL ,
-	date          date NULL ,
-	time 	      time NULL,
-	message    varchar(300)  NULL ,
-	location_id          integer  NULL,
-    FOREIGN KEY fk_loc(location_id) REFERENCES location(id)
-);
+INSERT INTO `category` (`id`, `name`) VALUES
+(1, 'Principal'),
+(2, 'Ensalada'),
+(3, 'Aperitivo'),
+(4, 'Bebida'),
+(5, 'Postre');
 
-ALTER TABLE Order_Detail
-	ADD CONSTRAINT R_6 FOREIGN KEY (order_id) REFERENCES Orders(id)
-		ON DELETE NO ACTION
-		ON UPDATE NO ACTION
-go
+-- --------------------------------------------------------
 
-ALTER TABLE Order_Detail
-	ADD CONSTRAINT R_7 FOREIGN KEY (plato_id) REFERENCES Plato(id)
-		ON DELETE NO ACTION
-		ON UPDATE NO ACTION
-go
+--
+-- Estructura de tabla para la tabla `clients`
+--
 
-ALTER TABLE Orders
-	ADD CONSTRAINT R_2 FOREIGN KEY (location_id) REFERENCES Location(id)
-		ON DELETE NO ACTION
-		ON UPDATE NO ACTION
-go
+CREATE TABLE `clients` (
+  `id` int(11) NOT NULL,
+  `fullname` varchar(30) NOT NULL,
+  `password` blob NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `username` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-ALTER TABLE Orders
-	ADD CONSTRAINT R_3 FOREIGN KEY (client_id) REFERENCES Cliente(id)
-		ON DELETE NO ACTION
-		ON UPDATE NO ACTION
-go
+--
+-- Volcado de datos para la tabla `clients`
+--
 
-ALTER TABLE Orders
-	ADD CONSTRAINT R_4 FOREIGN KEY (metodo_pago_id) REFERENCES Metodo_Pago(id)
-		ON DELETE NO ACTION
-		ON UPDATE NO ACTION
-go
+INSERT INTO `clients` (`id`, `fullname`, `password`, `email`, `username`) VALUES
+(3, 'Elena', 0x81f44672f7707f551ea23c36b66f7afe, 'easp0104@gmail.com', 'lena');
 
-CREATE TABLE Location
-( 
-	id          integer  NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	district             varchar(50)  NOT NULL ,
-	address            varchar(150)  NOT NULL ,
-	city                 varchar(30)  NOT NULL 
-);
+-- --------------------------------------------------------
 
-INSERT INTO Location (district, address, city)
-VALUES ( 'Miraflores', 'Av La Colmena-Bellavista, Garcia Nelaza 1948', 'Lima');
+--
+-- Estructura de tabla para la tabla `location`
+--
 
-INSERT INTO Location (district, address, city)
-VALUES ('Santiago de Surco', 'Av Paraiso, Mendoza 1568', 'Lima');
+CREATE TABLE `location` (
+  `id` int(11) NOT NULL,
+  `district` varchar(50) NOT NULL,
+  `address` varchar(150) NOT NULL,
+  `city` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-INSERT INTO Location (district, address, city)
-VALUES ('San Isidro', 'Av Primavera, Magna Loza 4157', 'Lima');
+--
+-- Volcado de datos para la tabla `location`
+--
+
+INSERT INTO `location` (`id`, `district`, `address`, `city`) VALUES
+(1, 'Miraflores', 'Av La Colmena-Bellav', 'Lima'),
+(2, 'Santiago de Surco', 'Av Paraiso, Mendoza ', 'Lima'),
+(3, 'San Isidro', 'Av Primavera, Magna ', 'Lima');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `type_order` varchar(50) DEFAULT NULL,
+  `total_price` float NOT NULL,
+  `location_id` int(11) DEFAULT NULL,
+  `client_id` int(11) DEFAULT NULL,
+  `payment_method_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `order_detail`
+--
+
+CREATE TABLE `order_detail` (
+  `id` int(11) NOT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `subtotal` int(11) DEFAULT NULL,
+  `order_id` int(11) DEFAULT NULL,
+  `product_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `payment_method`
+--
+
+CREATE TABLE `payment_method` (
+  `id` int(11) NOT NULL,
+  `name` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `products`
+--
 
 CREATE TABLE `products` (
   `id` int(11) NOT NULL,
@@ -146,6 +159,10 @@ CREATE TABLE `products` (
   `description` varchar(50) NOT NULL,
   `category_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `products`
+--
 
 INSERT INTO `products` (`id`, `title`, `src`, `price`, `stars`, `amount`, `description`, `category_id`) VALUES
 (1, 'Lomo Saltado', 'assets/img/lomo_saltado.png', 26.5, 5, 1, 'Delicioso plato peruano que combina tiernos trozos', 1),
@@ -169,16 +186,168 @@ INSERT INTO `products` (`id`, `title`, `src`, `price`, `stars`, `amount`, `descr
 (19, 'Mazamorra Morada', 'assets/img/Mazamorra_morada.png', 10, 5, 1, 'Postre con frutas frescas y un toque de canela, tr', 5),
 (20, 'Picarones', 'assets/img/Picarones.jpg', 10, 4, 1, 'Irresistibles Picarones bañados en miel de chancac', 5);
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `reservation`
+--
+
+CREATE TABLE `reservation` (
+  `id` int(11) NOT NULL,
+  `fullname` varchar(150) NOT NULL,
+  `consult_type` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone_number` varchar(20) NOT NULL,
+  `companions` int(11) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `time` time DEFAULT NULL,
+  `message` varchar(300) DEFAULT NULL,
+  `location_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `reservation`
+--
+
+INSERT INTO `reservation` (`id`, `fullname`, `consult_type`, `email`, `phone_number`, `companions`, `date`, `time`, `message`, `location_id`) VALUES
+(5, 'Elena Suarez', 'mensajes', 'easp0104@gmail.com', '912905731', 0, '0000-00-00', '00:00:00', 'Hola', NULL),
+(10, 'Elena', 'mensaje', 'easp0104@gmail.com', '912478321', 0, '0000-00-00', '00:00:00', 'Dsds', NULL),
+(11, 'Elena', 'reservacion', 'ea@hotmail.com', '912478321', 5, '2024-06-25', '12:00:00', 'Dsdsdsdsds', 1);
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `clients`
+--
+ALTER TABLE `clients`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `location`
+--
+ALTER TABLE `location`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `order_detail`
+--
+ALTER TABLE `order_detail`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `producto_id` (`product_id`);
+
+--
+-- Indices de la tabla `payment_method`
+--
+ALTER TABLE `payment_method`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `products`
+--
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`),
   ADD KEY `category_id` (`category_id`);
 
+--
+-- Indices de la tabla `reservation`
+--
+ALTER TABLE `reservation`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `location_id` (`location_id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `category`
+--
+ALTER TABLE `category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `clients`
+--
+ALTER TABLE `clients`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `location`
+--
+ALTER TABLE `location`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `order_detail`
+--
+ALTER TABLE `order_detail`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `payment_method`
+--
+ALTER TABLE `payment_method`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `products`
+--
 ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
+--
+-- AUTO_INCREMENT de la tabla `reservation`
+--
+ALTER TABLE `reservation`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `order_detail`
+--
+ALTER TABLE `order_detail`
+  ADD CONSTRAINT `order_detail_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;
+
+--
+-- Filtros para la tabla `products`
+--
 ALTER TABLE `products`
-  ADD CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;
+  ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;
+
+--
+-- Filtros para la tabla `reservation`
+--
+ALTER TABLE `reservation`
+  ADD CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;
 COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
 
 ```
 ## Cambio de puertos

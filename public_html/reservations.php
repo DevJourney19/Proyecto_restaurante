@@ -48,13 +48,13 @@ try {
                                 <label for="consulta">Tipo de Consulta</label>
                                 <select name="consulta" id="consulta" onchange="checkType();">
                                     <option value="mensaje">Mensajes</option>
-                                    <option value="reservacion">Reservacion</option>
+                                    <option value="reservacion">Reservación</option>
                                 </select>
                             </div>
                         </div>
                         <div class="double_input">
                             <div>
-                                <label for="email"> Correo electrónico </label>
+                                <label for="email">Correo electrónico</label>
                                 <input name="email" title="email para contacto" type="text" placeholder="Ingrese correo" id="email" />
                             </div>
                             <div>
