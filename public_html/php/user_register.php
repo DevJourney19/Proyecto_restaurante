@@ -9,12 +9,11 @@ $full_name = mayusculaFirstWord(limpiar_cadena($_POST["nombre_completo"]));
 $email = minusculas(limpiar_cadena($_POST["correoR"]));
 $user = limpiar_cadena($_POST["usuarioR"]);
 $pass = limpiar_cadena($_POST["contrasenaR"]);
-$pass = hash('sha512', $pass);
 
 function verificarExistencia($campo, $valor)
 {
     conectar();
-    $query = "SELECT * FROM clientes WHERE $campo = '$valor'";
+    $query = "SELECT * FROM clients WHERE $campo = '$valor'";
     $listado = consultar($query);
     desconectar();
     return count($listado) > 0;
@@ -27,19 +26,19 @@ function enviarRespuesta($estado)
 }
 
 // Verificar correo
-if (verificarExistencia('correo', $email)) {
+if (verificarExistencia('email', $email)) {
     enviarRespuesta("correo_ya_existe");
 }
 
 // Verificar usuario
-if (verificarExistencia('usuario', $user)) {
+if (verificarExistencia('password', $user)) {
     enviarRespuesta("usuario_ya_existe");
 }
 
 // Ejecutar la inserción
 conectar();
-$query = "INSERT INTO clientes(nombre_completo, correo, usuario, contrasena)
-              VALUES('$full_name', '$email', '$user', '$pass')";
+$query = "INSERT INTO clients(fullname, email, username, password)
+              VALUES('$full_name', '$email', '$user', AES_ENCRYPT('$pass','$pass'))";
 if (ejecutar($query)) {
     enviarRespuesta("registrado");
 } else {
