@@ -1,14 +1,11 @@
 <?php
-
-session_start();
 include './util/connection.php';
 
 //Traemos los datos del html
 $user = $_POST['usuario'];
 $pass = $_POST['contrasena'];
-$pass = hash('sha512', $pass);
 
-$validar_login = "SELECT * FROM clientes WHERE usuario = '$user' AND contrasena = '$pass'";
+$validar_login = "SELECT * FROM clients WHERE username = '$user' AND AES_DECRYPT(password, '$pass') = '$pass'";
 
 try {
     conectar();
@@ -17,7 +14,7 @@ try {
     if (count($registro) == 1) {
         session_start();
         $_SESSION['acceso'] = '12345';
-        $_SESSION['usuario'] = $user;
+        $_SESSION['email'] = $registro[0]['email'];
         header("Location: ../bienvenida.php");
     } else {
         session_start();

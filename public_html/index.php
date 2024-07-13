@@ -99,7 +99,7 @@ if (isset($_GET["message"])) {
                 </div>
             </div>
 
-            <?php if ($mensaje === true) : ?>
+            <?php if (!isset($_SESSION['acceso'])) : ?>
                 <div class="dir_registrarse_login">
                     <h4>
                         ¡Hola! ¿Quieres sacar el máximo provecho de nuestro sitio? Regístrate

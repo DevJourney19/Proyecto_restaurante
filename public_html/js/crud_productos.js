@@ -38,6 +38,32 @@ function cart_products() {
   listContainer.innerHTML = html;
 }
 
+async function procesarPago() {
+  const formulario = document.getElementById("formPago");
+  let formData = new FormData(formulario);
+  formData.append('total', localStorage.getItem("p_total"));
+  formData.append('productos', localStorage.getItem("cart"));
+  for (let [key, value] of formData.entries()) {
+    console.log(`${key}: ${value}`);
+  }
+  await fetch("./php/datos_carrito.php", {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.error("Error:", error));
+}
+
+document
+  .getElementById("botonPagar")
+  .addEventListener("click", async function (event) {
+    event.preventDefault();
+    await procesarPago(); // Llamar a la función
+    localStorage.clear();
+    window.location.href = "./menu.php";
+  });
+
 window.addEventListener("load", () => {
   cart_products();
 });

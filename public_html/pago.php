@@ -1,5 +1,18 @@
 <?php
-include_once 'php/util/validar_pago.php';
+include_once 'php/util/connection.php';
+include_once 'php/util/validar_entradas.php';
+validar_entrada('login_signup.php', 'pago');
+
+$sql = "SELECT * FROM location";
+try {
+  conectar();
+  $resultado = consultar($sql);
+  $locations = $resultado;
+  unset($resultado);
+  desconectar();
+} catch (Exception $exc) {
+  die($exc->getMessage());
+}
 ?>
 
 <!DOCTYPE html>
@@ -22,47 +35,56 @@ include_once 'php/util/validar_pago.php';
     </div>
     <div class="payment">
       <h3 class="payment_title">PAYMENT</h3>
-      <form action="">
+      <form id="formPago">
         <div>
-          <input id="direccion" type="text" placeholder="Direccion">
-          <input id="telefono" type="text" placeholder="Telefono">
-        </div>
-        <div class="type_payment">
+          <select id="location" name="location" class="location">
+            <option value="">Selecciona la ubicacion mas cercana</option>
+            <?php
+            foreach ($locations as $location) {
+              echo "<option value='{$location['id']}'>{$location['address']}</option>";
+            }
+            ?>
+          </select>
           <div>
-            <input name="type-payment" id="pago-completo" type="radio" checked>
-            <label for="pago-completo">Pago Online</label>
+            <input id="direccion" type="text" placeholder="Direccion" name="direccion">
+            <input id="telefono" type="text" placeholder="Telefono" name="telefono">
           </div>
-          <div>
-            <input name="type-payment" id="pago-contraentrega" type="radio">
-            <label for="pago-contraentrega">Pago Contraentrega</label>
-          </div>
-        </div>
-        <div id="online" class="">
-          <div class="type_card">
+          <div class="type_payment">
             <div>
-              <input id="visa" type="radio" name="type_card" checked />
-              <label for="visa"><i class='bx bxl-visa'></i></label>
+              <input value="online" name="type-payment" id="pago-completo" type="radio" checked>
+              <label for="pago-completo">Pago Online</label>
             </div>
             <div>
-              <input id="paypal" type="radio" name="type_card" />
-              <label for="paypal"> <i class='bx bxl-paypal'></i></label>
+              <input value="contraentrega" name="type-payment" id="pago-contraentrega" type="radio">
+              <label for="pago-contraentrega">Pago Contraentrega</label>
             </div>
           </div>
-          <div class="online_form">
-            <input id="nombre-titular" type="text" placeholder="Nombre del Titular">
-            <input id="numero-tarjeta" type="text" placeholder="Numero de Tarjeta">
-            <div>
-              <input id="fecha" type="text" placeholder="Fecha Exp.">
-              <input id="cvv" type="text" placeholder="CVV">
+          <div id="online" class="">
+            <div class="type_card">
+              <div>
+                <input id="visa" type="radio" name="type_card" value="visa" checked />
+                <label for="visa"><i class='bx bxl-visa'></i></label>
+              </div>
+              <div>
+                <input id="paypal" type="radio" name="type_card" value="paypal" />
+                <label for="paypal"> <i class='bx bxl-paypal'></i></label>
+              </div>
+            </div>
+            <div class="online_form">
+              <input id="nombre-titular" type="text" placeholder="Nombre del Titular">
+              <input id="numero-tarjeta" type="text" placeholder="Numero de Tarjeta">
+              <div>
+                <input id="fecha" type="text" placeholder="Fecha Exp.">
+                <input id="cvv" type="text" placeholder="CVV">
+              </div>
             </div>
           </div>
-        </div>
-        <div id="contraentrega" class="hidden">
-          <input id="monto-pagar" type="text" placeholder="Monto con el que pagara">
-        </div>
-        <div  class="checkout">
-          <button type="submit">Checkout<i class='bx bx-right-arrow-alt'></i></button>
-        </div>
+          <div id="contraentrega" class="hidden">
+            <input id="monto-pagar" type="text" placeholder="Monto con el que pagara" name="amount_pay">
+          </div>
+          <div class="checkout">
+            <button id="botonPagar" type="submit">Pagar<i class='bx bx-right-arrow-alt'></i></button>
+          </div>
       </form>
     </div>
     <div class="img_decoration"></div>
