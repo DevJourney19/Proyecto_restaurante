@@ -1,4 +1,5 @@
 <?php
+
 include_once './util/texto.php';
 include 'util/connection.php';
 
@@ -48,12 +49,12 @@ $sql .= is_null($location) ? "NULL" : "'$location'";
 $sql .= ")";
 try {
     conectar();
-    if(ejecutar($sql)){
+    if (ejecutar($sql)) {
         echo "<script>
         window.location.href = '../reservations.php';
         alert('Reservación realizada con éxito');
       </script>";
-    }else{
+    } else {
         echo "<script>
         window.location.href = '../reservations.php';
         alert('Error al realizar la reservación');
