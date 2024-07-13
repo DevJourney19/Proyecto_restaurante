@@ -1,3 +1,18 @@
+<?php
+include 'php/util/connection.php';
+$sql = "SELECT * FROM location";
+try {
+    conectar();
+    $resultado = consultar($sql);
+    $locaciones = $resultado;
+    unset($resultado);
+    desconectar();
+    #var_dump($categoria);
+} catch (Exception $exc) {
+    die($exc->getMessage());
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,9 +66,11 @@
                             <div>
                                 <label for="location">Ubicacion*</label>
                                 <select name="location" id="location">
-                                    <option value="Miraflores">La Trattoria Secreta Miraflores</option>
-                                    <option value="Surco">La Trattoria Secreta Santiago de Surco</option>
-                                    <option value="San Isidro">La Trattoria Secreta San Isidro</option>
+                                <?php
+                                    foreach ($locaciones as $locacion) {
+                                        echo "<option value='" . $locacion['id'] . "'>" . $locacion['district'] ." ". $locacion['address'] . "</option>";
+                                    }
+                                    ?>
                                 </select>
                             </div>
                             <div>

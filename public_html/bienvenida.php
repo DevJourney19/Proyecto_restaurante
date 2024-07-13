@@ -3,9 +3,6 @@ include_once 'php/util/validar_bienvenida.php';
 include 'php/util/connection.php';
 $user = $_SESSION['usuario'];
 $sql = "SELECT nombre_completo FROM clientes WHERE usuario = '$user'";
-// $resultado = $connection->query($sql);
-// $row = $resultado->fetch_assoc();
-// $nombre_completo = $row['nombre_completo'];
 $titulo = "<span class='restaurant_name'>La Trattoria Secreta</span>";
 try {
     conectar();

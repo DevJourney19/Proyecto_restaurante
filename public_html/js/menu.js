@@ -5,6 +5,7 @@ const fetchInfo = async () => {
             .then((data) => {
                 // 'data' es la variable $menu de PHP convertida a un objeto JavaScript
                 menu = data;
+                console.log(menu);
             })
             .catch((error) => console.error("Error:", error));
     return menu;
@@ -26,7 +27,7 @@ const seeMore = async () => {
       <div class="card">
         <div>
           <div class="container_img">
-            <img src=${item["src"]} alt=${item["alt"]} class="card_img" style="width: 95px; height: 100px" />
+            <img src=${item["src"]} alt=${item["title"]} class="card_img" style="width: 95px; height: 100px" />
           </div>
           <div class="card_inner">
             <div class="description">
@@ -53,9 +54,8 @@ const filtrarPlatos = async (categoria, event) => {
     const containerMenu = document.querySelector("#menu");
     const menu = await fetchInfo();
     let cardsHTML = "";
-
     menu.forEach((item) => {
-        if (item["type"] === categoria) {
+        if (item["category_id"] === categoria) {
             let starsHTML = "";
             for (let i = 0; i < item["stars"]; i++) {
                 starsHTML += `<i class="bx bxs-star" style="color: #ffb100"></i>`;
