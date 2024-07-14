@@ -45,6 +45,7 @@ try {
         <link rel="stylesheet" href="css/reservations.css" />
         <link rel="stylesheet" href="css/form.css" />
         <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
         <?php include 'fragments/head_links.php'; ?>
     </head>
 
@@ -85,14 +86,14 @@ try {
                                     <td><?= $r['message'] ?></td>
                                     <td><?= $r['location_id'] ?></td>
                                     <td class="text-center">
-                                        <a href="categorias_form.php?id=<?= $r['id'] ?>" class="btn btn-sm btn-outline-warning">
+                                        <a href="categorias_form.php?id=<?= $r['id'] ?>" class="btn btn-sm btn-outline-warning fs-6 fw-semibold">
                                             <i class="bi bi-pencil"></i>
                                             Editar
                                         </a>
                                     </td>
                                     <td class="text-center">
                                         <a href="categoria_eliminar.php?id=<?= $c['id'] ?>" 
-                                           class="btn btn-sm btn-outline-danger"
+                                           class="btn btn-sm btn-outline-danger fs-6 fw-semibold"
                                            onclick="return confirm('¿Deseas eliminar?')">
                                             <i class="bi bi-trash"></i>
                                             Eliminar
