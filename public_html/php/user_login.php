@@ -7,9 +7,9 @@ include './util/connection.php';
 $user = $_POST['usuario'];
 $pass = $_POST['contrasena'];
 //!!BUSCAR LA MANERA PARA CAMBIAR DE HASH TIPO SHA512 A AESCRIPT, CLAVE CLAVE ---------------------------------------!!!
-$pass = hash('sha512', $pass);
+//$pass = hash('sha512', $pass);
 
-$validar_login = "SELECT * FROM clientes WHERE usuario = '$user' AND contrasena = '$pass'";
+$validar_login = "SELECT * FROM clients WHERE username = '$user' AND 'AES_DECRYPT(password, '$pass') = '$pass'";
 
 try {
     conectar();

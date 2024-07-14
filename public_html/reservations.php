@@ -66,12 +66,13 @@ try {
                             <div>
                                 <label for="location">Ubicacion*</label>
                                 <select name="location" id="location">
-                                <?php
+                                    <?php
                                     foreach ($locaciones as $locacion) {
-                                        echo "<option value='" . $locacion['id'] . "'>" . $locacion['district'] ." ". $locacion['address'] . "</option>";
+                                        echo "<option value='" . $locacion['id'] . "'>" . $locacion['district'] . " " . $locacion['address'] . "</option>";
                                     }
                                     ?>
                                 </select>
+
                             </div>
                             <div>
                                 <label for="partners"> Acompañantes* </label>
@@ -99,47 +100,55 @@ try {
                             </fieldset>
                         </div>
                         <p id="error" class="error hidden"></p>
-                        <div class="final_form">
-                            <button class="send" type="submit">Enviar Mensaje</button>
+                        <div class="imposible">
+                            <div class="final_form">
+                                <button class="send" type="submit">Enviar Mensaje</button>
+                            </div>               
+
+                    </form>
+                    <form method="post" action="reservation_history.php">
+                        <div class="history_form">
+                            <button class="send" type="submit">Ver Historial</button>
                         </div>
                     </form>
-                </section>
-                <section class="contact_info">
-                    <h4>Información de Contacto</h4>
-                    <div>
-                        <i class="bx bxs-phone"></i>
-                        <p>+51 914703631</p>
-                    </div>
-                    <div>
-                        <i class="bx bxs-envelope"></i>
-                        <p>hello@example.com</p>
-                    </div>
-                    <div>
-                        <i class="bx bxs-map-pin"></i>
-                        <p>189 San Isidro, Lima - Perú</p>
-                    </div>
-                </section>
             </div>
-            <div id="container_cart" class="container_cart hidden">
+        </section>
+        <section class="contact_info">
+            <h4>Información de Contacto</h4>
+            <div>
+                <i class="bx bxs-phone"></i>
+                <p>+51 914703631</p>
             </div>
-        </main>
-        <footer class="footer_reservation">
-            <div class="footer_desc">
-                <img src="assets/img/logo.png" alt="logo" class="Logo de la Trattoria Secreta" style="width:70px; height:70px" />
-                <p>
-                    Nos esforzamos para ofrecerle una experiencia gastronómica
-                    excepcional, donde cada plato es una obra maestra de sabor, calidad y
-                    dedicación, saborea la excelencia en cada bocado.
-                </p>
+            <div>
+                <i class="bx bxs-envelope"></i>
+                <p>hello@example.com</p>
             </div>
-            <?php include 'fragments/footer.php'; ?>
-            <div class="contenedor_curve">
-                <div class="curve_footer"></div>
+            <div>
+                <i class="bx bxs-map-pin"></i>
+                <p>189 San Isidro, Lima - Perú</p>
             </div>
-        </footer>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        <script src="./js/login_signup.js"></script>
-        <script src="./js/consultas.js"></script>
-        <script src="js/go_productos.js"></script>
-    </body>
+        </section>
+    </div>
+    <div id="container_cart" class="container_cart hidden">
+    </div>
+</main>
+<footer class="footer_reservation">
+    <div class="footer_desc">
+        <img src="assets/img/logo.png" alt="logo" class="Logo de la Trattoria Secreta" style="width:70px; height:70px" />
+        <p>
+            Nos esforzamos para ofrecerle una experiencia gastronómica
+            excepcional, donde cada plato es una obra maestra de sabor, calidad y
+            dedicación, saborea la excelencia en cada bocado.
+        </p>
+    </div>
+    <?php include 'fragments/footer.php'; ?>
+    <div class="contenedor_curve">
+        <div class="curve_footer"></div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="./js/login_signup.js"></script>
+<script src="./js/consultas.js"></script>
+<script src="js/go_productos.js"></script>
+</body>
 </html>

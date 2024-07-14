@@ -77,6 +77,16 @@ section{
     font-size:2rem;
 }
 
+.history_form{
+    margin-bottom: -10px;
+}
+.imposible{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 6%;
+}
 
 @media only screen and (min-width:768px){
     .container_res{

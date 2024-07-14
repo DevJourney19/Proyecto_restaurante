@@ -5,7 +5,6 @@ const fetchInfo = async () => {
             .then((data) => {
                 // 'data' es la variable $menu de PHP convertida a un objeto JavaScript
                 menu = data;
-                console.log(menu);
             })
             .catch((error) => console.error("Error:", error));
     return menu;

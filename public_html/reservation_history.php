@@ -1,9 +1,9 @@
 <?php
 
 //Si el usuario tiene el acceso = 12345 -> Me debería dejar entrar para poder realizar el pago
-include_once '/util/verify_session.php';
-include_once '/util/connection.php';
-
+include_once 'php/util/verify_session.php';
+include_once 'php/util/connection.php';
+include_once 'php/util/validar_pago.php';
 $sql = "SELECT * FROM reservation";
 try {
     conectar();
