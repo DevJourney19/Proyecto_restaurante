@@ -217,6 +217,7 @@ INSERT INTO `products` (`id`, `title`, `src`, `price`, `stars`, `amount`, `descr
 
 CREATE TABLE `reservation` (
   `id` int(11) NOT NULL,
+  `client_id` int(11) NULL,
   `fullname` varchar(150) NOT NULL,
   `consult_type` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -232,10 +233,10 @@ CREATE TABLE `reservation` (
 -- Volcado de datos para la tabla `reservation`
 --
 
-INSERT INTO `reservation` (`id`, `fullname`, `consult_type`, `email`, `phone_number`, `companions`, `date`, `time`, `message`, `location_id`) VALUES
-(5, 'Elena Suarez', 'mensajes', 'easp0104@gmail.com', '912905731', 0, '0000-00-00', '00:00:00', 'Hola', NULL),
-(10, 'Elena', 'mensaje', 'easp0104@gmail.com', '912478321', 0, '0000-00-00', '00:00:00', 'Dsds', NULL),
-(11, 'Elena', 'reservacion', 'ea@hotmail.com', '912478321', 5, '2024-06-25', '12:00:00', 'Dsdsdsdsds', 1);
+INSERT INTO `reservation` (`id`, `client_id`, `fullname`, `consult_type`, `email`, `phone_number`, `companions`, `date`, `time`, `message`, `location_id`) VALUES
+(5, 3,'Elena Suarez', 'mensajes', 'easp0104@gmail.com', '912905731', 0, '0000-00-00', '00:00:00', 'Hola', NULL),
+(10, 3,'Elena', 'mensaje', 'easp0104@gmail.com', '912478321', 0, '0000-00-00', '00:00:00', 'Dsds', NULL),
+(11, 3, 'Elena', 'reservacion', 'ea@hotmail.com', '912478321', 5, '2024-06-25', '12:00:00', 'Dsdsdsdsds', 1);
 
 --
 -- Índices para tablas volcadas
@@ -286,8 +287,8 @@ ALTER TABLE `products`
 -- Indices de la tabla `reservation`
 --
 ALTER TABLE `reservation`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `location_id` (`location_id`);
+  ADD PRIMARY KEY (`id`);
+  
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -363,12 +364,14 @@ ALTER TABLE `products`
 -- Filtros para la tabla `reservation`
 --
 ALTER TABLE `reservation`
-  ADD CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;
+  ADD CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+    ADD CONSTRAINT `reservation_ibfk_2` FOREIGN KEY (`client_id`) REFERENCES `clients` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
 
 
 ```
