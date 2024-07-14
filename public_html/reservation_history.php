@@ -2,8 +2,8 @@
 //Si el usuario tiene el acceso = 12345 -> Me debería dejar entrar para poder realizar el pago
 
 include 'php/util/connection.php';
-include 'php/util/validar_pago.php';
-
+include 'php/util/validar_entradas.php';
+validar_entrada("reservations.php", "reservations");
 //Si está vacio la tabla mostrar un alert de que no se agregó registros
 
 /**
