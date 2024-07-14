@@ -38,7 +38,7 @@ try {
                             <div class="local_box">
                                 <div class="placeslocals_nombre">
                                     <h4> La Trattoria Secreta <?= htmlspecialchars($location["district"]) ?></h4>
-                                    <p><?= htmlspecialchars($location["address"]) ?>,<?= htmlspecialchars($location["city"]) ?></p>
+                                    <p><?= htmlspecialchars($location["address"]) ?>,<?= htmlspecialchars($location[" city"]) ?></p>
                                   
                                 </div>
                                 <a href="https://maps.google.com/?q=<?= urlencode($location["address"] . ", " . $location["city"]) ?>" target="_blank" class="local_link">
