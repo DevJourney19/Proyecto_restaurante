@@ -1,3 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
 body {
   background-color: #f7f7f7;
 }
@@ -22,6 +31,14 @@ input[type="text"] {
   border: none;
   border-bottom: 1px solid white;
   background-color: transparent;
+}
+
+.location{
+  padding:5px 20px;
+  border-radius:30px;
+  margin-bottom:20px;
+  border:none;
+  color:black;
 }
 
 .hidden {

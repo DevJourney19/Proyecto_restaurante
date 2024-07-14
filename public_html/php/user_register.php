@@ -15,8 +15,11 @@ $pass = limpiar_cadena($_POST["contrasenaR"]);
 
 function verificarExistencia($campo, $valor) {
     conectar();
-    $query = "SELECT * FROM clients WHERE '$campo' = '$valor'";
+
+    $query = "SELECT * FROM clients WHERE $campo = '$valor'";
+
     $listado = consultar($query);
+
     desconectar();
     return count($listado) > 0;
 }
@@ -39,13 +42,13 @@ if (verificarExistencia('username', $user)) {
 
 // Ejecutar la inserción
 conectar();
-$query = "INSERT INTO clients(fullname, password, email, username)
-              VALUES('$full_name', '$pass','$email','$user')";
-if (ejecutar($query)) {
 
+$query = "INSERT INTO clients(fullname, email, username, password)
+              VALUES('$full_name', '$email', '$user', AES_ENCRYPT('$pass','$pass'))";
+
+if (ejecutar($query)) {
     enviarRespuesta("registrado");
 } else {
-
     enviarRespuesta("no_registrado");
 }
 desconectar();

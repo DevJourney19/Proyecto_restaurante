@@ -25,6 +25,7 @@ const existe_usuario = async () => {
   };
   
   const cambiar_pantallas = () => {
+    const container = document.getElementById("container");
     const registerBtn = document.getElementById("btn_registrarse");
     const loginBtn = document.getElementById("btn_iniciarSesion");
   
@@ -38,38 +39,6 @@ const existe_usuario = async () => {
       container.classList.remove("active");
     });
   };
-  
-  // const verificar_login = async (event) => {
-  //   event.preventDefault();
-  //   const usuario = document.getElementById("usuario-login");
-  //   const password = document.getElementById("password-login");
-  //   //Realizar un metodo para enviar datos al user_login.php
-  //   await fetch("./php/user_login.php", {
-  //     method: "POST",
-  //     headers: {
-  //       //Clave valor
-  //       "Content-Type": "application/x-www-form-urlencoded",
-  //     },
-  //     //Mandamos el valor al user_login.php (que esta arriba)
-  //     body: `usuario=${usuario.value}&contrasena=${password.value}`,
-  //   })
-  //     .then((response) => {
-  //       return response.text();
-  //     })
-  //     .then((data) => {
-  //       const usuario_existe = data;
-  //       if (usuario_existe) {
-  //         console.log("Bienvenido");
-  //         window.location.href = "bienvenida.php";
-  //       } else {
-  //         usuario.value = "";
-  //         password.value = "";
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error:", error);
-  //     });
-  // };
   //Funciona al recargar la pagina
   window.addEventListener("load", function () {
     // Obtiene la ruta actual del archivo de la URL

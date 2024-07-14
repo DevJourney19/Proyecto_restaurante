@@ -1,8 +1,9 @@
 <?php
-include_once 'php/util/validar_bienvenida.php';
+include_once 'php/util/validar_entradas.php';
 include 'php/util/connection.php';
-$user = $_SESSION['usuario'];
-$sql = "SELECT nombre_completo FROM clientes WHERE usuario = '$user'";
+validar_entrada('login_signup.php', 'bienvenida');
+$email = $_SESSION['email'];
+$sql = "SELECT fullname FROM clients WHERE email = '$email'";
 $titulo = "<span class='restaurant_name'>La Trattoria Secreta</span>";
 try {
     conectar();
@@ -49,12 +50,12 @@ try {
         <div class="texto_1">
             <div class="cuadrito_texto_bienvenida">
                 <p class="p1_bienvenida text-light" style="font-size: 32px">¡Bienvenid@!</p>
-                <p class="p2 text-warning"><?= $persona['nombre_completo'] ?></p>
+                <p class="p2 text-warning"><?= $persona['fullname'] ?></p>
                 <p class="mensajito_bienvenida" style="color: white;">Gracias por unirte a La Trattoria Secreta. Estamos
                     emocionados de compartir nuestros deliciosos platos variados contigo. ¡Disfruta de una experiencia
                     culinaria inolvidable!</p>
                 <p class="p3">¡Vamos al home!</p>
-                <a class="button_menu" href="index.php?message=true">Home</a>
+                <a class="button_menu" href="index.php">Home</a>
             </div>
         </div>
     </main>

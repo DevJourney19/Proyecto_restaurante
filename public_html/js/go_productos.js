@@ -14,7 +14,6 @@ function add_product() {
     count = parseInt(window.localStorage.getItem("contador")) || 0; // Obtener contador desde localStorage
     notification_nav = parseInt(window.localStorage.getItem("notificacion")) || 0;
     precio_total = parseInt(window.localStorage.getItem("p_total")) || 0;
-    //  (Esto es solo para una clase): notificar.innerHTML = notification_nav;
     notificar.forEach((el) => (el.innerHTML = notification_nav));
 
     //Se hace un if para comprobar si estamos en el archivo menu.php
@@ -30,7 +29,6 @@ function add_product() {
                         .then((menu) => {
                             //Trae el plato que tenga el mismo id que el button del menu
                             const product_find = menu.find((product) => Number(product.id) === id);
-
                             //Si el producto no se encuentra en el cart, procede...
                             if (!cart[product_find.id]) {
                                 //Esto se hace para no almacenar platillos repetidos en el slide
@@ -39,12 +37,11 @@ function add_product() {
                                 notification_nav++;
                                 //Suma los precios de los productos seleccionados
                                 precio_total += Number(product_find.price);
-
                                 //Almacenamos los datos en el navegador (persistencia)
-                                window.localStorage.setItem("notificacion", notification_nav);
-                                window.localStorage.setItem("cart", JSON.stringify(cart));
-                                window.localStorage.setItem("contador", count);
-                                window.localStorage.setItem("p_total", precio_total);
+                                localStorage.setItem("notificacion", notification_nav);
+                                localStorage.setItem("contador", count);
+                                localStorage.setItem("cart", JSON.stringify(cart));
+                                localStorage.setItem("p_total", precio_total);
                                 //Mostramos el producto en el slide
                                 print_product();
                             }
@@ -98,7 +95,7 @@ function print_product() {
     <div class="card_total">
         <div>
             <p>Total</p>
-            <span>S/. ${Number(precio_total)}</span>
+            <span>S/. ${precio_total}</span>
         </div>
         <button id="pagar" onclick="pagar()">Pedir</button>
     </div>
@@ -117,14 +114,13 @@ function in_slide() {
                 return alert("Limite máximo 10 productos");
             }
             //Se aumenta la cantidad del producto
-            valor = cart[id].amount++;
+            valor = Number(cart[id].amount++);
             //Se aumenta el numero de productos que se van a comprar
             count++;
             notification_nav++;
             //Es la acumulación de la suma de los precios de los productos seleccionados, en el slide.
             //Esta variable ya viene con un valor almacenado. Es el precio del platillo agregado al slide.
             precio_total += Number(cart[id].price);
-
             metodos_generales();
         }
         //Cuando se presiona el icono de disminuir
@@ -133,7 +129,7 @@ function in_slide() {
             if (cart[id].amount <= 1) {
                 const eleccion = confirm("¿Deseas eliminar el platillo?");
                 if (eleccion) {
-                    precio_total -= cart[id].price * cart[id].amount;
+                    precio_total -= Number(cart[id].price) * Number(cart[id].amount);
                     delete cart[id];
                     count--;
                     notification_nav--;
@@ -145,10 +141,10 @@ function in_slide() {
                     return;
                 }
             } else {
-                cart[id].amount--;
+                Number(cart[id].amount--);
                 count--;
                 notification_nav--;
-                precio_total -= cart[id].price;
+                precio_total -= Number(cart[id].price);
             }
 
             metodos_generales();
@@ -157,9 +153,9 @@ function in_slide() {
         if (e.target.classList.contains("bx-x")) {
             const id = Number(e.target.id);
 
-            precio_total -= cart[id].price * cart[id].amount;
-            count -= cart[id].amount;
-            notification_nav -= cart[id].amount;
+            precio_total -= Number(cart[id].price) * Number(cart[id].amount);
+            count -= Number(cart[id].amount);
+            notification_nav -= Number(cart[id].amount);
             delete cart[id];
 
             metodos_generales();
@@ -175,13 +171,12 @@ const metodos_generales = () => {
     print_product();
 };
 
-const pagar = () => {
+const pagar = async () => {
     const total = precio_total;
     if (total === 0) {
         return alert("No hay productos en el carrito");
-    } else {
-        window.location.href = "./pago.php";
     }
+    window.location.href = "./pago.php";
 };
 
 add_product();
