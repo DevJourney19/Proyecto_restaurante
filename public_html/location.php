@@ -1,4 +1,18 @@
 <!DOCTYPE html>
+<?php
+include 'php/util/connection.php';
+
+$sql = "SELECT * FROM location";
+try {
+    conectar();
+    $resultado = consultar($sql);
+    $locations = $resultado;
+    unset($resultado);
+    desconectar();
+} catch (Exception $exc) {
+    die($exc->getMessage());
+}
+?>
 <html lang="en">
 
     <head>
@@ -18,70 +32,18 @@
                 <h2>Ubicación</h2>
             </div>
             <section>
-                <!-- comment 
                 <div class="boxes">
-                    <div class="local_box">
-                        <div class="placeslocals_nombre">
-                            <h4>La Trattoria Secreta Miraflores</h4>
-                            <p>
-                                Av La colmena-Bellavista, Garcia Nelaza 1948 , miraflores, Perú
-                            </p>
-                        </div>
-                        <a href="https://maps.app.goo.gl/aJT9f5cvbGoGZTDf6" target="blank" class="local_link">
-                            <i class="bx bx-current-location"></i>
-                            ¿Comó llegar?</a>
-                    </div>
-                    <div class="local_box">
-                        <div class="placeslocals_nombre">
-                            <h4>La Trattoria Secreta Santiago de Surco</h4>
-                            <p>Av Paraiso, Mendoza 1568 , Santiago de Surco, Perú</p>
-                        </div>
-                        <a href="https://maps.app.goo.gl/aJT9f5cvbGoGZTDf6" target="blank" class="local_link">
-                            <i class="bx bx-current-location"></i>
-                            ¿Comó llegar?</a>
-                    </div>
-                    <div class="local_box">
-                        <div class="placeslocals_nombre">
-                            <h4>La Trattoria Secreta San Isidro</h4>
-                            <p>Av Primavera, Magna Loza 4157 , San Isidro, Perú</p>
-                        </div>
-                        <a href="https://maps.app.goo.gl/aJT9f5cvbGoGZTDf6" target="blank" class="local_link">
-                            <i class="bx bx-current-location"></i>
-                            ¿Comó llegar?</a>
-                    </div>
-                </div>
-                -->
-                <?php
-                $locations = [
-                    [
-                        "name" => "La Trattoria Secreta Miraflores",
-                        "address" => "Av La colmena-Bellavista, Garcia Nelaza 1948 , Miraflores, Perú",
-                        "link" => "https://maps.app.goo.gl/aJT9f5cvbGoGZTDf6"
-                    ],
-                    [
-                        "name" => "La Trattoria Secreta Santiago de Surco",
-                        "address" => "Av Paraiso, Mendoza 1568 , Santiago de Surco, Perú",
-                        "link" => "https://maps.app.goo.gl/aJT9f5cvbGoGZTDf6"
-                    ],
-                    [
-                        "name" => "La Trattoria Secreta San Isidro",
-                        "address" => "Av Primavera, Magna Loza 4157 , San Isidro, Perú",
-                        "link" => "https://maps.app.goo.gl/aJT9f5cvbGoGZTDf6"
-                    ]
-                ];
-                ?>
-
-                <div class="boxes">
-                    <?php if (is_array($locations)): ?>
+                    <?php if (!empty($locations)): ?>
                         <?php foreach ($locations as $location): ?>
                             <div class="local_box">
                                 <div class="placeslocals_nombre">
-                                    <h4><?php echo htmlspecialchars($location["name"]); ?></h4>
-                                    <p><?php echo htmlspecialchars($location["address"]); ?></p>
+                                    <h4> La Trattoria Secreta <?= htmlspecialchars($location["district"]) ?></h4>
+                                    <p><?= htmlspecialchars($location["address"]) ?>,<?= htmlspecialchars($location["city"]) ?></p>
+                                  
                                 </div>
-                                <a href="<?php echo htmlspecialchars($location["link"]); ?>" target="_blank" class="local_link">
+                                <a href="https://maps.google.com/?q=<?= urlencode($location["address"] . ", " . $location["city"]) ?>" target="_blank" class="local_link">
                                     <i class="bx bx-current-location"></i>
-                                    ¿Comó llegar?
+                                    ¿Cómo llegar?
                                 </a>
                             </div>
                         <?php endforeach; ?>
