@@ -19,7 +19,7 @@ CREATE TABLE clientes (
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3308
--- Tiempo de generación: 13-07-2024 a las 02:02:43
+-- Tiempo de generación: 14-07-2024 a las 04:37:36
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -114,9 +114,23 @@ CREATE TABLE `orders` (
   `total_price` float NOT NULL,
   `location_id` int(11) DEFAULT NULL,
   `client_id` int(11) DEFAULT NULL,
-  `payment_method_id` int(11) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `payment_method` varchar(100) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `address` varchar(150) NOT NULL,
+  `phone_number` varchar(20) NOT NULL,
+  `amount` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `orders`
+--
+
+INSERT INTO `orders` (`id`, `type_order`, `total_price`, `location_id`, `client_id`, `payment_method`, `created_at`, `address`, `phone_number`, `amount`) VALUES
+(17, 'online', 59, 1, 3, 'visa', '2024-07-13 18:47:40', 'dsdsds', 'dsdsds', 0),
+(18, 'online', 125, 3, 3, 'visa', '2024-07-13 18:49:40', 'las esmeraldas 1650', '912905731', 0),
+(19, 'online', 125, 1, 3, 'visa', '2024-07-13 18:50:38', 'dsdsdsd', 'dsdsdddddddddddddddd', 0),
+(20, 'online', 125, 1, 3, 'visa', '2024-07-13 18:54:11', 'dsds', 'dsdsdsds', 0),
+(21, 'online', 125, 1, 3, 'visa', '2024-07-13 18:55:35', 'dsds', 'dsdsdsds', 0);
 
 -- --------------------------------------------------------
 
@@ -132,16 +146,25 @@ CREATE TABLE `order_detail` (
   `product_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
 --
--- Estructura de tabla para la tabla `payment_method`
+-- Volcado de datos para la tabla `order_detail`
 --
 
-CREATE TABLE `payment_method` (
-  `id` int(11) NOT NULL,
-  `name` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `order_detail` (`id`, `quantity`, `subtotal`, `order_id`, `product_id`) VALUES
+(26, 2, 30, 17, 2),
+(27, 1, 29, 17, 6),
+(28, 2, 30, 18, 2),
+(29, 1, 8, 18, 4),
+(30, 3, 87, 18, 6),
+(31, 2, 30, 19, 2),
+(32, 1, 8, 19, 4),
+(33, 3, 87, 19, 6),
+(34, 2, 30, 20, 2),
+(35, 1, 8, 20, 4),
+(36, 3, 87, 20, 6),
+(37, 2, 30, 21, 2),
+(38, 1, 8, 21, 4),
+(39, 3, 87, 21, 6);
 
 -- --------------------------------------------------------
 
@@ -194,6 +217,7 @@ INSERT INTO `products` (`id`, `title`, `src`, `price`, `stars`, `amount`, `descr
 
 CREATE TABLE `reservation` (
   `id` int(11) NOT NULL,
+  `client_id` int(11) NULL,
   `fullname` varchar(150) NOT NULL,
   `consult_type` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -209,10 +233,10 @@ CREATE TABLE `reservation` (
 -- Volcado de datos para la tabla `reservation`
 --
 
-INSERT INTO `reservation` (`id`, `fullname`, `consult_type`, `email`, `phone_number`, `companions`, `date`, `time`, `message`, `location_id`) VALUES
-(5, 'Elena Suarez', 'mensajes', 'easp0104@gmail.com', '912905731', 0, '0000-00-00', '00:00:00', 'Hola', NULL),
-(10, 'Elena', 'mensaje', 'easp0104@gmail.com', '912478321', 0, '0000-00-00', '00:00:00', 'Dsds', NULL),
-(11, 'Elena', 'reservacion', 'ea@hotmail.com', '912478321', 5, '2024-06-25', '12:00:00', 'Dsdsdsdsds', 1);
+INSERT INTO `reservation` (`id`, `client_id`, `fullname`, `consult_type`, `email`, `phone_number`, `companions`, `date`, `time`, `message`, `location_id`) VALUES
+(5, 3,'Elena Suarez', 'mensajes', 'easp0104@gmail.com', '912905731', 0, '0000-00-00', '00:00:00', 'Hola', NULL),
+(10, 3,'Elena', 'mensaje', 'easp0104@gmail.com', '912478321', 0, '0000-00-00', '00:00:00', 'Dsds', NULL),
+(11, 3, 'Elena', 'reservacion', 'ea@hotmail.com', '912478321', 5, '2024-06-25', '12:00:00', 'Dsdsdsdsds', 1);
 
 --
 -- Índices para tablas volcadas
@@ -240,20 +264,17 @@ ALTER TABLE `location`
 -- Indices de la tabla `orders`
 --
 ALTER TABLE `orders`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `location_id` (`location_id`) USING BTREE,
+  ADD KEY `client_id` (`client_id`) USING BTREE;
 
 --
 -- Indices de la tabla `order_detail`
 --
 ALTER TABLE `order_detail`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `producto_id` (`product_id`);
-
---
--- Indices de la tabla `payment_method`
---
-ALTER TABLE `payment_method`
-  ADD PRIMARY KEY (`id`);
+  ADD KEY `producto_id` (`product_id`) USING BTREE,
+  ADD KEY `order_id` (`order_id`) USING BTREE;
 
 --
 -- Indices de la tabla `products`
@@ -266,8 +287,8 @@ ALTER TABLE `products`
 -- Indices de la tabla `reservation`
 --
 ALTER TABLE `reservation`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `location_id` (`location_id`);
+  ADD PRIMARY KEY (`id`);
+  
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -295,19 +316,13 @@ ALTER TABLE `location`
 -- AUTO_INCREMENT de la tabla `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `order_detail`
 --
 ALTER TABLE `order_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `payment_method`
---
-ALTER TABLE `payment_method`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT de la tabla `products`
@@ -326,10 +341,18 @@ ALTER TABLE `reservation`
 --
 
 --
+-- Filtros para la tabla `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`client_id`) REFERENCES `clients` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;
+
+--
 -- Filtros para la tabla `order_detail`
 --
 ALTER TABLE `order_detail`
-  ADD CONSTRAINT `order_detail_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;
+  ADD CONSTRAINT `order_detail_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `order_detail_ibfk_2` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;
 
 --
 -- Filtros para la tabla `products`
@@ -341,12 +364,14 @@ ALTER TABLE `products`
 -- Filtros para la tabla `reservation`
 --
 ALTER TABLE `reservation`
-  ADD CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;
+  ADD CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+    ADD CONSTRAINT `reservation_ibfk_2` FOREIGN KEY (`client_id`) REFERENCES `clients` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
 
 
 ```
