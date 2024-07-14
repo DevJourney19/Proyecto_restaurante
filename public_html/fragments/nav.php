@@ -6,7 +6,7 @@
         </button>
         <span class="restaurant_name">La Trattoria Secreta</span>
         <div class="nav_icons icons_initial">
-            <button onclick="open_cart();" class="btn-cart"><i class="bx bx-cart"></i><span class="notification" ></span></button>
+            <button onclick="open_cart();" class="btn-cart"><i class="bx bx-cart"></i><span class="notification"></span></button>
             <a class="user_login">
             </a>
         </div>
