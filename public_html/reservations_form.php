@@ -1,49 +1,13 @@
 <?php
 include 'php/util/connection.php';
-include 'php/util/reg_reservation.php';
 $sql = "SELECT * FROM location";
-
-$titulo = "Agregar mensaje/reservación";
 try {
     conectar();
     $resultado = consultar($sql);
     $locaciones = $resultado;
     unset($resultado);
     desconectar();
-    //Si le dimos clic en actualizar nos aparecera un valor del id -> id=17
-    if (isset($_GET['id'])) {
-        $titulo = "Actualizar mensaje/reservación";
-        //Traemos el valor del id de la reservacion
-        $id_reservar = $_GET['id'];
-        /**
-         * EL PROBLEMA DE QUE EL ARRAY EN CIERTOS CASOS SEA NULL ES PORQUE NO SE ENCONTRO SU
-         * LOCATION ID DE LA CONSULTA sql.
-         */
-        //Hacer un select para traer los valores de esa reservacion en especifico
-        $sql = "SELECT * FROM reservation "
-                . "where reservation.id = '$id_reservar'";
-        $sql_location = "SELECT * FROM reservation INNER JOIN location on "
-                . "reservation.location_id = location.id "
-                . "where reservation.id = '$id_reservar'";
-        conectar();
-        $registrar_location = consultar($sql_location);
-        $reg_reservation = consultar($sql);
-//        var_dump($reg_reservation);
-        $fullname = reservado($reg_reservation, "fullname") ?? "";
-        $consult_type = reservado($reg_reservation, "consult_type");
-        $email = reservado($reg_reservation, "email");
-        $phone = reservado($reg_reservation, "phone_number");
-        $companions = reservado($reg_reservation, "companions");
-        $date = reservado($reg_reservation, "date");
-        $time = reservado($reg_reservation, "time");
-        $message = reservado($reg_reservation, "message");
-        $location_id = reservado($registrar_location, "id");
-        $location_district = reservado($registrar_location, "district");
-        $location_address = reservado($registrar_location, "address");
-
-        unset($reg_reservation);
-        desconectar();
-    }
+    #var_dump($categoria);
 } catch (Exception $exc) {
     die($exc->getMessage());
 }
@@ -72,19 +36,17 @@ try {
                     reservaciones
                 </p>
             </div>
-            <h3 class="pt-3 pb-2" style="text-decoration: underline gray; color: #FFB100; font-weight: 700"><?= $titulo; ?></h3>
-
             <div class="container_res">
                 <section>
                     <form method="get" action="./php/procesar_consulta.php" onsubmit="checkRequired(event);">
                         <div class="double_input">
                             <div>
                                 <label for="full_name"> Nombre Completo </label>
-                                <input title="nombre completo para contacto" type="text" placeholder="Ingrese su nombre" name="full_name" id="full_name" required value="<?= isset($_GET['id']) ? $fullname : '' ?>"/>
+                                <input title="nombre completo para contacto" type="text" placeholder="Ingrese su nombre" name="full_name" id="full_name" required />
                             </div>
                             <div>
                                 <label for="consulta">Tipo de Consulta</label>
-                                <select name="consulta" id="consulta" onchange="checkType();" >
+                                <select name="consulta" id="consulta" onchange="checkType();">
                                     <option value="mensaje">Mensajes</option>
                                     <option value="reservacion">Reservación</option>
                                 </select>
@@ -93,31 +55,28 @@ try {
                         <div class="double_input">
                             <div>
                                 <label for="email">Correo electrónico</label>
-                                <input name="email" title="email para contacto" type="text" placeholder="Ingrese correo" id="email" value="<?= isset($_GET['id']) ? $email : '' ?>"/>
+                                <input name="email" title="email para contacto" type="text" placeholder="Ingrese correo" id="email" />
                             </div>
                             <div>
                                 <label for="phone_number"> Número celular </label>
-                                <input maxlength="9" name="phone_number" title="número de telefono para contacto" type="text" pattern="[0-9]{7,9}" placeholder="914703631" id="phone_number" value="<?= isset($_GET['id']) ? $phone : '' ?>"/>
+                                <input maxlength="9" name="phone_number" title="número de telefono para contacto" type="text" pattern="[0-9]{7,9}" placeholder="914703631" id="phone_number" />
                             </div>
                         </div>
                         <div id="reservation" class="reservation_consult hidden">
                             <div>
                                 <label for="location">Ubicacion*</label>
-                                <select name="location" id="location" >
-                                    <option value="<?= isset($_GET['id']) ? $location_id : '0' ?>"><?= isset($_GET['id']) ? $location_district . " - " . $location_address : 'Seleccionar Ubicación' ?></option>
-
+                                <select name="location" id="location">
                                     <?php
                                     foreach ($locaciones as $locacion) {
-                                        echo "<option value='" . $locacion['id'] . "'>" . $locacion['district'] . " - " . $locacion['address'] . "</option>";
+                                        echo "<option value='" . $locacion['id'] . "'>" . $locacion['district'] . " " . $locacion['address'] . "</option>";
                                     }
                                     ?>
-
                                 </select>
 
                             </div>
                             <div>
                                 <label for="partners"> Acompañantes* </label>
-                                <input name="partners" title="numero de acompañantes" type="number" placeholder="# of people" min="1" max="10" id="partners" value="<?= isset($_GET['id']) ? $companions : '' ?>" />
+                                <input name="partners" title="numero de acompañantes" type="number" placeholder="# of people" min="1" max="10" id="partners" />
                             </div>
                             <div>
                                 <label for="day_selected">
@@ -125,10 +84,10 @@ try {
                                 </label>
                                 <div class="double_input">
                                     <div>
-                                        <input title="hora de la reserva" type="time" id="time" name="time_selected" value="<?= isset($_GET['id']) ? $time : '' ?>"/>
+                                        <input title="hora de la reserva" type="time" id="time" name="time_selected" />
                                     </div>
                                     <div>
-                                        <input name="day_selected" title="dia de la reserva" type="date" id="day_selected" value="<?= isset($_GET['id']) ? $date : '' ?>" />
+                                        <input name="day_selected" title="dia de la reserva" type="date" id="day_selected" />
                                     </div>
                                 </div>
                             </div>
@@ -137,20 +96,19 @@ try {
                             <fieldset>
                                 <legend>Mensaje adicional</legend>
                                 <!--no se encontro atributo para accesibilidad-->
-                                <textarea id="message" name="message" rows="4" cols="20" placeholder="Ingrese el mensaje..." ><?= isset($_GET['id']) ? $message : '' ?></textarea>
+                                <textarea id="message" name="message" rows="4" cols="20" placeholder="Ingrese el mensaje..."></textarea>
                             </fieldset>
                         </div>
                         <p id="error" class="error hidden"></p>
                         <div class="imposible">
                             <div class="final_form">
-                                <button class="send" type="submit"><?= isset($_GET['id']) ? "Actualizar" : "Agregar Mensaje" ?></button>                                
+                                <button class="send" type="submit">Enviar Mensaje</button>
                             </div>               
 
                     </form>
                     <form method="post" action="reservation_history.php">
                         <div class="history_form">
-                            <button class="send" type="submit"><?= isset($_GET['id']) ? "Cancelar" : "Ver Historial" ?></button>
-                            
+                            <button class="send" type="submit">Ver Historial</button>
                         </div>
                     </form>
             </div>

@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 include_once './util/texto.php';
 include 'util/connection.php';
@@ -45,9 +46,24 @@ unset($email);
 unset($phoneNumber);
 unset($message);
 
-$sql = "INSERT INTO `reservation` (`fullname`,`client_id`,`consult_type`, `email`, `phone_number`, `companions`, `date`, `time`, `message`, `location_id`) VALUES ('$fullNameProcessed','$client_id','$consultType','$emailProcessed','$phoneNumberProcessed','$partners','$fechaSQL','$timeSQL','$messageProcessed',";
-$sql .= is_null($location) ? "NULL" : "'$location'";
-$sql .= ")";
+if (isset($_GET['id'])) {
+    $id_reservacion = $_GET['id'];
+    $sql = "UPDATE `reservation` set "
+            . "(`fullname`='$fullNameProcessed',`consult_type`='$consultType', "
+            . "`email`='$emailProcessed', `phone_number='$phoneNumberProcessed'`, "
+            . "`companions`='$partners', `date`='$fechaSQL', `time`='$timeSQL', "
+            . "`message`='$messageProcessed'";
+    $sql .= is_null($location) ? "NULL" : "'$location'";
+    $sql .= "where id=$id_reservacion)";
+} else {
+    $sql = "INSERT INTO `reservation` (`fullname`,`client_id`,`consult_type`, "
+            . "`email`, `phone_number`, `companions`, `date`, `time`, `message`, "
+            . "`location_id`) VALUES ('$fullNameProcessed','$client_id',"
+            . "'$consultType','$emailProcessed','$phoneNumberProcessed','$partners',"
+            . "'$fechaSQL','$timeSQL','$messageProcessed',";
+    $sql .= is_null($location) ? "NULL" : "'$location'";
+    $sql .= ")";
+}
 try {
     conectar();
     if (ejecutar($sql)) {
