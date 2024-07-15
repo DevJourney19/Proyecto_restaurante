@@ -4,13 +4,6 @@
 -- Para avance 5 usar--
 CREATE DATABASE restaurante;
 USE restaurante;
-CREATE TABLE clientes (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  nombre_completo VARCHAR(50),
-  correo VARCHAR(50),
-  usuario VARCHAR(150),
-  contrasena VARCHAR(150)
-);
 ```
 ## Tablas
 ```sql
