@@ -48,7 +48,7 @@ try {
             </div>
             <?php if ($id_reservation === "reservado"): ?>
                <!-- <div class="row" >-->
-                    <div class="table-responsive col-12 ">
+               <div class="table-responsive col-12 " style="scrollbar-width: thin;">
                         <table class="table">
                             <thead class="bg-success text-light">
                                 <tr>
