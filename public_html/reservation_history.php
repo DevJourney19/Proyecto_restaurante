@@ -48,7 +48,7 @@ try {
             </div>
             <?php if ($id_reservation === "reservado"): ?>
                <!-- <div class="row" >-->
-               <div class="table-responsive col-12 " style="scrollbar-width: thin;">
+               <div class="table-responsive col-12 ">
                         <table class="table">
                             <thead class="bg-success text-light">
                                 <tr>
@@ -100,7 +100,7 @@ try {
             <?php else: ?>
                 <h3 class="py-3">No se realizaron reservaciones...</h3>
             <?php endif; ?>
-            <a class="send" href="reservations.php" style="text-decoration: underline transparent">Regresar</a>
+            <a class="send" href="reservations.php" style="text-decoration: none;margin-top: 20px;">Regresar</a>
             <div id="container_cart" class="container_cart hidden">
             </div>
          

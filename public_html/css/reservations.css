@@ -89,6 +89,9 @@ section{
     justify-content: center;
     margin: 6%;
 }
+.table-responsive{
+    scrollbar-width: thin;
+}
 
 @media only screen and (min-width:768px){
     .container_res{
