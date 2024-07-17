@@ -4,13 +4,6 @@
 -- Para avance 5 usar--
 CREATE DATABASE restaurante;
 USE restaurante;
-CREATE TABLE clientes (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  nombre_completo VARCHAR(50),
-  correo VARCHAR(50),
-  usuario VARCHAR(150),
-  contrasena VARCHAR(150)
-);
 ```
 ## Tablas
 ```sql
@@ -98,9 +91,9 @@ CREATE TABLE `location` (
 --
 
 INSERT INTO `location` (`id`, `district`, `address`, `city`) VALUES
-(1, 'Miraflores', 'Av La Colmena-Bellav', 'Lima'),
-(2, 'Santiago de Surco', 'Av Paraiso, Mendoza ', 'Lima'),
-(3, 'San Isidro', 'Av Primavera, Magna ', 'Lima');
+(1, 'Miraflores', 'Av La colmena-Bellavista Nelaza 1948', 'Lima'),
+(2, 'Santiago de Surco', 'Av Paraiso Mendoza 1568', 'Lima'),
+(3, 'San Isidro', 'Av Primavera Magna Loza 4157', 'Lima');
 
 -- --------------------------------------------------------
 
