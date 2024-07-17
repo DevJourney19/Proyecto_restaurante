@@ -1,7 +1,15 @@
 <?php
 include 'php/util/connection.php';
 include 'php/util/reg_reservation.php';
+session_start();
 $sql = "SELECT * FROM location";
+//Si no existe el usuario registrado, se asigna null
+//if (!isset($_SESSION['id'])) {
+//    $id = "null";
+//} else {
+////Si el usuario se registro se obtiene su id
+//    $id = $_SESSION['id'];
+//}
 
 $titulo = "Agregar mensaje/reservación";
 try {
@@ -10,25 +18,30 @@ try {
     $locaciones = $resultado;
     unset($resultado);
     desconectar();
-    //Si le dimos clic en actualizar nos aparecera un valor del id -> id=17
+
+    $id_reservar = "";
+//Si le dimos clic en "actualizar" nos aparecera un valor del id -> id=17
+//Si se encuentra "id" en la url
     if (isset($_GET['id'])) {
         $titulo = "Actualizar mensaje/reservación";
         //Traemos el valor del id de la reservacion
-        $id_reservar = $_GET['id'];
+        $id_reservar = $_GET['id']; //36 ID Reservacion
+
         /**
          * EL PROBLEMA DE QUE EL ARRAY EN CIERTOS CASOS SEA NULL ES PORQUE NO SE ENCONTRO SU
          * LOCATION ID DE LA CONSULTA sql.
          */
-        //Hacer un select para traer los valores de esa reservacion en especifico
+//Hacer un select para traer los valores de esa reservacion en especifico
         $sql = "SELECT * FROM reservation "
                 . "where reservation.id = '$id_reservar'";
         $sql_location = "SELECT * FROM reservation INNER JOIN location on "
                 . "reservation.location_id = location.id "
                 . "where reservation.id = '$id_reservar'";
         conectar();
+
         $registrar_location = consultar($sql_location);
         $reg_reservation = consultar($sql);
-//        var_dump($reg_reservation);
+        //Traer los datos del usuario registrado
         $fullname = reservado($reg_reservation, "fullname") ?? "";
         $consult_type = reservado($reg_reservation, "consult_type");
         $email = reservado($reg_reservation, "email");
@@ -50,8 +63,7 @@ try {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
     <head>
         <title>La Trattoria Secreta | Reservations</title>
         <link rel="stylesheet" href="css/reservations.css" />
@@ -66,7 +78,7 @@ try {
         </header>
         <main>
             <div class="title_section">
-                <h3>Ponte en contacto con nosotros</h3>
+                <h3>Ponte en contacto con nosotros </h3>
                 <p>
                     Estamos aquí para ayudar, consulta informacion sobre nosotros y
                     reservaciones
@@ -75,9 +87,13 @@ try {
             <h3 class="pt-3 pb-2" style="text-decoration: underline gray; color: #FFB100; font-weight: 700"><?= $titulo; ?></h3>
 
             <div class="container_res">
-                <section>
-                    <form method="get" action="./php/procesar_consulta.php" onsubmit="checkRequired(event);">
+
+                <section>                    
+                    <form method="get" action="php/procesar_agregar_editar.php" onsubmit="checkRequired(event)" >
                         <div class="double_input">
+
+                            <!-- Va a servir de mucha utilidad-->
+                            <input type="hidden" name="id" value="<?= $id_reservar ?? "" ?>" />
                             <div>
                                 <label for="full_name"> Nombre Completo </label>
                                 <input title="nombre completo para contacto" type="text" placeholder="Ingrese su nombre" name="full_name" id="full_name" required value="<?= isset($_GET['id']) ? $fullname : '' ?>"/>
@@ -105,19 +121,16 @@ try {
                                 <label for="location">Ubicacion*</label>
                                 <select name="location" id="location" >
                                     <option value="<?= isset($_GET['id']) ? $location_id : '0' ?>"><?= isset($_GET['id']) ? $location_district . " - " . $location_address : 'Seleccionar Ubicación' ?></option>
-
                                     <?php
                                     foreach ($locaciones as $locacion) {
                                         echo "<option value='" . $locacion['id'] . "'>" . $locacion['district'] . " - " . $locacion['address'] . "</option>";
                                     }
                                     ?>
-
                                 </select>
-
                             </div>
                             <div>
                                 <label for="partners"> Acompañantes* </label>
-                                <input name="partners" title="numero de acompañantes" type="number" placeholder="# of people" min="1" max="10" id="partners" value="<?= isset($_GET['id']) ? $companions : '' ?>" />
+                                <input name="partners" title="numero de acompañantes" type="number" placeholder="# of people" min="0" max="10" id="partners" value="<?= isset($_GET['id']) ? $companions : null ?>"/>
                             </div>
                             <div>
                                 <label for="day_selected">
@@ -128,6 +141,7 @@ try {
                                         <input title="hora de la reserva" type="time" id="time" name="time_selected" value="<?= isset($_GET['id']) ? $time : '' ?>"/>
                                     </div>
                                     <div>
+                                        <!-- Se debe escoger una fecha, no se debe traer con valores sin escoger -->
                                         <input name="day_selected" title="dia de la reserva" type="date" id="day_selected" value="<?= isset($_GET['id']) ? $date : '' ?>" />
                                     </div>
                                 </div>
@@ -145,12 +159,10 @@ try {
                             <div class="final_form">
                                 <button class="send" type="submit"><?= isset($_GET['id']) ? "Actualizar" : "Agregar Mensaje" ?></button>                                
                             </div>               
-
                     </form>
                     <form method="post" action="reservation_history.php">
                         <div class="history_form">
                             <button class="send" type="submit"><?= isset($_GET['id']) ? "Cancelar" : "Ver Historial" ?></button>
-                            
                         </div>
                     </form>
             </div>

@@ -1,5 +1,5 @@
 <?php
-
+//Esta funcion regresa el valor del campo que se encuentre con el id de la reservacion 
 function reservado($reg_reservation, $name) {
     
     // Verifica si $reg_reservation está definido y tiene al menos un elemento
