@@ -1,12 +1,9 @@
-## Primera Actualizacion
-- Se requiere de una base de datos local en phpmyadmi llamada restaurante para poder ejecutar el proyecto y la tabla clientes para la lectura de los usuarios.
-```sql
--- Para avance 5 usar--
-CREATE DATABASE restaurante;
-USE restaurante;
+
 ```
 ## Tablas
 ```sql
+CREATE DATABASE restaurante;
+USE restaurante;
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
