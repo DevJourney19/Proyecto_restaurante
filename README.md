@@ -1,6 +1,8 @@
 
 ```
-## Tablas
+## Copiar Base de datos
+- Cambiar el puerto, dependiendo de tu servidor local (XAMPP), para evitar conflictos.
+```
 
 CREATE DATABASE restaurante;
 USE restaurante;
@@ -68,6 +70,7 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`id`, `fullname`, `password`, `email`, `username`) VALUES
+
 (3, 'Elena', 0x81f44672f7707f551ea23c36b66f7afe, 'easp0104@gmail.com', 'lena');
 
 -- --------------------------------------------------------
@@ -116,11 +119,7 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `type_order`, `total_price`, `location_id`, `client_id`, `payment_method`, `created_at`, `address`, `phone_number`, `amount`) VALUES
-(17, 'online', 59, 1, 3, 'visa', '2024-07-13 18:47:40', 'dsdsds', 'dsdsds', 0),
-(18, 'online', 125, 3, 3, 'visa', '2024-07-13 18:49:40', 'las esmeraldas 1650', '912905731', 0),
-(19, 'online', 125, 1, 3, 'visa', '2024-07-13 18:50:38', 'dsdsdsd', 'dsdsdddddddddddddddd', 0),
-(20, 'online', 125, 1, 3, 'visa', '2024-07-13 18:54:11', 'dsds', 'dsdsdsds', 0),
-(21, 'online', 125, 1, 3, 'visa', '2024-07-13 18:55:35', 'dsds', 'dsdsdsds', 0);
+
 
 -- --------------------------------------------------------
 
