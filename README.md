@@ -1,7 +1,7 @@
 
 
-## Copiar Base de datos
-- Cambiar el puerto, dependiendo de tu servidor local (XAMPP), para evitar conflictos.
+## Base de datos  
+- Copiar el codigo sql a la base de datos php para el correcto funcionamiento del proyecto
 ```
 SQL
 
