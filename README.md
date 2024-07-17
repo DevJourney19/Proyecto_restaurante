@@ -1,8 +1,9 @@
 
-```
+
 ## Copiar Base de datos
 - Cambiar el puerto, dependiendo de tu servidor local (XAMPP), para evitar conflictos.
 ```
+SQL
 
 CREATE DATABASE restaurante;
 USE restaurante;
