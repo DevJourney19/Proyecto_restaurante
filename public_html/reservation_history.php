@@ -42,10 +42,12 @@ try {
         <header>
             <?php include 'fragments/nav.php'; ?>
         </header>
-        <main>
-            <h2>Historial de Reservaciones <span><i class='bx bx-food-menu' ></i></span></h2>
+        <main class="container my-5">
+            <div class="title_section">
+                 <h2>Historial de Reservaciones <span><i class='bx bx-food-menu' ></i></span></h2>
+            </div>
             <?php if ($id_reservation === "reservado"): ?>
-                <div class="row" >
+               <!-- <div class="row" >-->
                     <div class="table-responsive col-12 ">
                         <table class="table">
                             <thead class="bg-success text-light">
@@ -101,6 +103,7 @@ try {
             <a class="send" href="reservations.php" style="text-decoration: underline transparent">Regresar</a>
             <div id="container_cart" class="container_cart hidden">
             </div>
+         
         </main>
         <footer class="footer_reservation">
             <div class="footer_desc">
