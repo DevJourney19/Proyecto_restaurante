@@ -5,6 +5,7 @@
         <group>
             <file>file:/C:/xampp/htdocs/Proyecto_restaurante/public_html/reservations.php</file>
             <file>file:/C:/xampp/htdocs/Proyecto_restaurante/public_html/reservation_history.php</file>
+            <file>file:/C:/xampp/htdocs/Proyecto_restaurante/public_html/php/util/verify_session.php</file>
         </group>
     </open-files>
 </project-private>

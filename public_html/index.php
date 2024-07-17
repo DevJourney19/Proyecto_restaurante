@@ -1,9 +1,5 @@
 <?php
 session_start();
-$mensaje = true;
-if (isset($_GET["message"])) {
-    $mensaje = false;
-}
 ?>
 
 <!DOCTYPE html>
