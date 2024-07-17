@@ -1,7 +1,7 @@
 
 ```
 ## Tablas
-```sql
+
 CREATE DATABASE restaurante;
 USE restaurante;
 -- phpMyAdmin SQL Dump
