@@ -70,7 +70,6 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`id`, `fullname`, `password`, `email`, `username`) VALUES
-
 (3, 'Elena', 0x81f44672f7707f551ea23c36b66f7afe, 'easp0104@gmail.com', 'lena');
 
 -- --------------------------------------------------------
@@ -93,7 +92,14 @@ CREATE TABLE `location` (
 INSERT INTO `location` (`id`, `district`, `address`, `city`) VALUES
 (1, 'Miraflores', 'Av La colmena-Bellavista Nelaza 1948', 'Lima'),
 (2, 'Santiago de Surco', 'Av Paraiso Mendoza 1568', 'Lima'),
-(3, 'San Isidro', 'Av Primavera Magna Loza 4157', 'Lima');
+(3, 'San Isidro', 'Av Primavera Magna Loza 4157', 'Lima'),
+(4, 'Barranco', 'Calle de las Piedras 1234', 'Lima'),
+(5, 'La Molina', 'Av Los Ingenieros 6789', 'Lima'),
+(6, 'San Borja', 'Jr Las Flores 9876', 'Lima'),
+(7, 'Pueblo Libre', 'Calle Independencia 5432', 'Lima'),
+(8, 'Lince', 'Av Petit Thouars 4321', 'Lima'),
+(9, 'Magdalena del Mar', 'Jr Leoncio Prado 1234', 'Lima'),
+(10, 'Jesús María', 'Av Salaverry 678', 'Lima');
 
 -- --------------------------------------------------------
 
@@ -110,7 +116,7 @@ CREATE TABLE `orders` (
   `payment_method` varchar(100) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `address` varchar(150) NOT NULL,
-  `phone_number` varchar(20) NOT NULL,
+  `phone_number` char(9) NOT NULL,
   `amount` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -119,7 +125,11 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `type_order`, `total_price`, `location_id`, `client_id`, `payment_method`, `created_at`, `address`, `phone_number`, `amount`) VALUES
-
+(17, 'online', 59, 1, 3, 'visa', '2024-07-13 18:47:40', 'dsdsds', 'dsdsds', 0),
+(18, 'online', 125, 3, 3, 'visa', '2024-07-13 18:49:40', 'las esmeraldas 1650', '912905731', 0),
+(19, 'online', 125, 1, 3, 'visa', '2024-07-13 18:50:38', 'dsdsdsd', 'dsdsdddddddddddddddd', 0),
+(20, 'online', 125, 1, 3, 'visa', '2024-07-13 18:54:11', 'dsds', 'dsdsdsds', 0),
+(21, 'online', 125, 1, 3, 'visa', '2024-07-13 18:55:35', 'dsds', 'dsdsdsds', 0);
 
 -- --------------------------------------------------------
 
@@ -360,7 +370,6 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
 
 
 ```
