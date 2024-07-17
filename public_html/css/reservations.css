@@ -18,6 +18,8 @@ main{
     align-items: center;
     flex-direction: column;
     margin: 3rem auto;
+    z-index: 99;
+
 }
 
 .title_section{

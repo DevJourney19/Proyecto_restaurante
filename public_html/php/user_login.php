@@ -17,6 +17,7 @@ try {
         session_start();
         $_SESSION['acceso'] = '12345';
         //Valor único por eso el 0 del primer elemento
+        //Estamos trayendo el id del usuario
         $_SESSION['id'] = $registro[0]['id']; //Es NULL!!!!
 
         $_SESSION['email'] = $registro[0]['email'];

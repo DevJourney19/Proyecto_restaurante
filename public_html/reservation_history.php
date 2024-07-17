@@ -2,26 +2,24 @@
 include 'php/util/connection.php';
 
 include 'php/util/validar_entradas.php';
-validar_entrada("reservations.php", "reservations");
+validar_entrada("reservations.php");
+//id del usuario registrado (alt + shift + (minus/plus))
 
 $id = $_SESSION['id'];
 //Buscar si el usuario registrado ha hecho una reservacion
 $sql = "SELECT * FROM reservation where client_id = '$id'";
+
 try {
     conectar();
     $registro = consultar($sql);
     desconectar();
     $id_reservation = null;
+    //Se cuenta si la cantidad de registros del cliente existe en reservaciones
     if (count($registro) > 0) {
+        //Inventamos una llave para poder mostrar los registros de reservaciones de los clientes
+        //si en caso hicieron por lo menos un pedido
         $_SESSION['id_reservation'] = "reservado";
         $id_reservation = $_SESSION['id_reservation'];
-    }
-
-//Si se hizo por lo menos un registro entonces se mostrara el listado de reservaciones
-    if (isset($id_reservation)) {
-        conectar();
-        $listado = consultar($sql); //ID_RES - NOMBRE - CORREO - DATE - TIME - LOCATION.ID
-        desconectar();
     }
 } catch (Exception $exc) {
     die($exc->getMessage());
@@ -29,7 +27,7 @@ try {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
     <head>
         <title>La Trattoria Secreta | Reservations</title>
@@ -66,7 +64,7 @@ try {
                             </thead>
                             <tbody>
 
-                                <?php foreach ($listado as $r) : ?>
+                                <?php foreach ($registro as $r) : ?>
                                     <tr>
                                         <td><?= $r['fullname'] ?></td>
                                         <td><?= $r['consult_type'] ?></td>
@@ -84,7 +82,7 @@ try {
                                             </a>
                                         </td>
                                         <td class="text-center">
-                                            <a href="reservations_eliminar.php?id=<?= $c['id'] ?>" 
+                                            <a href="php/procesar_eliminar.php?id=<?= $r['id'] ?>" 
                                                class="btn btn-sm btn-outline-danger"
                                                onclick="return confirm('¿Deseas eliminar?')">
                                                 <i class="bi bi-trash"></i>
@@ -92,20 +90,17 @@ try {
                                             </a>
                                         </td>
                                     </tr>
-
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
-                    <div>
-
-                    </div>
                 </div>
             <?php else: ?>
                 <h3 class="py-3">No se realizaron reservaciones...</h3>
-
             <?php endif; ?>
             <a class="send" href="reservations.php" style="text-decoration: underline transparent">Regresar</a>
+            <div id="container_cart" class="container_cart hidden">
+            </div>
         </main>
         <footer class="footer_reservation">
             <div class="footer_desc">

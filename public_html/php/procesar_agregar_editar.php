@@ -1,11 +1,18 @@
 <?php
 
-session_start();
-include_once './util/texto.php';
+include './util/validar_entradas.php';
 include 'util/connection.php';
+include_once './util/texto.php';
+
+validar_entrada("../reservations.php");
+//El id del usuario que fue registrado
 $client_id = $_SESSION['id'];
+//El id de la reservacion :)
+$id_reservacion = $_GET['id'];
+
 // Obtener la URL completa para verificar que no supere el límite de 1024 caracteres
 $urlCompleta = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER["REQUEST_URI"];
+
 if (strlen($urlCompleta) > 1024) {
     echo "<script>
         alert('Error: La URL supera el límite de 1024 caracteres. Te redirigiremos a la página de reservaciones.');
@@ -46,38 +53,49 @@ unset($email);
 unset($phoneNumber);
 unset($message);
 
-if (isset($_GET['id'])) {
-    $id_reservacion = $_GET['id'];
+//va a leer la consulta que recien se ha enviado en la url o donde parte, no con una ya puesta
+//SI SE HIZO CLIC EN EDITAR PEDIDO
+
+if ($id_reservacion != "") {
+    echo "ACTUALIZAR";
+    echo $id_reservacion;
     $sql = "UPDATE `reservation` set "
-            . "(`fullname`='$fullNameProcessed',`consult_type`='$consultType', "
-            . "`email`='$emailProcessed', `phone_number='$phoneNumberProcessed'`, "
-            . "`companions`='$partners', `date`='$fechaSQL', `time`='$timeSQL', "
-            . "`message`='$messageProcessed'";
-    $sql .= is_null($location) ? "NULL" : "'$location'";
-    $sql .= "where id=$id_reservacion)";
+            . "`fullname`='$fullNameProcessed', `consult_type`='$consultType', "
+            . "`email`='$emailProcessed', "
+            . "`phone_number`= " . (is_null($phoneNumberProcessed) ? "NULL" : "'$phoneNumberProcessed'") . ", "
+            . "`companions`= " . (is_null($partners) ? "NULL" : "'$partners'") . ", "
+            . "`date`=" . (is_null($fechaSQL) ? "NULL" : "'$fechaSQL'") . ", "
+            . "`time`=" . (is_null($timeSQL) ? "NULL" : "'$timeSQL'") . ", "
+            . "`message`= '$messageProcessed', "
+            . "`location_id`=" . (is_null($location) ? "NULL" : "'$location'") . " "
+            . "where `id`=$id_reservacion";
 } else {
+    echo "INSERTAR";
     $sql = "INSERT INTO `reservation` (`fullname`,`client_id`,`consult_type`, "
             . "`email`, `phone_number`, `companions`, `date`, `time`, `message`, "
             . "`location_id`) VALUES ('$fullNameProcessed','$client_id',"
-            . "'$consultType','$emailProcessed','$phoneNumberProcessed','$partners',"
-            . "'$fechaSQL','$timeSQL','$messageProcessed',";
-    $sql .= is_null($location) ? "NULL" : "'$location'";
-    $sql .= ")";
+            . "'$consultType','$emailProcessed', "
+            . (is_null($phoneNumberProcessed) ? "NULL" : "'$phoneNumberProcessed'") . ", "
+            . (is_null($partners) ? "NULL" : "'$partners'") . ", "
+            . (is_null($fechaSQL) ? "NULL" : "'$fechaSQL'") . ", "
+            . (is_null($timeSQL) ? "NULL" : "'$timeSQL'") . ", "
+            . "'$messageProcessed', "
+            . (is_null($location) ? "NULL" : "'$location'") . ")";
 }
 try {
     conectar();
     if (ejecutar($sql)) {
         echo "<script>
         window.location.href = '../reservations.php';
-        alert('Reservación realizada con éxito');
+        alert('Operación realizada con éxito');
       </script>";
     } else {
         echo "<script>
         window.location.href = '../reservations.php';
-        alert('Error al realizar la reservación');
+        alert('Error en la reservación');
         </script>";
     }
+//    var_dump($_GET["id"]);
 } catch (Exception $exc) {
     die($exc->getMessage());
 }
-?>

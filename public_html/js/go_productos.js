@@ -101,66 +101,70 @@ function print_product() {
     </div>
     `;
     //Mostraremos la carta en el slide
-    slide.innerHTML = html;
+    if (slide) {
+        slide.innerHTML = html;
+    }
 }
 
 function in_slide() {
     slide = document.querySelector(".container_cart");
-    slide.addEventListener("click", function (e) {
-        //Cuando se presiona el icono de aumentar
-        if (e.target.classList.contains("bx-plus")) {
-            let id = Number(e.target.id);
-            if (cart[id].amount === 10) {
-                return alert("Limite máximo 10 productos");
+    if (slide) {
+        slide.addEventListener("click", function (e) {
+            //Cuando se presiona el icono de aumentar
+            if (e.target.classList.contains("bx-plus")) {
+                let id = Number(e.target.id);
+                if (cart[id].amount === 10) {
+                    return alert("Limite máximo 10 productos");
+                }
+                //Se aumenta la cantidad del producto
+                valor = Number(cart[id].amount++);
+                //Se aumenta el numero de productos que se van a comprar
+                count++;
+                notification_nav++;
+                //Es la acumulación de la suma de los precios de los productos seleccionados, en el slide.
+                //Esta variable ya viene con un valor almacenado. Es el precio del platillo agregado al slide.
+                precio_total += Number(cart[id].price);
+                metodos_generales();
             }
-            //Se aumenta la cantidad del producto
-            valor = Number(cart[id].amount++);
-            //Se aumenta el numero de productos que se van a comprar
-            count++;
-            notification_nav++;
-            //Es la acumulación de la suma de los precios de los productos seleccionados, en el slide.
-            //Esta variable ya viene con un valor almacenado. Es el precio del platillo agregado al slide.
-            precio_total += Number(cart[id].price);
-            metodos_generales();
-        }
-        //Cuando se presiona el icono de disminuir
-        if (e.target.classList.contains("bx-minus")) {
-            let id = Number(e.target.id);
-            if (cart[id].amount <= 1) {
-                const eleccion = confirm("¿Deseas eliminar el platillo?");
-                if (eleccion) {
-                    precio_total -= Number(cart[id].price) * Number(cart[id].amount);
-                    delete cart[id];
+            //Cuando se presiona el icono de disminuir
+            if (e.target.classList.contains("bx-minus")) {
+                let id = Number(e.target.id);
+                if (cart[id].amount <= 1) {
+                    const eleccion = confirm("¿Deseas eliminar el platillo?");
+                    if (eleccion) {
+                        precio_total -= Number(cart[id].price) * Number(cart[id].amount);
+                        delete cart[id];
+                        count--;
+                        notification_nav--;
+
+                        window.localStorage.setItem("notificacion", notification_nav);
+                        window.localStorage.setItem("contador", count);
+                        window.localStorage.setItem("cart", JSON.stringify(cart));
+                        print_product();
+                        return;
+                    }
+                } else {
+                    Number(cart[id].amount--);
                     count--;
                     notification_nav--;
-
-                    window.localStorage.setItem("notificacion", notification_nav);
-                    window.localStorage.setItem("contador", count);
-                    window.localStorage.setItem("cart", JSON.stringify(cart));
-                    print_product();
-                    return;
+                    precio_total -= Number(cart[id].price);
                 }
-            } else {
-                Number(cart[id].amount--);
-                count--;
-                notification_nav--;
-                precio_total -= Number(cart[id].price);
+
+                metodos_generales();
             }
+            //Cuando se presiona el icono de eliminar
+            if (e.target.classList.contains("bx-x")) {
+                const id = Number(e.target.id);
 
-            metodos_generales();
-        }
-        //Cuando se presiona el icono de eliminar
-        if (e.target.classList.contains("bx-x")) {
-            const id = Number(e.target.id);
+                precio_total -= Number(cart[id].price) * Number(cart[id].amount);
+                count -= Number(cart[id].amount);
+                notification_nav -= Number(cart[id].amount);
+                delete cart[id];
 
-            precio_total -= Number(cart[id].price) * Number(cart[id].amount);
-            count -= Number(cart[id].amount);
-            notification_nav -= Number(cart[id].amount);
-            delete cart[id];
-
-            metodos_generales();
-        }
-    });
+                metodos_generales();
+            }
+        });
+    }
 }
 const metodos_generales = () => {
     window.localStorage.setItem("p_total", precio_total);
