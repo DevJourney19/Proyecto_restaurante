@@ -70,7 +70,10 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`id`, `fullname`, `password`, `email`, `username`) VALUES
-(3, 'Elena', 0x81f44672f7707f551ea23c36b66f7afe, 'easp0104@gmail.com', 'lena');
+(3, 'Elena', 0x81f44672f7707f551ea23c36b66f7afe, 'easp0104@gmail.com', 'lena'),
+(4, 'Jose', 0xd6bb7626efc713a6a28c078b5f723c86, 'jose@gmail.com', 'Jose'),
+(5, 'Yoshua', 0xdb5652b978f8b4962db6e91b1c2504c5, 'yoshua@gmail.com', 'Yoshua'),
+(6, 'Luis', 0xa522803f6cd5b87e1186d3fe57c2f1d5, 'luis@gmail.com', 'Luis');
 
 -- --------------------------------------------------------
 
