@@ -167,8 +167,13 @@ img {
 }
 
 .checkout {
+  /*display: flex;
+  justify-content: flex-end;*/
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px; 
+
 }
 
 .checkout > button {
@@ -394,7 +399,9 @@ img {
     padding: 20px 0;
     font-size: 3rem;
   }
+ 
 }
+
 
 @media screen and (min-width: 768px) {
   main {

@@ -63,6 +63,16 @@ document
     localStorage.clear();
     window.location.href = "./menu.php";
   });
+  
+  document
+   .getElementById("regresarButton")
+   .addEventListener("click", async function (event) {
+   event.preventDefault();
+      
+    window.location.href = "./menu.php";
+  });
+
+  
 
 window.addEventListener("load", () => {
   cart_products();
