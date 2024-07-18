@@ -2,8 +2,7 @@
 include 'php/util/connection.php';
 
 include 'php/util/validar_entradas.php';
-validar_entrada("reservations.php");
-//id del usuario registrado (alt + shift + (minus/plus))
+validar_entrada("login_signup.php");
 
 $id = $_SESSION['id'];
 //Buscar si el usuario registrado ha hecho una reservacion
@@ -18,8 +17,7 @@ try {
     if (count($registro) > 0) {
         //Inventamos una llave para poder mostrar los registros de reservaciones de los clientes
         //si en caso hicieron por lo menos un pedido
-        $_SESSION['id_reservation'] = "reservado";
-        $id_reservation = $_SESSION['id_reservation'];
+        $id_reservation = "reservado";
     }
 } catch (Exception $exc) {
     die($exc->getMessage());

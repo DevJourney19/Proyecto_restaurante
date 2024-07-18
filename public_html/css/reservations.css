@@ -82,6 +82,12 @@ section{
 .history_form{
     margin-bottom: -10px;
 }
+
+.history_form > a{
+    display: inline-block;
+    text-decoration:none;
+}
+
 .imposible{
     display: flex;
     flex-direction: row;
