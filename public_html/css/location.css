@@ -40,10 +40,10 @@ section{
     padding-bottom: 20px;
 }
 .scroll-container {
-    max-height: 500px; /* Altura fija */
-    overflow-y: auto; /* Habilitar desplazamiento vertical */
-    flex-shrink: 0; /* Evitar que el contenedor se encoja */
-    padding-right: 15px; /* Añadir un poco de espacio a la derecha para la barra de desplazamiento */
+    max-height: 500px; 
+    overflow-y: auto; 
+    flex-shrink: 0; 
+    padding-right: 15px; 
 }
 
 @media only screen and (min-width:768px){
@@ -64,10 +64,10 @@ section{
         width:275px;
     }
     .scroll-container {
-    max-height: 750px; /* Altura fija */
-    overflow-y: auto; /* Habilitar desplazamiento vertical */
-    flex-shrink: 0; /* Evitar que el contenedor se encoja */
-    padding-right: 15px; /* Añadir un poco de espacio a la derecha para la barra de desplazamiento */
+    max-height: 750px; 
+    overflow-y: auto; 
+    flex-shrink: 0; 
+    padding-right: 15px; 
 }
 
 }
