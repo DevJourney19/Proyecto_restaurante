@@ -32,6 +32,7 @@ try {
                 <h2>Ubicación</h2>
             </div>
             <section>
+                 <div class="scroll-container">
                 <div class="boxes">
                     <?php if (!empty($locations)): ?>
                         <?php foreach ($locations as $location): ?>
@@ -51,7 +52,7 @@ try {
                         <p>No hay localizaciones disponibles.</p>
                     <?php endif; ?>
                 </div>
-
+    </div>
 
                 <div class="iframe">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62446.69422690843!2d-77.00754382134797!3d-11.980148814031805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c562b237b1ad%3A0x81b7bf88d50f89ff!2sUniversidad%20Tecnol%C3%B3gica%20Del%20Per%C3%BA!5e0!3m2!1ses-419!2spe!4v1713728009305!5m2!1ses-419!2spe" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

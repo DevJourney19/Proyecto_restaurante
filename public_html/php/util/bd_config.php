@@ -6,4 +6,4 @@ const HOST = "localhost";
 const USER = "root";
 const PASS = "";
 const DATABASE = "restaurante";
-const PORT = "3308";
+const PORT = "3306";
