@@ -38,7 +38,7 @@ try {
                 <form id="formPago">
                     <div>
                         <select id="location" name="location" class="location">
-                            <option value="">Selecciona la ubicacion mas cercana</option>
+                            <option id="first_option" value="">Selecciona la ubicacion mas cercana</option>
                             <?php
                             foreach ($locations as $location) {
                                 echo "<option value='{$location['id']}'>{$location['address']}</option>";
@@ -47,7 +47,7 @@ try {
                         </select>
                         <div>
                             <input id="direccion" type="text" placeholder="Direccion" name="direccion">
-                            <input id="telefono" type="text" placeholder="Telefono" name="telefono">
+                            <input id="telefono" type="text" placeholder="Telefono" name="telefono" oninput="evaluarTelefono()">
                         </div>
                         <div class="type_payment">
                             <div>
@@ -72,23 +72,19 @@ try {
                             </div>
                             <div class="online_form">
                                 <input id="nombre-titular" type="text" placeholder="Nombre del Titular">
-                                <input id="numero-tarjeta" type="text" placeholder="Numero de Tarjeta">
+                                <input id="numero-tarjeta" type="text" placeholder="Numero de Tarjeta" oninput="numeroTarjeta()">
                                 <div>
-                                    <input id="fecha" type="text" placeholder="Fecha Exp.">
-                                    <input id="cvv" type="text" placeholder="CVV">
+                                    <input id="fecha" type="text" placeholder="Fecha Exp." oninput="fechaExp()">
+                                    <input id="cvv" type="text" placeholder="CVV" oninput="numeroCvv()">
                                 </div>
                             </div>
                         </div>
                         <div id="contraentrega" class="hidden">
-                            <input id="monto-pagar" type="text" placeholder="Monto con el que pagara" name="amount_pay">
+                            <input id="monto-pagar" type="text" placeholder="Monto con el que pagara" name="amount_pay" oninput="evaluarMontoPagar()">
                         </div>
+                        <div id="error" class="error"></div>
                         <div class="checkout">
-
-
-                        </div>
-                        <div class="checkout">
-                            <button id="regresarButton" >Regresar<i class='bx bx-left-arrow-alt'></i></button>
-
+                            <button id="regresarButton" type="button">Regresar<i class='bx bx-left-arrow-alt'></i></button> 
                             <button id="botonPagar" type="submit">Pagar<i class='bx bx-right-arrow-alt'></i></button>
                         </div>
 

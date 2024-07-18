@@ -114,8 +114,8 @@ input[type="text"] {
 }
 
 img.logo {
-  height: 100px;
-  width: 100px;
+  height: 75px;
+  width: 75px;
   margin-bottom: 30px;
 }
 
@@ -270,6 +270,14 @@ img {
   display: none;
 }
 
+
+.error {
+  font-weight:400;
+  margin-bottom:20px;
+  color: #ff5e5e;
+  font-size: 14px ;
+}
+
 @media screen and (min-width: 576px) {
   .item_quantity {
     flex-direction: row;
@@ -310,7 +318,7 @@ img {
   }
 }
 
-@media screen and (min-width: 969px) {
+@media screen and (min-width: 1092px) {
   main {
     flex-direction: row;
     gap: 20px;
@@ -385,11 +393,6 @@ img {
     padding: 5px 30px;
   }
 
-  .error {
-    color: red;
-    font-weight: 700;
-  }
-
   .card_total {
     border-top: 1px solid #343434;
     display: flex;
@@ -400,17 +403,4 @@ img {
     font-size: 3rem;
   }
  
-}
-
-
-@media screen and (min-width: 768px) {
-  main {
-    flex-direction: row;
-    gap: 20px;
-  }
-
-  .payment,
-  .cart {
-    padding: 50px;
-  }
 }

@@ -1,15 +1,21 @@
 <?php
 include_once './util/connection.php';
+include_once './util/texto.php';
 // obtener información enviada desde JS
 session_start();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $location = $_POST['location'];
-    $address = $_POST['direccion'];
+    $address = mayusculaFirstWord(minusculas(limpiarHtml(limpiarEspacios($_POST['direccion']))));
     $phone = $_POST['telefono'];
     $type_order = $_POST['type-payment'];
-    $amout = $_POST['amount_pay'];
-    $type_card = $_POST['type_card'];
+    $amout = "";
+    $type_card = "";
     $total = $_POST['total'];
+    if ($type_order == 'online') {
+        $type_card = $_POST['type_card'];
+    } else {
+        $amout = $_POST['amount_pay'];
+    }
     $productos = json_decode($_POST['productos'], true);
     $email = $_SESSION['email'];
     // obtener el id del cliente
@@ -41,9 +47,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     // obtener el id del pedido insertado
     $query = "SELECT id FROM orders WHERE id=LAST_INSERT_ID()";
-    try{
+    try {
         $result = consultar($query);
-        if (count($result)== 1) {
+        if (count($result) == 1) {
             $order_id = $result[0]['id'];
         } else {
             echo json_encode(['success' => false, 'message' => 'No se encontró el pedido']);
