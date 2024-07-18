@@ -119,9 +119,16 @@ function validarFormulario() {
     return false;
   }
 
+  const total_compra = Number(localStorage.getItem("p_total"));
   if (pago_contraentrega.checked && monto_pagar.value === "") {
     error.innerHTML = "Por favor, ingrese el monto a pagar";
     return false;
+  }else if(monto_pagar.value<=0){
+    error.innerHTML = "Por favor, ingrese un monto mayor a 0";
+    return false
+  }else if(Number(monto_pagar.value)<total_compra){
+    error.innerHTML = "Por favor, ingrese un monto mayor al total de la compra";
+    return false
   }
 
   if (pago_online.checked) {
@@ -134,6 +141,7 @@ function validarFormulario() {
       return false;
     }
   }
+
   return true;
 }
 
