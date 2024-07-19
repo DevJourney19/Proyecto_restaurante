@@ -7,8 +7,6 @@ include './reg_reservation.php';
 session_start();
 $id = $_SESSION['id'];
 try {
-    //El orden de las tablas al hacer un INNER JOIN, sí importa.
-    //Obtener los pedidos del cliente registrado.
     $query = "Select * from orders WHERE client_id = $id order by id desc limit 1";
     conectar();
     //Obtenemos los pedidos realizados por el cliente registrado
@@ -27,7 +25,6 @@ try {
             . "AND orders.id='$id_pedido' ";
     $bolsa = consultar($sql);
     desconectar();
-//$resultado = $mysqli->query($query);
 } catch (ErrorException $exc) {
     die($exc->getMessage());
 }

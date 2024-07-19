@@ -23,7 +23,6 @@ session_start();
                     <h1 class="titulo">
                         La Trattoria Secreta
                     </h1>
-                    <!-- <a class="logout" href="php/close_session.php" onclick=""><i class='bx bx-exit'></i></a> -->
                     <div class="nav_icons icons_initial">
                         <button onclick="open_cart();" class="btn-cart"><i class="bx bx-cart"></i><span class="notification"></span></button>
                         <a class="user_login">

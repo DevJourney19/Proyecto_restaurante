@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if ($_SESSION['acceso'] == "12345") {
+if (isset($_SESSION['acceso'])) {
     echo true;
 } else {
     echo false;
