@@ -190,26 +190,26 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `title`, `src`, `price`, `stars`, `amount`, `description`, `category_id`) VALUES
-(1, 'Lomo Saltado', 'assets/img/lomo_saltado.png', 26.5, 5, 1, 'Delicioso plato peruano que combina tiernos trozos', 1),
-(2, 'Ensalada César', 'assets/img/ensalada_cesar.png', 15, 4, 1, 'Clásica ensalada con lechuga romana, crutones, que', 2),
-(3, 'Causa Limeña', 'assets/img/causa.png', 12, 5, 1, 'Puré de papas sazonado con ají amarillo y relleno ', 3),
-(4, 'Chicha Morada', 'assets/img/chicha_morada.webp', 8, 4, 1, 'Refrescante bebida peruana hecha de maíz morado, p', 4),
-(5, 'Suspiro a la Limeña', 'assets/img/suspiro.gif', 10, 5, 1, 'Delicioso postre peruano hecho de leche condensada', 5),
-(6, 'Seco de Cordero', 'assets/img/seco.png', 29, 4, 1, 'Guiso de cordero cocido lentamente con cilantro, a', 1),
-(7, 'Ensalada de Quinoa', 'assets/img/ensalada_quinoa.png', 23, 5, 1, 'Ensalada nutritiva con quinoa, tomates cherry, pep', 2),
-(8, 'Anticuchos', 'assets/img/anticucho.png', 14, 5, 1, 'Brochetas de corazón de res marinadas en ají panca', 3),
-(9, 'Pisco Sour', 'assets/img/pisco_sour.png', 13, 5, 1, 'Cóctel clásico peruano hecho con pisco, jugo de li', 4),
-(10, 'Turrón de Doña Pepa', 'assets/img/turron.png', 9, 4, 1, 'Dulce tradicional hecho con barras de harina de tr', 5),
-(11, 'Ají de Gallina', 'assets/img/Ajide_gallina.jpeg', 25, 5, 1, 'Suave pollo desmenuzado en una cremosa salsa de aj', 1),
-(12, 'Arroz con Pato', 'assets/img/Arrozcon_pato.jpg', 35, 5, 1, 'Exquisito pato cocido a la perfección con arroz ve', 1),
-(13, 'Solterito', 'assets/img/Solterito.jpg', 15, 4, 1, 'Fresca mezcla de choclo habas y queso fresco. ¡Ide', 2),
-(14, 'Ensalada de Betarrag', 'assets/img/Betarraga.jpg', 12, 4, 1, 'Dulce betarraga cocida con zanahoria y papa, adere', 2),
-(15, 'Papa a la Huancaína', 'assets/img/Huancaina.jpg', 12, 5, 1, 'Rodajas de papa cubiertas con una cremosa salsa de', 3),
-(16, 'Tamalitos Verdes', 'assets/img/Tamal_verde.jpeg', 10, 4, 1, 'Tamales verdes de maíz con cilantro, rellenos de c', 3),
-(17, 'Emoliente', 'assets/img/Emoliente.png', 8, 4, 1, 'Bebida caliente a base de granos tostados de cebad', 4),
-(18, 'Chicha de Jora', 'assets/img/Jora.jpg', 8, 4, 1, 'Maíz germinado, denominado Jora, diferentes frutos', 4),
-(19, 'Mazamorra Morada', 'assets/img/Mazamorra_morada.png', 10, 5, 1, 'Postre con frutas frescas y un toque de canela, tr', 5),
-(20, 'Picarones', 'assets/img/Picarones.jpg', 10, 4, 1, 'Irresistibles Picarones bañados en miel de chancac', 5);
+(1, 'Lomo Saltado', 'https://www.record.com.pe/wp-content/uploads/2021/07/Lomo-Saltado-1.png', 26.5, 5, 1, 'Delicioso plato peruano que combina tiernos trozos', 1),
+(2, 'Ensalada César', 'https://bk-latam-prod.s3.amazonaws.com/sites/burgerking.latam/files/BK_Web_Ensalada_Cesar_con_pollo_crujiente_500X540px.png', 15, 4, 1, 'Clásica ensalada con lechuga romana, crutones, que', 2),
+(3, 'Causa Limeña', 'https://png.pngtree.com/png-vector/20230912/ourmid/pngtree-causa-rellena-is-classic-peruvian-appetizer-png-image_10016526.png', 12, 5, 1, 'Puré de papas sazonado con ají amarillo y relleno ', 3),
+(4, 'Chicha Morada', 'https://recetariosupukomikuy.adra.org.pe/sources/chicha-morada.webp', 8, 4, 1, 'Refrescante bebida peruana hecha de maíz morado, p', 4),
+(5, 'Suspiro a la Limeña', 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgWRhf5KtyHXgInMk1ewEvbmbIP_64CLKD1bU-ErhpBseJf4d78XxxGYNEtSBCjRNSFg9kl6rvXd4ufF_xKAzj5B0SI2Tu7lmJwuXpho-j7r6xGJOvKQgORF1ZFvC2oSmHE_ObJqPgb4yKt/s320/suspiro.gif', 10, 5, 1, 'Delicioso postre peruano hecho de leche condensada', 5),
+(6, 'Seco de Cordero', 'https://buenazo.cronosmedia.glr.pe/original/2023/06/08/648288b91e752527c9414bf2.png', 29, 4, 1, 'Guiso de cordero cocido lentamente con cilantro, a', 1),
+(7, 'Ensalada de Quinoa', 'https://png.pngtree.com/png-clipart/20231102/original/pngtree-quinoa-salad-raw-on-photo-png-image_13489135.png', 23, 5, 1, 'Ensalada nutritiva con quinoa, tomates cherry, pep', 2),
+(8, 'Anticuchos', 'https://peruvianveef.com/wp-content/uploads/2023/10/anticuchos-plant-based-galeria-2.webp', 14, 5, 1, 'Brochetas de corazón de res marinadas en ají panca', 3),
+(9, 'Pisco Sour', 'https://www.paulinacocina.net/wp-content/uploads/2023/08/receta-pisco-sour-e1692884052543-640x397.jpg', 13, 5, 1, 'Cóctel clásico peruano hecho con pisco, jugo de li', 4),
+(10, 'Turrón de Doña Pepa', 'https://pasteleriasanantonio.com/carta-digital/wp-content/uploads/2023/04/A7405153-300x300.png', 9, 4, 1, 'Dulce tradicional hecho con barras de harina de tr', 5),
+(11, 'Ají de Gallina', 'https://www.cafecolonial.pe/wp-content/uploads/2023/02/Aji-de-Gallina-3.webp', 25, 5, 1, 'Suave pollo desmenuzado en una cremosa salsa de aj', 1),
+(12, 'Arroz con Pato', 'https://www.comedera.com/wp-content/uploads/2022/05/Arroz-con-pato-peruano-shutterstock_1846729603.jpg', 35, 5, 1, 'Exquisito pato cocido a la perfección con arroz ve', 1),
+(13, 'Solterito', 'https://mojo.generalmills.com/api/public/content/vcWKjxwt4EikvZc0EbOE5A_gmi_hi_res_jpeg.jpeg?v=ebc74845&t=16e3ce250f244648bef28c5949fb99ff', 15, 4, 1, 'Fresca mezcla de choclo habas y queso fresco. ¡Ide', 2),
+(14, 'Ensalada de Betarrag', 'https://www.recetasthermomix.cl/wp-content/uploads/ensalada-de-betarraga-zanahoria-y-manzana.jpg', 12, 4, 1, 'Dulce betarraga cocida con zanahoria y papa, adere', 2),
+(15, 'Papa a la Huancaína', 'https://donangelo.pe/wp-content/uploads/2022/10/cheese-burger-removebg-preview-1-3.png', 12, 5, 1, 'Rodajas de papa cubiertas con una cremosa salsa de', 3),
+(16, 'Tamalitos Verdes', 'https://mojo.generalmills.com/api/public/content/niN6wqjD_0OPr7jQUfctCQ_gmi_hi_res_jpeg.jpeg?v=e1e503fd&t=16e3ce250f244648bef28c5949fb99ff', 10, 4, 1, 'Tamales verdes de maíz con cilantro, rellenos de c', 3),
+(17, 'Emoliente', 'https://www.comida-peruana.com/base/stock/Recipe/emoliente-peruano/emoliente-peruano_web.jpg', 8, 4, 1, 'Bebida caliente a base de granos tostados de cebad', 4),
+(18, 'Chicha de Jora', 'https://chichadejora.net.pe/wp-content/themes/themeChichaLima/img/chicha-de-jora-lima-peru.png', 8, 4, 1, 'Maíz germinado, denominado Jora, diferentes frutos', 4),
+(19, 'Mazamorra Morada', 'https://www.gourmet.cl/wp-content/uploads/2022/08/mazamorra-morada-ajustada-web-570x458.jpg', 10, 5, 1, 'Postre con frutas frescas y un toque de canela, tr', 5),
+(20, 'Picarones', 'https://acomer.pe/wp-content/uploads/2017/07/picaronesweb-1.jpg', 10, 4, 1, 'Irresistibles Picarones bañados en miel de chancac', 5);
 
 -- --------------------------------------------------------
 
