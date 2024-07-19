@@ -17,7 +17,6 @@ try {
 
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +24,6 @@ try {
         <link rel="stylesheet" href="./css/pago.css">
         <?php include_once 'fragments/head_links.php'; ?>
     </head>
-
     <body>
         <main>
             <div class="cart">
@@ -76,6 +74,7 @@ try {
                                 <div>
                                     <input id="fecha" type="text" placeholder="Fecha Exp." oninput="fechaExp()">
                                     <input id="cvv" type="text" placeholder="CVV" oninput="numeroCvv()">
+                                    
                                 </div>
                             </div>
                         </div>
@@ -87,7 +86,6 @@ try {
                             <button id="regresarButton" type="button">Regresar<i class='bx bx-left-arrow-alt'></i></button> 
                             <button id="botonPagar" type="submit">Pagar<i class='bx bx-right-arrow-alt'></i></button>
                         </div>
-
                 </form>
             </div>
             <div class="img_decoration"></div>
@@ -95,5 +93,4 @@ try {
         <script src="./js/crud_productos.js"></script>
         <script src="./js/pagos_formulario.js"></script>
     </body>
-
 </html>

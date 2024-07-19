@@ -1,4 +1,5 @@
 <?php
+
 include_once './util/connection.php';
 include_once './util/texto.php';
 // obtener información enviada desde JS
@@ -38,6 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     try {
         conectar();
         if (ejecutar($insertOrder)) {
+            
         } else {
             echo json_encode(['success' => false, 'message' => 'Error al insertar el pedido']);
             exit();
@@ -69,6 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         try {
             conectar();
             if (ejecutar($query)) {
+                
             } else {
                 echo json_encode(['success' => false, 'message' => 'Error al insertar el pedido']);
                 exit();
