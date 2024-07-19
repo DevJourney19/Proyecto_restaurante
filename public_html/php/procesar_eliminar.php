@@ -2,7 +2,6 @@
 
 include './util/validar_entradas.php';
 include 'util/connection.php';
-include_once './util/texto.php';
 
 validar_entrada("../reservations.php");
 
@@ -22,7 +21,6 @@ try {
         alert('Error al realizar la eliminacion');
         </script>";
     }
-//    var_dump($_GET["id"]);
 } catch (Exception $exc) {
     die($exc->getMessage());
 }

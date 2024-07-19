@@ -57,45 +57,48 @@ unset($message);
 //SI SE HIZO CLIC EN EDITAR PEDIDO
 
 if ($id_reservacion != "") {
-    echo "ACTUALIZAR";
-    echo $id_reservacion;
     $sql = "UPDATE `reservation` set "
-            . "`fullname`='$fullNameProcessed', `consult_type`='$consultType', "
-            . "`email`='$emailProcessed', "
-            . "`phone_number`= " . (is_null($phoneNumberProcessed) ? "NULL" : "'$phoneNumberProcessed'") . ", "
-            . "`companions`= " . (is_null($partners) ? "NULL" : "'$partners'") . ", "
-            . "`date`=" . (is_null($fechaSQL) ? "NULL" : "'$fechaSQL'") . ", "
-            . "`time`=" . (is_null($timeSQL) ? "NULL" : "'$timeSQL'") . ", "
-            . "`message`= '$messageProcessed', "
-            . "`location_id`=" . (is_null($location) ? "NULL" : "'$location'") . " "
-            . "where `id`=$id_reservacion";
+        . "`fullname`='$fullNameProcessed', `consult_type`='$consultType', "
+        . "`email`='$emailProcessed', "
+        . "`phone_number`= " . (is_null($phoneNumberProcessed) ? "NULL" : "'$phoneNumberProcessed'") . ", "
+        . "`companions`= " . (is_null($partners) ? "NULL" : "'$partners'") . ", "
+        . "`date`=" . (is_null($fechaSQL) ? "NULL" : "'$fechaSQL'") . ", "
+        . "`time`=" . (is_null($timeSQL) ? "NULL" : "'$timeSQL'") . ", "
+        . "`message`= '$messageProcessed', "
+        . "`location_id`=" . (is_null($location) ? "NULL" : "'$location'") . " "
+        . "where `id`=$id_reservacion";
 } else {
-    echo "INSERTAR";
     $sql = "INSERT INTO `reservation` (`fullname`,`client_id`,`consult_type`, "
-            . "`email`, `phone_number`, `companions`, `date`, `time`, `message`, "
-            . "`location_id`) VALUES ('$fullNameProcessed','$client_id',"
-            . "'$consultType','$emailProcessed', "
-            . (is_null($phoneNumberProcessed) ? "NULL" : "'$phoneNumberProcessed'") . ", "
-            . (is_null($partners) ? "NULL" : "'$partners'") . ", "
-            . (is_null($fechaSQL) ? "NULL" : "'$fechaSQL'") . ", "
-            . (is_null($timeSQL) ? "NULL" : "'$timeSQL'") . ", "
-            . "'$messageProcessed', "
-            . (is_null($location) ? "NULL" : "'$location'") . ")";
+        . "`email`, `phone_number`, `companions`, `date`, `time`, `message`, "
+        . "`location_id`) VALUES ('$fullNameProcessed','$client_id',"
+        . "'$consultType','$emailProcessed', "
+        . (is_null($phoneNumberProcessed) ? "NULL" : "'$phoneNumberProcessed'") . ", "
+        . (is_null($partners) ? "NULL" : "'$partners'") . ", "
+        . (is_null($fechaSQL) ? "NULL" : "'$fechaSQL'") . ", "
+        . (is_null($timeSQL) ? "NULL" : "'$timeSQL'") . ", "
+        . "'$messageProcessed', "
+        . (is_null($location) ? "NULL" : "'$location'") . ")";
 }
 try {
     conectar();
     if (ejecutar($sql)) {
-        echo "<script>
-        window.location.href = '../reservations.php';
-        alert('Operación realizada con éxito');
-      </script>";
+        if (isset($_GET['id'])) {
+            echo "<script>
+            window.location.href = '../reservation_history.php';
+            alert('Operación actualizada correctamente');
+            </script>";
+        } else {
+            echo "<script>
+            window.location.href = '../reservations.php';
+            alert('Operación realizada con éxito');
+            </script>";
+        }
     } else {
         echo "<script>
         window.location.href = '../reservations.php';
         alert('Error en la reservación');
         </script>";
     }
-//    var_dump($_GET["id"]);
 } catch (Exception $exc) {
     die($exc->getMessage());
 }

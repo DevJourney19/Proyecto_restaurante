@@ -1,19 +1,11 @@
-## Primera Actualizacion
-- Se requiere de una base de datos local en phpmyadmi llamada restaurante para poder ejecutar el proyecto y la tabla clientes para la lectura de los usuarios.
-```sql
--- Para avance 5 usar--
+
+
+## Base de datos  
+- Copiar el codigo sql a la base de datos php para el correcto funcionamiento del proyecto
+```
+
 CREATE DATABASE restaurante;
 USE restaurante;
-CREATE TABLE clientes (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  nombre_completo VARCHAR(50),
-  correo VARCHAR(50),
-  usuario VARCHAR(150),
-  contrasena VARCHAR(150)
-);
-```
-## Tablas
-```sql
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
@@ -78,7 +70,10 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`id`, `fullname`, `password`, `email`, `username`) VALUES
-(3, 'Elena', 0x81f44672f7707f551ea23c36b66f7afe, 'easp0104@gmail.com', 'lena');
+(3, 'Elena', 0x81f44672f7707f551ea23c36b66f7afe, 'easp0104@gmail.com', 'lena'),
+(4, 'Jose', 0xd6bb7626efc713a6a28c078b5f723c86, 'jose@gmail.com', 'Jose'),
+(5, 'Yoshua', 0xdb5652b978f8b4962db6e91b1c2504c5, 'yoshua@gmail.com', 'Yoshua'),
+(6, 'Luis', 0xa522803f6cd5b87e1186d3fe57c2f1d5, 'luis@gmail.com', 'Luis');
 
 -- --------------------------------------------------------
 
@@ -98,9 +93,16 @@ CREATE TABLE `location` (
 --
 
 INSERT INTO `location` (`id`, `district`, `address`, `city`) VALUES
-(1, 'Miraflores', 'Av La Colmena-Bellav', 'Lima'),
-(2, 'Santiago de Surco', 'Av Paraiso, Mendoza ', 'Lima'),
-(3, 'San Isidro', 'Av Primavera, Magna ', 'Lima');
+(1, 'Miraflores', 'Av La colmena-Bellavista Nelaza 1948', 'Lima'),
+(2, 'Santiago de Surco', 'Av Paraiso Mendoza 1568', 'Lima'),
+(3, 'San Isidro', 'Av Primavera Magna Loza 4157', 'Lima'),
+(4, 'Barranco', 'Calle de las Piedras 1234', 'Lima'),
+(5, 'La Molina', 'Av Los Ingenieros 6789', 'Lima'),
+(6, 'San Borja', 'Jr Las Flores 9876', 'Lima'),
+(7, 'Pueblo Libre', 'Calle Independencia 5432', 'Lima'),
+(8, 'Lince', 'Av Petit Thouars 4321', 'Lima'),
+(9, 'Magdalena del Mar', 'Jr Leoncio Prado 1234', 'Lima'),
+(10, 'Jesús María', 'Av Salaverry 678', 'Lima');
 
 -- --------------------------------------------------------
 
@@ -117,7 +119,7 @@ CREATE TABLE `orders` (
   `payment_method` varchar(100) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `address` varchar(150) NOT NULL,
-  `phone_number` varchar(20) NOT NULL,
+  `phone_number` char(9) NOT NULL,
   `amount` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -371,7 +373,6 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
 
 
 ```

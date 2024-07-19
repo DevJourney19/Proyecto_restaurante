@@ -39,11 +39,18 @@ section{
     justify-content: center;
     padding-bottom: 20px;
 }
+.scroll-container {
+    max-height: 500px; 
+    overflow-y: auto; 
+    flex-shrink: 0; 
+    padding-right: 15px; 
+}
 
 @media only screen and (min-width:768px){
     section{
         flex-direction: row;
         padding: 0 50px 50px;
+        overflow-y: auto !important;
     }
     div.boxes{
         flex-direction: column;
@@ -56,6 +63,13 @@ section{
     div.local_box {
         width:275px;
     }
+    .scroll-container {
+    max-height: 750px; 
+    overflow-y: auto; 
+    flex-shrink: 0; 
+    padding-right: 15px; 
+}
+
 }
 
 .boxes{

@@ -14,14 +14,12 @@ try {
 
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <title>La Trattoria Secreta | Menu</title>
         <link rel="stylesheet" href="./css/menu.css" />
         <link rel="stylesheet" href="./css/main.css" />
         <?php include 'fragments/head_links.php'; ?>
     </head>
-
     <body>
         <header>
             <?php include 'fragments/nav.php'; ?>

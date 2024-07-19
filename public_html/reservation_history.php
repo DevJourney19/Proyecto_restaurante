@@ -2,8 +2,7 @@
 include 'php/util/connection.php';
 
 include 'php/util/validar_entradas.php';
-validar_entrada("reservations.php");
-//id del usuario registrado (alt + shift + (minus/plus))
+validar_entrada("login_signup.php");
 
 $id = $_SESSION['id'];
 //Buscar si el usuario registrado ha hecho una reservacion
@@ -18,8 +17,7 @@ try {
     if (count($registro) > 0) {
         //Inventamos una llave para poder mostrar los registros de reservaciones de los clientes
         //si en caso hicieron por lo menos un pedido
-        $_SESSION['id_reservation'] = "reservado";
-        $id_reservation = $_SESSION['id_reservation'];
+        $id_reservation = "reservado";
     }
 } catch (Exception $exc) {
     die($exc->getMessage());
@@ -42,11 +40,13 @@ try {
         <header>
             <?php include 'fragments/nav.php'; ?>
         </header>
-        <main>
-            <h2>Historial de Reservaciones <span><i class='bx bx-food-menu' ></i></span></h2>
+        <main class="container my-5">
+            <div class="title_section">
+                 <h2>Historial de Reservaciones <span><i class='bx bx-food-menu' ></i></span></h2>
+            </div>
             <?php if ($id_reservation === "reservado"): ?>
-                <div class="row" >
-                    <div class="table-responsive col-12 ">
+               <!-- <div class="row" >-->
+               <div class="table-responsive col-12 ">
                         <table class="table">
                             <thead class="bg-success text-light">
                                 <tr>
@@ -98,9 +98,10 @@ try {
             <?php else: ?>
                 <h3 class="py-3">No se realizaron reservaciones...</h3>
             <?php endif; ?>
-            <a class="send" href="reservations.php" style="text-decoration: underline transparent">Regresar</a>
+            <a class="send" href="reservations.php" style="text-decoration: none;margin-top: 20px;">Regresar</a>
             <div id="container_cart" class="container_cart hidden">
             </div>
+         
         </main>
         <footer class="footer_reservation">
             <div class="footer_desc">
