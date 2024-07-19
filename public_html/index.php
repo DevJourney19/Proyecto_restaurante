@@ -3,7 +3,7 @@ session_start();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
     <head>
         <title>La Trattoria Secreta | Home</title>

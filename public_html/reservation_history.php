@@ -42,66 +42,66 @@ try {
         </header>
         <main class="container my-5">
             <div class="title_section">
-                 <h2>Historial de Reservaciones <span><i class='bx bx-food-menu' ></i></span></h2>
+                <h2>Historial de Reservaciones <span><i class='bx bx-food-menu' ></i></span></h2>
             </div>
             <?php if ($id_reservation === "reservado"): ?>
-               <!-- <div class="row" >-->
-               <div class="table-responsive col-12 ">
-                        <table class="table">
-                            <thead class="bg-success text-light">
-                                <tr>
-                                    <th>Full Name</th>
-                                    <th>Consult Type</th>
-                                    <th>Email</th>
-                                    <th>Phone Number</th>
-                                    <th>Companions</th>
-                                    <th>Date</th>
-                                    <th>Time</th>
-                                    <th>Message</th>
-                                    <th>Location</th><!--Hacer un inner join - district-->
-                                    <th colspan="2" class="text-center">Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+                <!-- <div class="row" >-->
+                <div class="table-responsive col-12 ">
+                    <table class="table">
+                        <thead class="bg-success text-light">
+                            <tr>
+                                <th>Full Name</th>
+                                <th>Consult Type</th>
+                                <th>Email</th>
+                                <th>Phone Number</th>
+                                <th>Companions</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Message</th>
+                                <th>Location</th><!--Hacer un inner join - district-->
+                                <th colspan="2" class="text-center">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                                <?php foreach ($registro as $r) : ?>
-                                    <tr>
-                                        <td><?= $r['fullname'] ?></td>
-                                        <td><?= $r['consult_type'] ?></td>
-                                        <td><?= $r['email'] ?></td>
-                                        <td><?= $r['phone_number'] ?></td>
-                                        <td><?= $r['companions'] ?></td>
-                                        <td><?= $r['date'] ?></td>
-                                        <td><?= $r['time'] ?></td>
-                                        <td><?= $r['message'] ?></td>
-                                        <td><?= $r['location_id'] ?></td>
-                                        <td class="text-center">
-                                            <a href="reservations.php?id=<?= $r['id'] ?>" class="btn btn-sm btn-outline-warning">
-                                                <i class="bi bi-pencil"></i>
-                                                Editar
-                                            </a>
-                                        </td>
-                                        <td class="text-center">
-                                            <a href="php/procesar_eliminar.php?id=<?= $r['id'] ?>" 
-                                               class="btn btn-sm btn-outline-danger"
-                                               onclick="return confirm('¿Deseas eliminar?')">
-                                                <i class="bi bi-trash"></i>
-                                                Eliminar
-                                            </a>
-                                        </td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
-                    </div>
+                            <?php foreach ($registro as $r) : ?>
+                                <tr>
+                                    <td><?= $r['fullname'] ?></td>
+                                    <td><?= $r['consult_type'] ?></td>
+                                    <td><?= $r['email'] ?></td>
+                                    <td><?= $r['phone_number'] ?></td>
+                                    <td><?= $r['companions'] ?></td>
+                                    <td><?= $r['date'] ?></td>
+                                    <td><?= $r['time'] ?></td>
+                                    <td><?= $r['message'] ?></td>
+                                    <td><?= $r['location_id'] ?></td>
+                                    <td class="text-center">
+                                        <a href="reservations.php?id=<?= $r['id'] ?>" class="btn btn-sm btn-outline-warning">
+                                            <i class="bi bi-pencil"></i>
+                                            Editar
+                                        </a>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="php/procesar_eliminar.php?id=<?= $r['id'] ?>" 
+                                           class="btn btn-sm btn-outline-danger"
+                                           onclick="return confirm('¿Deseas eliminar?')">
+                                            <i class="bi bi-trash"></i>
+                                            Eliminar
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
                 </div>
+
             <?php else: ?>
                 <h3 class="py-3">No se realizaron reservaciones...</h3>
             <?php endif; ?>
             <a class="send" href="reservations.php" style="text-decoration: none;margin-top: 20px;">Regresar</a>
             <div id="container_cart" class="container_cart hidden">
             </div>
-         
+
         </main>
         <footer class="footer_reservation">
             <div class="footer_desc">
