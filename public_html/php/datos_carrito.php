@@ -1,4 +1,5 @@
 <?php
+
 include_once './util/connection.php';
 // obtener información enviada desde JS
 session_start();
@@ -32,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     try {
         conectar();
         if (ejecutar($insertOrder)) {
+            
         } else {
             echo json_encode(['success' => false, 'message' => 'Error al insertar el pedido']);
             exit();
@@ -41,9 +43,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     // obtener el id del pedido insertado
     $query = "SELECT id FROM orders WHERE id=LAST_INSERT_ID()";
-    try{
+    try {
         $result = consultar($query);
-        if (count($result)== 1) {
+        if (count($result) == 1) {
             $order_id = $result[0]['id'];
         } else {
             echo json_encode(['success' => false, 'message' => 'No se encontró el pedido']);
@@ -63,6 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         try {
             conectar();
             if (ejecutar($query)) {
+                
             } else {
                 echo json_encode(['success' => false, 'message' => 'Error al insertar el pedido']);
                 exit();

@@ -1,14 +1,16 @@
+
 function cart_products() {
-  const listContainer = document.querySelector(".container_cart");
-  const list = JSON.parse(localStorage.getItem("cart")) || "";
-  const precio_total = localStorage.getItem("p_total") || 0;
-  let html = "";
-  html += `
+
+    const listContainer = document.querySelector(".container_cart");
+    const list = JSON.parse(localStorage.getItem("cart")) || "";
+    const precio_total = localStorage.getItem("p_total") || 0;
+    let html = "";
+    html += `
     <div class="container_cart_content">
         <div class="cart_list">`;
-  for (const product of Object.values(list)) {
-    const { src, price, title, description, alt, id, amount } = product;
-    html += `
+    for (const product of Object.values(list)) {
+        const {src, price, title, description, alt, id, amount} = product;
+        html += `
         <div class="cart_list_card" id="s">
                 <img src="${src}" alt="${alt}">
                 <div class="cart_card_info">
@@ -26,44 +28,51 @@ function cart_products() {
                 </div>
         </div>    
 `;
-  }
-  html += `
+    }
+    html += `
   </div>
     <div class="card_total">
             <p>Total</p>
             <span>S/. ${precio_total}</span>
     </div>
     `;
-  //Mostraremos la carta en el slide
-  listContainer.innerHTML = html;
+    //Mostraremos la carta en el slide
+    listContainer.innerHTML = html;
 }
-
 async function procesarPago() {
-  const formulario = document.getElementById("formPago");
-  let formData = new FormData(formulario);
-  formData.append('total', localStorage.getItem("p_total"));
-  formData.append('productos', localStorage.getItem("cart"));
-  for (let [key, value] of formData.entries()) {
-    console.log(`${key}: ${value}`);
-  }
-  await fetch("./php/datos_carrito.php", {
-    method: "POST",
-    body: formData,
-  })
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch((error) => console.error("Error:", error));
+    const formulario = document.getElementById("formPago");
+    let formData = new FormData(formulario);
+    formData.append('total', localStorage.getItem("p_total"));
+    formData.append('productos', localStorage.getItem("cart"));
+    for (let [key, value] of formData.entries()) {
+        console.log(`${key}: ${value}`);
+    }
+    await fetch("./php/datos_carrito.php", {
+        method: "POST",
+        body: formData
+    })
+            .then((response) => response.json())
+            .then((data) => console.log(data))
+            .catch((error) => console.error("Error:", error));
 }
+document.getElementById("botonPagar")
+        .addEventListener("click", async function (event) {
+            event.preventDefault();
+            await procesarPago(); // Llamar a la función
+            localStorage.clear();
+            let resultado = confirm("¿Deseas generar un pdf de la compra realizada?");
+            if (resultado) {
+                window.location.href = "./php/util/pdf.php";
+                setTimeout(function () {
+                    window.location.href = "./menu.php"; // Redirige a menu.php después de 4 segundos
+                }, 4000);
+            } else {
+                window.location.href = "./menu.php";
+            }
 
-document
-  .getElementById("botonPagar")
-  .addEventListener("click", async function (event) {
-    event.preventDefault();
-    await procesarPago(); // Llamar a la función
-    localStorage.clear();
-    window.location.href = "./menu.php";
-  });
+        });
 
 window.addEventListener("load", () => {
-  cart_products();
+    cart_products();
 });
+
