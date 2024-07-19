@@ -190,7 +190,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `title`, `src`, `price`, `stars`, `amount`, `description`, `category_id`) VALUES
-(1, 'Lomo Saltado', 'https://www.record.com.pe/wp-content/uploads/2021/07/Lomo-Saltado-1.png', 26.5, 5, 1, 'Delicioso plato peruano que combina tiernos trozos', 1),
+(1, 'Lomo Saltado', 'https://www.record.com.pe/wp-content/uploads/2021/07/Lomo-Saltado-1.png', 26, 5, 1, 'Delicioso plato peruano que combina tiernos trozos', 1),
 (2, 'Ensalada César', 'https://bk-latam-prod.s3.amazonaws.com/sites/burgerking.latam/files/BK_Web_Ensalada_Cesar_con_pollo_crujiente_500X540px.png', 15, 4, 1, 'Clásica ensalada con lechuga romana, crutones, que', 2),
 (3, 'Causa Limeña', 'https://png.pngtree.com/png-vector/20230912/ourmid/pngtree-causa-rellena-is-classic-peruvian-appetizer-png-image_10016526.png', 12, 5, 1, 'Puré de papas sazonado con ají amarillo y relleno ', 3),
 (4, 'Chicha Morada', 'https://recetariosupukomikuy.adra.org.pe/sources/chicha-morada.webp', 8, 4, 1, 'Refrescante bebida peruana hecha de maíz morado, p', 4),
